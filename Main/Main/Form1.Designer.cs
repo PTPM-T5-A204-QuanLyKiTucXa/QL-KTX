@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtEmail1 = new thietKeControls.txtEmail();
+            this.SuspendLayout();
+            // 
+            // txtEmail1
+            // 
+            this.txtEmail1.Location = new System.Drawing.Point(348, 79);
+            this.txtEmail1.Name = "txtEmail1";
+            this.txtEmail1.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail1.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(617, 261);
+            this.Controls.Add(this.txtEmail1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private thietKeControls.txtEmail txtEmail1;
+
+
+
+
     }
 }
 
