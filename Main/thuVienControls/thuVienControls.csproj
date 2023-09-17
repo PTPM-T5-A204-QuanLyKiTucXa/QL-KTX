@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +41,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="gdDangNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gdDangNhap.Designer.cs">
+      <DependentUpon>gdDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gdMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gdMain.Designer.cs">
+      <DependentUpon>gdMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gdQLNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gdQLNhanVien.Designer.cs">
+      <DependentUpon>gdQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_danhSachPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_danhSachPhong.Designer.cs">
+      <DependentUpon>gd_danhSachPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_QLSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_QLSinhVien.Designer.cs">
+      <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gdDangNhap.resx">
+      <DependentUpon>gdDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gdMain.resx">
+      <DependentUpon>gdMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gdQLNhanVien.resx">
+      <DependentUpon>gdQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_danhSachPhong.resx">
+      <DependentUpon>gd_danhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLSinhVien.resx">
+      <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\thietKeControls\thietKeControls.csproj">
+      <Project>{11C03CC9-E94A-422E-B68F-D6BED1C0B83E}</Project>
+      <Name>thietKeControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
