@@ -1,6 +1,6 @@
 ﻿namespace thuVienControls
 {
-    partial class gdMain
+    partial class gd_Main
     {
         /// <summary> 
         /// Required designer variable.

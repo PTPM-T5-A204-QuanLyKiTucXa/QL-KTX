@@ -1,6 +1,6 @@
 ﻿namespace thuVienControls
 {
-    partial class gdDangNhap
+    partial class gd_DangNhap
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.txtChiNhapSo1 = new thietKeControls.txtChiNhapSo();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_matKhau = new System.Windows.Forms.TextBox();
             this.btn_dangNhap = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
@@ -74,12 +74,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "MẬT KHẨU:";
             // 
-            // textBox1
+            // txt_matKhau
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_matKhau.Location = new System.Drawing.Point(169, 120);
+            this.txt_matKhau.Name = "txt_matKhau";
+            this.txt_matKhau.Size = new System.Drawing.Size(318, 20);
+            this.txt_matKhau.TabIndex = 4;
             // 
             // btn_dangNhap
             // 
@@ -89,6 +89,7 @@
             this.btn_dangNhap.TabIndex = 5;
             this.btn_dangNhap.Text = "Đăng nhập";
             this.btn_dangNhap.UseVisualStyleBackColor = true;
+            this.btn_dangNhap.Click += new System.EventHandler(this.btn_dangNhap_Click);
             // 
             // btn_xoa
             // 
@@ -108,19 +109,19 @@
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
             // 
-            // gdDangNhap
+            // gd_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_dangNhap);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_matKhau);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtChiNhapSo1);
             this.Controls.Add(this.label1);
-            this.Name = "gdDangNhap";
+            this.Name = "gd_DangNhap";
             this.Size = new System.Drawing.Size(529, 282);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,7 +134,7 @@
         private thietKeControls.txtChiNhapSo txtChiNhapSo1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_matKhau;
         private System.Windows.Forms.Button btn_dangNhap;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_thoat;

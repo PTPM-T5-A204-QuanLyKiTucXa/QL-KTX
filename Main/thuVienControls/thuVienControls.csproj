@@ -41,29 +41,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gdDangNhap.cs">
+    <Compile Include="cauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cauHinh.Designer.cs">
+      <DependentUpon>cauHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_cauHinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="gdDangNhap.Designer.cs">
-      <DependentUpon>gdDangNhap.cs</DependentUpon>
+    <Compile Include="gd_cauHinh.Designer.cs">
+      <DependentUpon>gd_cauHinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="gdMain.cs">
+    <Compile Include="gd_DangNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="gdMain.Designer.cs">
-      <DependentUpon>gdMain.cs</DependentUpon>
+    <Compile Include="gd_DangNhap.Designer.cs">
+      <DependentUpon>gd_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="gdQLNhanVien.cs">
+    <Compile Include="gd_Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="gdQLNhanVien.Designer.cs">
-      <DependentUpon>gdQLNhanVien.cs</DependentUpon>
+    <Compile Include="gd_Main.Designer.cs">
+      <DependentUpon>gd_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="gd_danhSachPhong.cs">
+    <Compile Include="gd_QLNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="gd_danhSachPhong.Designer.cs">
-      <DependentUpon>gd_danhSachPhong.cs</DependentUpon>
+    <Compile Include="gd_QLNhanVien.Designer.cs">
+      <DependentUpon>gd_QLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_DangKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_DangKy.Designer.cs">
+      <DependentUpon>gd_DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_Phong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_Phong.Designer.cs">
+      <DependentUpon>gd_Phong.cs</DependentUpon>
     </Compile>
     <Compile Include="gd_QLSinhVien.cs">
       <SubType>UserControl</SubType>
@@ -77,19 +95,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ql_NguoiDung.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gdDangNhap.resx">
-      <DependentUpon>gdDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="cauHinh.resx">
+      <DependentUpon>cauHinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gdMain.resx">
-      <DependentUpon>gdMain.cs</DependentUpon>
+    <EmbeddedResource Include="gd_cauHinh.resx">
+      <DependentUpon>gd_cauHinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gdQLNhanVien.resx">
-      <DependentUpon>gdQLNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="gd_DangKy.resx">
+      <DependentUpon>gd_DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gd_danhSachPhong.resx">
-      <DependentUpon>gd_danhSachPhong.cs</DependentUpon>
+    <EmbeddedResource Include="gd_DangNhap.resx">
+      <DependentUpon>gd_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_Main.resx">
+      <DependentUpon>gd_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLNhanVien.resx">
+      <DependentUpon>gd_QLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_Phong.resx">
+      <DependentUpon>gd_Phong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gd_QLSinhVien.resx">
       <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
@@ -104,6 +137,13 @@
       <Project>{11C03CC9-E94A-422E-B68F-D6BED1C0B83E}</Project>
       <Name>thietKeControls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

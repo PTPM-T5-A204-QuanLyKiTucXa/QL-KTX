@@ -82,6 +82,10 @@
       <Project>{11C03CC9-E94A-422E-B68F-D6BED1C0B83E}</Project>
       <Name>thietKeControls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\thuVienControls\thuVienControls.csproj">
+      <Project>{39E46E87-09D0-4AF2-8048-C4079F97C740}</Project>
+      <Name>thuVienControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

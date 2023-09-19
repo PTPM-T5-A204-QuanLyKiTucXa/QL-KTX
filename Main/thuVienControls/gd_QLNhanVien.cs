@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace thuVienControls
 {
-    public partial class gdQLNhanVien : UserControl
+    public partial class gd_QLNhanVien : UserControl
     {
-        public gdQLNhanVien()
+        public gd_QLNhanVien()
         {
             InitializeComponent();
         }

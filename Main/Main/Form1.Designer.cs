@@ -28,36 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEmail1 = new thietKeControls.txtEmail();
+            this.gd_DangNhap1 = new thuVienControls.gd_DangNhap();
             this.SuspendLayout();
             // 
-            // txtEmail1
+            // gd_DangNhap1
             // 
-            this.txtEmail1.Location = new System.Drawing.Point(348, 79);
-            this.txtEmail1.Name = "txtEmail1";
-            this.txtEmail1.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail1.TabIndex = 0;
+            this.gd_DangNhap1.Location = new System.Drawing.Point(48, 42);
+            this.gd_DangNhap1.Name = "gd_DangNhap1";
+            this.gd_DangNhap1.Size = new System.Drawing.Size(529, 282);
+            this.gd_DangNhap1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 261);
-            this.Controls.Add(this.txtEmail1);
+            this.ClientSize = new System.Drawing.Size(617, 361);
+            this.Controls.Add(this.gd_DangNhap1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
+
+
+
         #endregion
 
-        private thietKeControls.txtEmail txtEmail1;
-
-
-
-
+        private thuVienControls.gd_DangNhap gd_DangNhap1;
     }
 }
 

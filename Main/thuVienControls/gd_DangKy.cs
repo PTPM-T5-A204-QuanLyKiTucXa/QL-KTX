@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace thuVienControls
 {
-    public partial class gdDangNhap : UserControl
+    public partial class gd_DangKy : UserControl
     {
-        public gdDangNhap()
+        public gd_DangKy()
         {
             InitializeComponent();
         }

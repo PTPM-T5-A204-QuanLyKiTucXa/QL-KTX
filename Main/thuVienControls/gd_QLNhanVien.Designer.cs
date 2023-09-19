@@ -1,6 +1,6 @@
 ﻿namespace thuVienControls
 {
-    partial class gdQLNhanVien
+    partial class gd_QLNhanVien
     {
         /// <summary> 
         /// Required designer variable.
