@@ -11,12 +11,16 @@ namespace Main
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static Form_Home mainForm = null;
+        public static Form_DangNhap dnForm = null;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            dnForm = new Form_DangNhap();
+            Application.Run(dnForm);
            
         }
     }

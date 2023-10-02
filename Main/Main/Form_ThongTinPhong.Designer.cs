@@ -1,6 +1,6 @@
 ﻿namespace Main
 {
-    partial class Form1
+    partial class Form_ThongTinPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gd_DangNhap1 = new thuVienControls.gd_DangNhap();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // gd_DangNhap1
+            // flowLayoutPanel1
             // 
-            this.gd_DangNhap1.Location = new System.Drawing.Point(48, 42);
-            this.gd_DangNhap1.Name = "gd_DangNhap1";
-            this.gd_DangNhap1.Size = new System.Drawing.Size(529, 282);
-            this.gd_DangNhap1.TabIndex = 0;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(539, 478);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // Form1
+            // Form_ThongTinPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 361);
-            this.Controls.Add(this.gd_DangNhap1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(539, 478);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "Form_ThongTinPhong";
+            this.Text = "Form_ThongTinPhong";
             this.ResumeLayout(false);
 
         }
 
-
-
-
         #endregion
 
-        private thuVienControls.gd_DangNhap gd_DangNhap1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
-

@@ -1,23 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuVienControls;
 
-namespace thuVienControls
+namespace Main
 {
-    public partial class gd_DangNhap : UserControl
+    public partial class Form_DangNhap : Form
     {
-        public gd_DangNhap()
+        public Form_DangNhap()
         {
             InitializeComponent();
         }
+        public void processLogin()
+        {
+            Ql_NguoiDung cauhinh = new Ql_NguoiDung();
+            int kq = cauhinh.check_user(txtChiNhapSo1.Text.ToString(), txt_matKhau.Text.ToString());
+            if (kq == 1)
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
+                return;
+            }
+            else if (kq == 2)
+            {
+                MessageBox.Show("Tài khoản đang bị khóa");
+                return;
+            }
+            if (Program.mainForm == null || Program.mainForm.IsDisposed)
+            {
+                Program.mainForm = new Form_Home();
+            }
+            this.Visible = false;
+            Program.mainForm.Show();
+        }
 
-        private void btn_dangNhap_Click(object sender, EventArgs e)
+        public void processConfig()
+        {
+            Form_CauHinh chForm = new Form_CauHinh();
+            chForm.Show();
+        }
+
+        private void btn_dangNhap_Click_1(object sender, EventArgs e)
         {
             if (txtChiNhapSo1.Text == "")
             {
@@ -36,47 +64,20 @@ namespace thuVienControls
             if (kq == 0)
             {
                 processLogin();
-                //đăng nhập đi mày
+                //đăng nhập 
             }
             if (kq == 1)
             {
                 MessageBox.Show("Chuỗi cấu hình không tồn tại");
                 processConfig();
-                // Xử lý cấu hình đi mày
+                // Xử lý cấu hình 
             }
             if (kq == 2)
             {
                 MessageBox.Show("Chuỗi cấu hình không phù hợp");
                 processConfig();
-                // chuỗi sai kìa mày, sửa đi mày
+                // chuỗi sai, sửa 
             }
-        }
-        public void processLogin()
-        {
-            Ql_NguoiDung cauhinh = new Ql_NguoiDung();
-            int kq = cauhinh.check_user(txtChiNhapSo1.Text.ToString(), txt_matKhau.Text.ToString());
-            if (kq == 1)
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
-                return;
-            }
-            else if (kq == 2)
-            {
-                MessageBox.Show("Tài khoản đang bị khóa");
-                return;
-            }
-            //if (Program.mainForm == null || Program.mainForm.IsDisposed)
-            //{
-            //    Program.mainForm = new gd_Main();
-            //}
-            //this.Visible = false;
-            //Program.mainForm.Show();
-        }
-
-        public void processConfig()
-        {
-            cauHinh chForm = new cauHinh();
-            chForm.Show();
         }
     }
 }

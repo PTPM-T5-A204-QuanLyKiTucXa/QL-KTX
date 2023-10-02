@@ -12,7 +12,7 @@ namespace thuVienControls.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,15 +25,22 @@ namespace thuVienControls.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DACK {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
+            "True")]
+        public string LTWNCConn {
             get {
-                return ((string)(this["DACK"]));
+                return ((string)(this["LTWNCConn"]));
             }
-
-            set
-            {
-                this["DACK"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
+            "True")]
+        public string qlktxConnectionString {
+            get {
+                return ((string)(this["qlktxConnectionString"]));
             }
         }
     }

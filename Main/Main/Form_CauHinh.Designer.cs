@@ -1,7 +1,7 @@
 ﻿
-namespace thuVienControls
+namespace Main
 {
-    partial class cauHinh
+    partial class Form_CauHinh
     {
         /// <summary>
         /// Required designer variable.
@@ -43,104 +43,103 @@ namespace thuVienControls
             // 
             // btn_huy
             // 
-            this.btn_huy.Location = new System.Drawing.Point(330, 319);
+            this.btn_huy.Location = new System.Drawing.Point(204, 215);
             this.btn_huy.Margin = new System.Windows.Forms.Padding(6);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(150, 44);
-            this.btn_huy.TabIndex = 29;
+            this.btn_huy.TabIndex = 39;
             this.btn_huy.Text = "Hủy bỏ";
             this.btn_huy.UseVisualStyleBackColor = true;
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(13, 319);
+            this.btn_luu.Location = new System.Drawing.Point(25, 215);
             this.btn_luu.Margin = new System.Windows.Forms.Padding(6);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(150, 44);
-            this.btn_luu.TabIndex = 28;
+            this.btn_luu.TabIndex = 38;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 246);
+            this.label4.Location = new System.Drawing.Point(22, 170);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 27;
+            this.label4.TabIndex = 37;
             this.label4.Text = "database";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 196);
+            this.label3.Location = new System.Drawing.Point(22, 120);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 26;
+            this.label3.TabIndex = 36;
             this.label3.Text = "password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 146);
+            this.label2.Location = new System.Drawing.Point(22, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 25;
+            this.label2.TabIndex = 35;
             this.label2.Text = "user name";
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(218, 190);
+            this.txt_pass.Location = new System.Drawing.Point(96, 117);
             this.txt_pass.Margin = new System.Windows.Forms.Padding(6);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(258, 20);
-            this.txt_pass.TabIndex = 23;
+            this.txt_pass.TabIndex = 33;
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(218, 140);
+            this.txt_username.Location = new System.Drawing.Point(96, 67);
             this.txt_username.Margin = new System.Windows.Forms.Padding(6);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(258, 20);
-            this.txt_username.TabIndex = 22;
+            this.txt_username.TabIndex = 32;
             // 
             // cbx_database
             // 
             this.cbx_database.FormattingEnabled = true;
-            this.cbx_database.Location = new System.Drawing.Point(218, 240);
+            this.cbx_database.Location = new System.Drawing.Point(96, 167);
             this.cbx_database.Margin = new System.Windows.Forms.Padding(6);
             this.cbx_database.Name = "cbx_database";
             this.cbx_database.Size = new System.Drawing.Size(258, 21);
-            this.cbx_database.TabIndex = 24;
+            this.cbx_database.TabIndex = 34;
             // 
             // cbx_severname
             // 
             this.cbx_severname.FormattingEnabled = true;
-            this.cbx_severname.Location = new System.Drawing.Point(218, 88);
+            this.cbx_severname.Location = new System.Drawing.Point(96, 15);
             this.cbx_severname.Margin = new System.Windows.Forms.Padding(6);
             this.cbx_severname.Name = "cbx_severname";
             this.cbx_severname.Size = new System.Drawing.Size(258, 21);
-            this.cbx_severname.TabIndex = 21;
+            this.cbx_severname.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 94);
+            this.label1.Location = new System.Drawing.Point(22, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 30;
             this.label1.Text = "sever name";
             // 
-            // cauHinh
+            // Form_CauHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 450);
+            this.ClientSize = new System.Drawing.Size(374, 291);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.label4);
@@ -151,8 +150,9 @@ namespace thuVienControls
             this.Controls.Add(this.cbx_database);
             this.Controls.Add(this.cbx_severname);
             this.Controls.Add(this.label1);
-            this.Name = "cauHinh";
-            this.Text = "cauHinh";
+            this.Name = "Form_CauHinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form_CauHinh";
             this.ResumeLayout(false);
             this.PerformLayout();
 

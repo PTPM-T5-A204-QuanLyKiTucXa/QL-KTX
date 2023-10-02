@@ -16,11 +16,11 @@ namespace thuVienControls
         }
         public int check_config()
         {
-            if (Properties.Settings.Default.DACK == string.Empty)
+            if (Properties.Settings.Default.LTWNCConn == string.Empty)
             {
                 return 1;
             }
-            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.DACK);
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.LTWNCConn);
             try
             {
                 if (cnn.State == System.Data.ConnectionState.Closed)
@@ -36,17 +36,17 @@ namespace thuVienControls
         }
         public int check_user(string user, string pass)
         {
-            string cauLenh = "select * from QL_NguoiDung where TenDangNhap ='" + user + "' and MatKhau ='" + pass + "'";
-            SqlDataAdapter da_checkuser = new SqlDataAdapter(cauLenh, Properties.Settings.Default.DACK);
+            string cauLenh = "select * from NguoiDung where ten_nguoi_dung ='" + user + "' and mat_khau ='" + pass + "'";
+            SqlDataAdapter da_checkuser = new SqlDataAdapter(cauLenh, Properties.Settings.Default.LTWNCConn);
             DataTable dt = new DataTable();
             da_checkuser.Fill(dt);
             if (dt.Rows.Count == 0)
             {
-                return 1; // user không tồn tại kìa mày
+                return 1; // user không tồn tại 
             }
             if (dt.Rows[0][2] == null || dt.Rows[0][2] == "False")
             {
-                return 2; // hàng này không sài được mày
+                return 2; // sai mk
             }
             return 0;
 
@@ -69,8 +69,11 @@ namespace thuVienControls
         }
         public void SaveConfig(string pServer, string pUser, string pPass, string pDBname)
         {
-            thuVienControls.Properties.Settings.Default.DACK = "Data Source=" + pServer + ";Initial Catalog=" + pDBname + ";User ID=" + pUser + ";pwd = " + pPass + "";
+            //thuVienControls.Properties.Settings.Default.LTWNCConn = "Data Source=" + pServer + ";Initial Catalog=" + pDBname + ";User ID=" + pUser + ";pwd = " + pPass + "";
             thuVienControls.Properties.Settings.Default.Save();
         }
+
+
+
     }
 }

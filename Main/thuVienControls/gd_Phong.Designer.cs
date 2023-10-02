@@ -29,70 +29,76 @@ namespace thuVienControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.gr_Phong = new System.Windows.Forms.GroupBox();
-            this.list_sinhVien = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gr_Phong.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_soThanhVien = new System.Windows.Forms.Label();
+            this.lb_loaiPhong = new System.Windows.Forms.Label();
+            this.lb_tenPhong = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gr_Phong
+            // panel1
             // 
-            this.gr_Phong.Controls.Add(this.label2);
-            this.gr_Phong.Controls.Add(this.label1);
-            this.gr_Phong.Controls.Add(this.list_sinhVien);
-            this.gr_Phong.Location = new System.Drawing.Point(3, 3);
-            this.gr_Phong.Name = "gr_Phong";
-            this.gr_Phong.Size = new System.Drawing.Size(291, 239);
-            this.gr_Phong.TabIndex = 1;
-            this.gr_Phong.TabStop = false;
-            this.gr_Phong.Text = "gr";
+            this.panel1.Controls.Add(this.lb_tenPhong);
+            this.panel1.Controls.Add(this.lb_soThanhVien);
+            this.panel1.Controls.Add(this.lb_loaiPhong);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 173);
+            this.panel1.TabIndex = 0;
             // 
-            // list_sinhVien
+            // lb_soThanhVien
             // 
-            this.list_sinhVien.FormattingEnabled = true;
-            this.list_sinhVien.Location = new System.Drawing.Point(6, 86);
-            this.list_sinhVien.Name = "list_sinhVien";
-            this.list_sinhVien.Size = new System.Drawing.Size(279, 147);
-            this.list_sinhVien.TabIndex = 0;
+            this.lb_soThanhVien.AutoSize = true;
+            this.lb_soThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_soThanhVien.ForeColor = System.Drawing.Color.Red;
+            this.lb_soThanhVien.Location = new System.Drawing.Point(3, 131);
+            this.lb_soThanhVien.Name = "lb_soThanhVien";
+            this.lb_soThanhVien.Size = new System.Drawing.Size(101, 18);
+            this.lb_soThanhVien.TabIndex = 2;
+            this.lb_soThanhVien.Text = "Số thành viên:";
             // 
-            // label1
+            // lb_loaiPhong
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Loại phòng:";
+            this.lb_loaiPhong.AutoSize = true;
+            this.lb_loaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_loaiPhong.ForeColor = System.Drawing.Color.Red;
+            this.lb_loaiPhong.Location = new System.Drawing.Point(3, 78);
+            this.lb_loaiPhong.Name = "lb_loaiPhong";
+            this.lb_loaiPhong.Size = new System.Drawing.Size(85, 18);
+            this.lb_loaiPhong.TabIndex = 1;
+            this.lb_loaiPhong.Text = "Loại phòng:";
             // 
-            // label2
+            // lb_tenPhong
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Số lượng:";
+            this.lb_tenPhong.AutoSize = true;
+            this.lb_tenPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_tenPhong.ForeColor = System.Drawing.Color.Red;
+            this.lb_tenPhong.Location = new System.Drawing.Point(3, 27);
+            this.lb_tenPhong.Name = "lb_tenPhong";
+            this.lb_tenPhong.Size = new System.Drawing.Size(109, 24);
+            this.lb_tenPhong.TabIndex = 3;
+            this.lb_tenPhong.Text = "Tên phòng:";
             // 
-            // gd_phong
+            // gd_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gr_Phong);
-            this.Name = "gd_phong";
-            this.Size = new System.Drawing.Size(297, 245);
-            this.gr_Phong.ResumeLayout(false);
-            this.gr_Phong.PerformLayout();
+            this.Controls.Add(this.panel1);
+            this.Name = "gd_Phong";
+            this.Size = new System.Drawing.Size(214, 179);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gr_Phong;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox list_sinhVien;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb_soThanhVien;
+        private System.Windows.Forms.Label lb_loaiPhong;
+        private System.Windows.Forms.Label lb_tenPhong;
+
 
     }
 }

@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuVienControls;
 
-namespace thuVienControls
+namespace Main
 {
-    public partial class cauHinh : Form
+    public partial class Form_CauHinh : Form
     {
-        public cauHinh()
+        public Form_CauHinh()
         {
             InitializeComponent();
-            cbx_severname.DropDown += cbx_severname_DropDown;
-            cbx_database.DropDown += cbx_database_DropDown;
+            cbx_severname.DropDown += Cbx_severname_DropDown;
+            cbx_database.DropDown += Cbx_database_DropDown;
         }
 
-
-        void cbx_database_DropDown(object sender, EventArgs e)
+        private void Cbx_database_DropDown(object sender, EventArgs e)
         {
             Ql_NguoiDung CauHinh = new Ql_NguoiDung();
             cbx_database.DataSource =
@@ -28,17 +28,13 @@ namespace thuVienControls
             cbx_database.DisplayMember = "name";
         }
 
-        void cbx_severname_DropDown(object sender, EventArgs e)
+        private void Cbx_severname_DropDown(object sender, EventArgs e)
         {
             Ql_NguoiDung CauHinh = new Ql_NguoiDung();
             cbx_severname.DataSource = CauHinh.GetServerName();
             cbx_severname.DisplayMember = "ServerName";
         }
 
-        private void cauHinh_Load(object sender, EventArgs e)
-        {
-
-        }
         private void cboServer_DropDown(object sender, EventArgs e)
         {
             Ql_NguoiDung CauHinh = new Ql_NguoiDung();
@@ -58,6 +54,11 @@ namespace thuVienControls
         {
             Ql_NguoiDung CauHinh = new Ql_NguoiDung();
             CauHinh.SaveConfig(cbx_severname.Text, txt_username.Text, txt_pass.Text, cbx_database.Text);
+            this.Close();
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
