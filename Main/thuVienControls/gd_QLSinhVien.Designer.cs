@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.grid_dssv = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbx_trangThai = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbx_trangThai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid_dssv)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -49,6 +49,7 @@
             // 
             // grid_dssv
             // 
+            this.grid_dssv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_dssv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_dssv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -60,10 +61,53 @@
             this.grid_dssv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_dssv.Location = new System.Drawing.Point(0, 0);
             this.grid_dssv.Name = "grid_dssv";
+            this.grid_dssv.RowHeadersWidth = 72;
             this.grid_dssv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_dssv.Size = new System.Drawing.Size(909, 690);
+            this.grid_dssv.Size = new System.Drawing.Size(909, 677);
             this.grid_dssv.TabIndex = 0;
             this.grid_dssv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.grid_dssv_MouseDoubleClick);
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ma_sinh_vien";
+            this.Column6.HeaderText = "MÃ SINH VIÊN";
+            this.Column6.MinimumWidth = 9;
+            this.Column6.Name = "Column6";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ho_ten";
+            this.Column1.HeaderText = "HỌ TÊN";
+            this.Column1.MinimumWidth = 9;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "so_dien_thoai";
+            this.Column2.HeaderText = "SỐ ĐIỆN THOẠI";
+            this.Column2.MinimumWidth = 9;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "email";
+            this.Column3.HeaderText = "EMAIL";
+            this.Column3.MinimumWidth = 9;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "gioi_tinh";
+            this.Column4.HeaderText = "GIỚI TÍNH";
+            this.Column4.MinimumWidth = 9;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "trang_thai";
+            this.Column5.HeaderText = "TRẠNG THÁI";
+            this.Column5.MinimumWidth = 9;
+            this.Column5.Name = "Column5";
             // 
             // panel1
             // 
@@ -79,9 +123,9 @@
             // 
             this.panel3.Controls.Add(this.grid_dssv);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 66);
+            this.panel3.Location = new System.Drawing.Point(0, 79);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(909, 690);
+            this.panel3.Size = new System.Drawing.Size(909, 677);
             this.panel3.TabIndex = 1;
             // 
             // panel2
@@ -92,7 +136,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(909, 66);
+            this.panel2.Size = new System.Drawing.Size(909, 79);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -121,47 +165,6 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bộ lọc";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ma_sinh_vien";
-            this.Column6.HeaderText = "MÃ SINH VIÊN";
-            this.Column6.Name = "Column6";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ho_ten";
-            this.Column1.HeaderText = "HỌ TÊN";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 173;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "so_dien_thoai";
-            this.Column2.HeaderText = "SỐ ĐIỆN THOẠI";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 173;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "email";
-            this.Column3.HeaderText = "EMAIL";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 174;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "gioi_tinh";
-            this.Column4.HeaderText = "GIỚI TÍNH";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 173;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "trang_thai";
-            this.Column5.HeaderText = "TRẠNG THÁI";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 173;
             // 
             // gd_QLSinhVien
             // 

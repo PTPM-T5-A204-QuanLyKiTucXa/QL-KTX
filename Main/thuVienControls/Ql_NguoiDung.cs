@@ -69,7 +69,7 @@ namespace thuVienControls
         }
         public void SaveConfig(string pServer, string pUser, string pPass, string pDBname)
         {
-            //thuVienControls.Properties.Settings.Default.LTWNCConn = "Data Source=" + pServer + ";Initial Catalog=" + pDBname + ";User ID=" + pUser + ";pwd = " + pPass + "";
+            thuVienControls.Properties.Settings.Default.LTWNCConn = "Data Source=" + pServer + ";Initial Catalog=" + pDBname + ";User ID=" + pUser + ";pwd = " + pPass + "";
             thuVienControls.Properties.Settings.Default.Save();
         }
 

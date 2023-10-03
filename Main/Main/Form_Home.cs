@@ -17,35 +17,32 @@ namespace Main
             InitializeComponent();
         }
 
-        private void btnDoiMau2_Click(object sender, EventArgs e)
-        {
-            Form_PhanQuyen form = new Form_PhanQuyen();
-            form.TopLevel = false; // Đặt TopLevel thành false để Form 2 không hiển thị độc lập
-            pn_form.Controls.Add(form); // Thêm Form 2 vào Panel của Form 1
-            form.Dock = DockStyle.Fill; // Đảm bảo Form 2 lấp đầy Panel
-            form.Show();
-        }
-
-        private void btnDoiMau3_Click(object sender, EventArgs e)
-        {
-            Form_DSPhong form = new Form_DSPhong();
-            form.TopLevel = false; // Đặt TopLevel thành false để Form 2 không hiển thị độc lập
-            pn_form.Controls.Add(form); // Thêm Form 2 vào Panel của Form 1
-            form.Dock = DockStyle.Fill; // Đảm bảo Form 2 lấp đầy Panel
-            form.Show();
-        }
-
         private void pn_form_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void btnDoiMau4_Click(object sender, EventArgs e)
+        private void phânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_PhanQuyen form = new Form_PhanQuyen();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void quảnLýPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_DSPhong form = new Form_DSPhong();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_QLSinhVien form = new Form_QLSinhVien();
-            form.TopLevel = false; // Đặt TopLevel thành false để Form 2 không hiển thị độc lập
-            pn_form.Controls.Add(form); // Thêm Form 2 vào Panel của Form 1
-            form.Dock = DockStyle.Fill; // Đảm bảo Form 2 lấp đầy Panel
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
             form.Show();
         }
     }

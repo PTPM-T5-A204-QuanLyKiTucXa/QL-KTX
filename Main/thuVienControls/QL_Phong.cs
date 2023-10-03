@@ -25,13 +25,15 @@ namespace thuVienControls
         {
             Phong p = new Phong();
             var thongTinPhong = (from ph in QL_KTX.Phongs
-                                where ph.so_phong == soPhong
-                                       select new
-                                       {
-                                           ph.so_phong, ph.LoaiPhong, ph.tang
-                                       }).SingleOrDefault();
+                                 where ph.so_phong == soPhong
+                                 select new
+                                 {
+                                     ph.so_phong,
+                                     ph.LoaiPhong,
+                                     ph.tang
+                                 }).SingleOrDefault();
 
-            if(thongTinPhong!=null)
+            if (thongTinPhong != null)
             {
                 p.so_phong = thongTinPhong.so_phong;
                 p.LoaiPhong = thongTinPhong.LoaiPhong;
@@ -43,7 +45,7 @@ namespace thuVienControls
         public DataGridView loadDanhSachSinhVienTheoPhong(string soPhong)
         {
             DataGridView dgv = new DataGridView();
-            var dsSinhVien = from sv in QL_KTX.SinhViens where sv.so_phong == soPhong select new{ sv.ho_ten, sv.ma_sinh_vien, sv.gioi_tinh, sv.email};
+            var dsSinhVien = from sv in QL_KTX.SinhViens where sv.so_phong == soPhong select new { sv.ho_ten, sv.ma_sinh_vien, sv.gioi_tinh, sv.email };
             dgv.DataSource = dsSinhVien;
             return dgv;
         }
@@ -53,19 +55,55 @@ namespace thuVienControls
         public string DemSoSinhVienTrongPhong(string phongCanDem)
         {
             var soSinhVienTrongPhong = from phong in QL_KTX.Phongs
-                                        join sinhvien in QL_KTX.SinhViens
-                                        on phong.so_phong equals sinhvien.so_phong
-                                        where phong.so_phong == phongCanDem
-                                        group sinhvien by phong.so_phong into g
-                                        select new
-                                        {
-                                            SoPhong = g.Key,
-                                            SoSinhVien = g.Count()
-                                        };
+                                       join sinhvien in QL_KTX.SinhViens
+                                       on phong.so_phong equals sinhvien.so_phong
+                                       where phong.so_phong == phongCanDem
+                                       group sinhvien by phong.so_phong into g
+                                       select new
+                                       {
+                                           SoPhong = g.Key,
+                                           SoSinhVien = g.Count()
+                                       };
 
             var phongX = soSinhVienTrongPhong.FirstOrDefault();
             int soSinhVienTrongPhongX = (phongX != null) ? phongX.SoSinhVien : 0;
             return soSinhVienTrongPhongX.ToString();
+        }
+
+        public int kiemTraLoaiPhong(string soPhong)
+        {
+            var loaiPhongQuery = from phong in QL_KTX.Phongs where phong.so_phong == soPhong select new { phong.LoaiPhong.loai_phong_id };
+            var loaiPhong = loaiPhongQuery.FirstOrDefault();
+            if(loaiPhong != null)
+            {
+                int loai = loaiPhong.loai_phong_id;
+                if (loai == 1)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 4;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public bool kiemTraSlotPhong(string soPhong)
+        {
+            int i = int.Parse(DemSoSinhVienTrongPhong(soPhong));
+            int j = kiemTraLoaiPhong(soPhong);
+            if(i<j)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

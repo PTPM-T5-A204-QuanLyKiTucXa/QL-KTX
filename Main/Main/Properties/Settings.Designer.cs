@@ -39,17 +39,6 @@ namespace Main.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=Module_DN;Integrated Secur" +
-            "ity=True")]
-        public string Module_DNConnectionString {
-            get {
-                return ((string)(this["Module_DNConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
             "True")]
         public string qlktxConnectionString {

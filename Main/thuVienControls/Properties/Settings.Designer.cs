@@ -31,6 +31,10 @@ namespace thuVienControls.Properties {
             get {
                 return ((string)(this["LTWNCConn"]));
             }
+            set
+            {
+                this["LTWNCConn"]=value;
+            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]

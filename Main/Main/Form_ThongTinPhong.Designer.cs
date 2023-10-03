@@ -46,7 +46,7 @@
             this.ClientSize = new System.Drawing.Size(539, 478);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form_ThongTinPhong";
-            this.Text = "Form_ThongTinPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 
         }

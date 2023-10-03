@@ -50,15 +50,15 @@ namespace Main
             cbx_database.DisplayMember = "name";
         }
 
-        private void btn_luu_Click_1(object sender, EventArgs e)
+        private void btn_huy_Click(object sender, EventArgs e)
         {
-            Ql_NguoiDung CauHinh = new Ql_NguoiDung();
-            CauHinh.SaveConfig(cbx_severname.Text, txt_username.Text, txt_pass.Text, cbx_database.Text);
             this.Close();
         }
 
-        private void btn_huy_Click(object sender, EventArgs e)
+        private void btn_luu_Click(object sender, EventArgs e)
         {
+            Ql_NguoiDung CauHinh = new Ql_NguoiDung();
+            CauHinh.SaveConfig(cbx_severname.Text, txt_username.Text, txt_pass.Text, cbx_database.Text);
             this.Close();
         }
     }

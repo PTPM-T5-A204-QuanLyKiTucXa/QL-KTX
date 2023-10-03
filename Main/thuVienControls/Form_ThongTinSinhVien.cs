@@ -53,6 +53,11 @@ namespace thuVienControls
                 cbx_gioiTinh.SelectedItem = gioiTinh;
             }
 
+            //if(sv.trang_thai=="Chờ duyệt")
+            //{
+            //    btn_luu.Visible = false;
+            //}
+
             if(sv.trang_thai == "Đang ở")
             {
                 btn_duyet.Visible = false;
@@ -61,6 +66,31 @@ namespace thuVienControls
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
+        {
+            string maSV = txt_maSV.Text;
+            string hoTen = txt_hoTen.Text;
+            DateTime ngaysinh = dtp_ngaySinh.Value ;
+            string gioiTinh = cbx_gioiTinh.Text.ToString();
+            string sdt = txt_sdt.Text;
+            string diaChi = txt_diaChi.Text;
+            string email = txt_email.Text;
+            string soPhong = txt_soPhong.Text;
+            if(qlsv.UpdateSinhVien(maSV,hoTen,ngaysinh,gioiTinh,sdt,diaChi,email,soPhong))
+            {
+                MessageBox.Show("Lưu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lưu thất bại");
+            }
+        }
+
+        private void btn_duyet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_khongDuyet_Click(object sender, EventArgs e)
         {
 
         }

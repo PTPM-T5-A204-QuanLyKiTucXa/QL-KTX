@@ -44,7 +44,7 @@ namespace Main
             // btn_huy
             // 
             this.btn_huy.Location = new System.Drawing.Point(204, 215);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(150, 44);
             this.btn_huy.TabIndex = 39;
@@ -54,12 +54,13 @@ namespace Main
             // btn_luu
             // 
             this.btn_luu.Location = new System.Drawing.Point(25, 215);
-            this.btn_luu.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_luu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(150, 44);
             this.btn_luu.TabIndex = 38;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // label4
             // 
@@ -94,7 +95,7 @@ namespace Main
             // txt_pass
             // 
             this.txt_pass.Location = new System.Drawing.Point(96, 117);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(258, 20);
             this.txt_pass.TabIndex = 33;
@@ -102,7 +103,7 @@ namespace Main
             // txt_username
             // 
             this.txt_username.Location = new System.Drawing.Point(96, 67);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(258, 20);
             this.txt_username.TabIndex = 32;
@@ -111,7 +112,7 @@ namespace Main
             // 
             this.cbx_database.FormattingEnabled = true;
             this.cbx_database.Location = new System.Drawing.Point(96, 167);
-            this.cbx_database.Margin = new System.Windows.Forms.Padding(6);
+            this.cbx_database.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbx_database.Name = "cbx_database";
             this.cbx_database.Size = new System.Drawing.Size(258, 21);
             this.cbx_database.TabIndex = 34;
@@ -120,7 +121,7 @@ namespace Main
             // 
             this.cbx_severname.FormattingEnabled = true;
             this.cbx_severname.Location = new System.Drawing.Point(96, 15);
-            this.cbx_severname.Margin = new System.Windows.Forms.Padding(6);
+            this.cbx_severname.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbx_severname.Name = "cbx_severname";
             this.cbx_severname.Size = new System.Drawing.Size(258, 21);
             this.cbx_severname.TabIndex = 31;
@@ -152,7 +153,6 @@ namespace Main
             this.Controls.Add(this.label1);
             this.Name = "Form_CauHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_CauHinh";
             this.ResumeLayout(false);
             this.PerformLayout();
 

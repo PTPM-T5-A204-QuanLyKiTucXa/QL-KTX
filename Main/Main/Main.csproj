@@ -88,10 +88,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ql_KTX_DATASET.cs">
-      <DependentUpon>Ql_KTX_DATASET.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Ql_KTX_DATASET.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
