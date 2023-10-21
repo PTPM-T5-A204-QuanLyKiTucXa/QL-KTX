@@ -45,5 +45,13 @@ namespace Main
             form.MdiParent = this;
             form.Show();
         }
+
+        private void quảnLýĐiệnNướcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_QLDienNuoc form = new Form_QLDienNuoc();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace thuVienControls
     {
 
         public string SoPhong { get; set; }
-
+        
         public gd_Phong()
         {
             InitializeComponent();
@@ -25,11 +25,12 @@ namespace thuVienControls
             lb_tenPhong.Text += tenPhong;
             lb_loaiPhong.Text += loaiPhong;
             lb_soThanhVien.Text += soNguoi;
+            this.SoPhong = tenPhong;
         }
 
         private void btn_ghiDienNuoc_Click(object sender, EventArgs e)
         {
-            Form_GhiDienNuoc form = new Form_GhiDienNuoc(lb_tenPhong.Text);
+            Form_GhiDienNuoc form = new Form_GhiDienNuoc(this.SoPhong);
             
             form.Show();
         }

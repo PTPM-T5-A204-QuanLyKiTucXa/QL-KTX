@@ -45,7 +45,6 @@ namespace Main
             {
                 string soPhong = gd.SoPhong;
                 Form_ThongTinPhong form = new Form_ThongTinPhong(soPhong);
-        
                 form.Show();
             }
         }

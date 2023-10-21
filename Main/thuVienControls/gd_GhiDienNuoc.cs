@@ -13,6 +13,9 @@ namespace thuVienControls
 {
     public partial class gd_GhiDienNuoc : UserControl
     {
+        QL_KTXDataContext qlktx = new QL_KTXDataContext();
+        QL_Phong qlPhong = new QL_Phong();
+        QL_DienNuoc qldn = new QL_DienNuoc();
         public gd_GhiDienNuoc()
         {
             InitializeComponent();
@@ -33,6 +36,8 @@ namespace thuVienControls
                 yearsList.Add(i);
             }
             cbx_nam.DataSource = yearsList;
+            cbx_nam.SelectedItem = currentYear;
+
         }
         public void loadCBXThang()
         {
@@ -44,17 +49,45 @@ namespace thuVienControls
                 monthsList.Add(monthName);
             }
 
-            // Gán danh sách tháng vào ComboBox
             cbx_thang.DataSource = monthsList;
+            cbx_thang.SelectedItem = "Tháng " + DateTime.Now.Month;
         }
+
+        public event EventHandler xacNhansclick;
+        public event EventHandler huyclick;
+
+        public void xacNhanGhiDienNuoc(string tenPhong)
+        {
+            Phong p = qlPhong.loadThongTinPhong(tenPhong);
+            int thang = int.Parse((cbx_thang.SelectedItem.ToString()).Substring(6)); // Lấy phần con số sau "Tháng "
+            int nam = int.Parse(cbx_nam.SelectedItem.ToString());
+            int soDien = int.Parse(txt_soDien.Text.ToString());
+            int soNuoc = int.Parse(txt_soNuoc.Text.ToString());
+
+            DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (qldn.ghiChiSoDienNuoc(p.phong_id, thang, nam, soDien, soNuoc))
+                {
+                    MessageBox.Show("Ghi số điện thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Ghi số điện thất bại");
+                }
+            }
+        }
+
         private void btn_xacNhan_Click(object sender, EventArgs e)
         {
-
+            xacNhansclick?.Invoke(this, e);
         }
 
         private void btn_huy_Click(object sender, EventArgs e)
         {
-
+            huyclick?.Invoke(this, e);
         }
+
+        
     }
 }

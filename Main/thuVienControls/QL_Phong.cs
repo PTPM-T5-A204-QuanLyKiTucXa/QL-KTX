@@ -23,23 +23,8 @@ namespace thuVienControls
 
         public Phong loadThongTinPhong(string soPhong)
         {
-            Phong p = new Phong();
-            var thongTinPhong = (from ph in QL_KTX.Phongs
-                                 where ph.so_phong == soPhong
-                                 select new
-                                 {
-                                     ph.so_phong,
-                                     ph.LoaiPhong,
-                                     ph.tang
-                                 }).SingleOrDefault();
-
-            if (thongTinPhong != null)
-            {
-                p.so_phong = thongTinPhong.so_phong;
-                p.LoaiPhong = thongTinPhong.LoaiPhong;
-                p.tang = thongTinPhong.tang;
-            }
-            return p;
+            var thongTinPhong = QL_KTX.Phongs.Where(t => t.so_phong == soPhong).FirstOrDefault();
+            return thongTinPhong;
         }
 
         public object loadDanhSachSinhVienTheoPhong(string soPhong)
@@ -103,6 +88,7 @@ namespace thuVienControls
                 return false;
             }
         }
+
 
     }
 }

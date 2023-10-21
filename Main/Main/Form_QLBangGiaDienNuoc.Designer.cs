@@ -1,7 +1,7 @@
 ﻿
 namespace Main
 {
-    partial class Form_QLDienNuoc
+    partial class Form_QLBangGiaDienNuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -37,20 +37,18 @@ namespace Main
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(682, 512);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(495, 532);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // Form_QLDienNuoc
+            // Form_QLBangGiaDienNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 512);
+            this.ClientSize = new System.Drawing.Size(495, 532);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form_QLDienNuoc";
+            this.Name = "Form_QLBangGiaDienNuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_QLDienNuoc";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Form_QLBangGiaDienNuoc";
             this.ResumeLayout(false);
 
         }

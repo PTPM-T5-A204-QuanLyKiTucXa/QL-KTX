@@ -74,6 +74,12 @@
     <Compile Include="Form_PhanQuyen.Designer.cs">
       <DependentUpon>Form_PhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_QLBangGiaDienNuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_QLBangGiaDienNuoc.Designer.cs">
+      <DependentUpon>Form_QLBangGiaDienNuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_QLDienNuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_PhanQuyen.resx">
       <DependentUpon>Form_PhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_QLBangGiaDienNuoc.resx">
+      <DependentUpon>Form_QLBangGiaDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_QLDienNuoc.resx">
       <DependentUpon>Form_QLDienNuoc.cs</DependentUpon>

@@ -60,11 +60,29 @@
     <Compile Include="gd_GhiDienNuoc.Designer.cs">
       <DependentUpon>gd_GhiDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="gd_GiaDien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_GiaDien.Designer.cs">
+      <DependentUpon>gd_GiaDien.cs</DependentUpon>
+    </Compile>
     <Compile Include="gd_Phong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="gd_Phong.Designer.cs">
       <DependentUpon>gd_Phong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_QLBangGiaDienNuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_QLBangGiaDienNuoc.Designer.cs">
+      <DependentUpon>gd_QLBangGiaDienNuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_QLDienNuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_QLDienNuoc.Designer.cs">
+      <DependentUpon>gd_QLDienNuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="gd_QLSinhVien.cs">
       <SubType>UserControl</SubType>
@@ -84,6 +102,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QL_DienNuoc.cs" />
     <Compile Include="QL_KTX.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,8 +127,17 @@
     <EmbeddedResource Include="gd_GhiDienNuoc.resx">
       <DependentUpon>gd_GhiDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gd_GiaDien.resx">
+      <DependentUpon>gd_GiaDien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gd_Phong.resx">
       <DependentUpon>gd_Phong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLBangGiaDienNuoc.resx">
+      <DependentUpon>gd_QLBangGiaDienNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLDienNuoc.resx">
+      <DependentUpon>gd_QLDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gd_QLSinhVien.resx">
       <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
@@ -121,9 +149,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="QL_KTX.dbml.layout">
-      <DependentUpon>QL_KTX.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\thietKeControls\thietKeControls.csproj">
@@ -141,6 +166,9 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QL_KTX.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_KTX.dbml.layout">
+      <DependentUpon>QL_KTX.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

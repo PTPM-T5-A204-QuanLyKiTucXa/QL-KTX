@@ -25,7 +25,7 @@ namespace Main.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D56FG3V\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
             "True")]
         public string LTWNCConn {
             get {
@@ -39,7 +39,7 @@ namespace Main.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D56FG3V\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BJQTLVC\\SQLEXPRESS;Initial Catalog=qlktx;Integrated Security=" +
             "True")]
         public string qlktxConnectionString {
             get {
