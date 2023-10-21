@@ -33,12 +33,7 @@
             this.vaiTroDataGridView = new System.Windows.Forms.DataGridView();
             this.btn_luu = new System.Windows.Forms.Button();
             this.vaiTroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ql_KTX_DATASET = new Main.Ql_KTX_DATASET();
             this.phanQuyenDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phanQuyenDKTableAdapter = new Main.Ql_KTX_DATASETTableAdapters.PhanQuyenDKTableAdapter();
-            this.tableAdapterManager = new Main.Ql_KTX_DATASETTableAdapters.TableAdapterManager();
-            this.phanQuyenTableAdapter = new Main.Ql_KTX_DATASETTableAdapters.PhanQuyenTableAdapter();
-            this.vaiTroTableAdapter = new Main.Ql_KTX_DATASETTableAdapters.VaiTroTableAdapter();
             this.phanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +43,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ql_KTX_DATASET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -96,43 +90,29 @@
             // vaiTroBindingSource
             // 
             this.vaiTroBindingSource.DataMember = "VaiTro";
-            this.vaiTroBindingSource.DataSource = this.ql_KTX_DATASET;
             // 
             // ql_KTX_DATASET
             // 
-            this.ql_KTX_DATASET.DataSetName = "Ql_KTX_DATASET";
-            this.ql_KTX_DATASET.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // phanQuyenDKBindingSource
             // 
             this.phanQuyenDKBindingSource.DataMember = "PhanQuyenDK";
-            this.phanQuyenDKBindingSource.DataSource = this.ql_KTX_DATASET;
             // 
             // phanQuyenDKTableAdapter
             // 
-            this.phanQuyenDKTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DanhMucManHinhTableAdapter = null;
-            this.tableAdapterManager.NguoiDungTableAdapter = null;
-            this.tableAdapterManager.PhanQuyenTableAdapter = this.phanQuyenTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Main.Ql_KTX_DATASETTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VaiTroTableAdapter = this.vaiTroTableAdapter;
             // 
             // phanQuyenTableAdapter
             // 
-            this.phanQuyenTableAdapter.ClearBeforeFill = true;
             // 
             // vaiTroTableAdapter
             // 
-            this.vaiTroTableAdapter.ClearBeforeFill = true;
             // 
             // phanQuyenBindingSource
             // 
             this.phanQuyenBindingSource.DataMember = "PhanQuyen";
-            this.phanQuyenBindingSource.DataSource = this.ql_KTX_DATASET;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -181,7 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ql_KTX_DATASET)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -190,15 +169,11 @@
 
         #endregion
 
-        private Ql_KTX_DATASET ql_KTX_DATASET;
+      
         private System.Windows.Forms.BindingSource phanQuyenDKBindingSource;
-        private Ql_KTX_DATASETTableAdapters.PhanQuyenDKTableAdapter phanQuyenDKTableAdapter;
-        private Ql_KTX_DATASETTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView phanQuyenDKDataGridView;
-        private Ql_KTX_DATASETTableAdapters.VaiTroTableAdapter vaiTroTableAdapter;
         private System.Windows.Forms.BindingSource vaiTroBindingSource;
         private System.Windows.Forms.DataGridView vaiTroDataGridView;
-        private Ql_KTX_DATASETTableAdapters.PhanQuyenTableAdapter phanQuyenTableAdapter;
         private System.Windows.Forms.BindingSource phanQuyenBindingSource;
         private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

@@ -33,7 +33,7 @@ namespace Main
             gd_ThongTinPhong gd = new gd_ThongTinPhong();
             gd.loadThongTinPhong(p.so_phong, p.LoaiPhong.ten_loai_phong, p.tang.ToString(), qlp.DemSoSinhVienTrongPhong(this.SoPhong));
             DataGridView dgv = new DataGridView();
-            dgv.DataSource = qlp.loadDanhSachSinhVienTheoPhong(this.SoPhong).DataSource;
+            dgv.DataSource = qlp.loadDanhSachSinhVienTheoPhong(this.SoPhong);
             gd.loadGridSinhVien(dgv);
             flowLayoutPanel1.Controls.Add(gd);            
         }

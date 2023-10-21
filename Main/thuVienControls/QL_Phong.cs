@@ -42,12 +42,10 @@ namespace thuVienControls
             return p;
         }
 
-        public DataGridView loadDanhSachSinhVienTheoPhong(string soPhong)
+        public object loadDanhSachSinhVienTheoPhong(string soPhong)
         {
-            DataGridView dgv = new DataGridView();
             var dsSinhVien = from sv in QL_KTX.SinhViens where sv.so_phong == soPhong select new { sv.ho_ten, sv.ma_sinh_vien, sv.gioi_tinh, sv.email };
-            dgv.DataSource = dsSinhVien;
-            return dgv;
+            return dsSinhVien.ToList();
         }
 
 

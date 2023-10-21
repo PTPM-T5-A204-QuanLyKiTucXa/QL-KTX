@@ -42,11 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_GhiDienNuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_GhiDienNuoc.Designer.cs">
+      <DependentUpon>Form_GhiDienNuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ThongTinSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ThongTinSinhVien.Designer.cs">
       <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_GhiDienNuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_GhiDienNuoc.Designer.cs">
+      <DependentUpon>gd_GhiDienNuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="gd_Phong.cs">
       <SubType>UserControl</SubType>
@@ -87,8 +99,14 @@
     <Compile Include="Ql_SinhVien.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form_GhiDienNuoc.resx">
+      <DependentUpon>Form_GhiDienNuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ThongTinSinhVien.resx">
       <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_GhiDienNuoc.resx">
+      <DependentUpon>gd_GhiDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gd_Phong.resx">
       <DependentUpon>gd_Phong.cs</DependentUpon>

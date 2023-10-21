@@ -16,20 +16,17 @@ namespace thuVienControls
         }
 
 
-        public DataGridView loadDanhSachSinhVien()
+        public object loadDanhSachSinhVien()
         {
-            DataGridView dgv = new DataGridView();
             var dsSinhVien = from sv in QL_KTX.SinhViens select new { sv.ma_sinh_vien, sv.ho_ten, sv.so_dien_thoai, sv.email, sv.gioi_tinh, sv.trang_thai };
-            dgv.DataSource = dsSinhVien;
-            return dgv;
+            return dsSinhVien.ToList();
         }
 
-        public DataGridView loadDanhSachSinhVienTheoTrangThai(string trangThai)
+        public object loadDanhSachSinhVienTheoTrangThai(string trangThai)
         {
-            DataGridView dgv = new DataGridView();
+ 
             var dsSinhVien = from sv in QL_KTX.SinhViens where sv.trang_thai == trangThai select new {sv.ma_sinh_vien, sv.ho_ten, sv.so_dien_thoai, sv.email, sv.gioi_tinh, sv.trang_thai };
-            dgv.DataSource = dsSinhVien;
-            return dgv;
+            return dsSinhVien.ToList();
         }
 
         public SinhVien loadThongTinSinhVienTheoMa(string maSV)

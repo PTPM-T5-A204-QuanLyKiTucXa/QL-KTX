@@ -26,5 +26,18 @@ namespace thuVienControls
             lb_loaiPhong.Text += loaiPhong;
             lb_soThanhVien.Text += soNguoi;
         }
+
+        private void btn_ghiDienNuoc_Click(object sender, EventArgs e)
+        {
+            Form_GhiDienNuoc form = new Form_GhiDienNuoc(lb_tenPhong.Text);
+            
+            form.Show();
+        }
+
+        public event EventHandler Controlsclick;
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Controlsclick?.Invoke(this, e);
+        }
     }
 }

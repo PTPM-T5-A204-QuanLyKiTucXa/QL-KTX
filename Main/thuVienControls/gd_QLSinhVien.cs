@@ -38,19 +38,19 @@ namespace thuVienControls
             string trangThai = cbx_trangThai.SelectedItem.ToString();
             if(trangThai=="Tất cả")
             {
-                grid_dssv.DataSource = qlsv.loadDanhSachSinhVien().DataSource;
+                grid_dssv.DataSource = qlsv.loadDanhSachSinhVien();
             }
             else if (trangThai == "Chờ duyệt")
             {
-                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Chờ duyệt").DataSource;
+                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Chờ duyệt");
             }
             else if (trangThai == "Ngưng ở")
             {
-                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Ngưng ở").DataSource;
+                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Ngưng ở");
             }
             else
             {
-                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Đang ở").DataSource;
+                grid_dssv.DataSource = qlsv.loadDanhSachSinhVienTheoTrangThai("Đang ở");
             }
         }
 

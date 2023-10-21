@@ -23,7 +23,7 @@ namespace Main
         {
             gd_QLSinhVien gd = new gd_QLSinhVien();
             DataGridView dgv = new DataGridView();
-            dgv.DataSource = qlsv.loadDanhSachSinhVien().DataSource;
+            dgv.DataSource = qlsv.loadDanhSachSinhVien();
             gd.loadGridSinhVien(dgv);
             gd.loadCbxTrangThai();
             
