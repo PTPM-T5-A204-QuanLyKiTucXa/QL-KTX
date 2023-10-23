@@ -79,5 +79,11 @@ namespace Main
                 // chuỗi sai, sửa 
             }
         }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            return;
+        }
     }
 }

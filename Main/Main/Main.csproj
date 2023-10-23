@@ -68,6 +68,12 @@
     <Compile Include="Form_Home.Designer.cs">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_LapHopDongThuePhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LapHopDongThuePhong.Designer.cs">
+      <DependentUpon>Form_LapHopDongThuePhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_PhanQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +92,29 @@
     <Compile Include="Form_QLDienNuoc.Designer.cs">
       <DependentUpon>Form_QLDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_QLHopDongThuePhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_QLHopDongThuePhong.Designer.cs">
+      <DependentUpon>Form_QLHopDongThuePhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_QLSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_QLSinhVien.Designer.cs">
       <DependentUpon>Form_QLSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThongTinHoaDonDienNuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThongTinHoaDonDienNuoc.Designer.cs">
+      <DependentUpon>Form_ThongTinHoaDonDienNuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThongTinHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThongTinHopDong.Designer.cs">
+      <DependentUpon>Form_ThongTinHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ThongTinPhong.cs">
       <SubType>Form</SubType>
@@ -118,6 +142,9 @@
     <EmbeddedResource Include="Form_Home.resx">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_LapHopDongThuePhong.resx">
+      <DependentUpon>Form_LapHopDongThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_PhanQuyen.resx">
       <DependentUpon>Form_PhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,8 +154,17 @@
     <EmbeddedResource Include="Form_QLDienNuoc.resx">
       <DependentUpon>Form_QLDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_QLHopDongThuePhong.resx">
+      <DependentUpon>Form_QLHopDongThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_QLSinhVien.resx">
       <DependentUpon>Form_QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThongTinHoaDonDienNuoc.resx">
+      <DependentUpon>Form_ThongTinHoaDonDienNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThongTinHopDong.resx">
+      <DependentUpon>Form_ThongTinHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ThongTinPhong.resx">
       <DependentUpon>Form_ThongTinPhong.cs</DependentUpon>

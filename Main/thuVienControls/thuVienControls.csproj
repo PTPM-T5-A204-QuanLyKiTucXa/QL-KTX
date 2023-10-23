@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>thuVienControls</RootNamespace>
-    <AssemblyName>thuVienControls</AssemblyName>
+    <AssemblyName>s</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -66,6 +66,12 @@
     <Compile Include="gd_GiaDien.Designer.cs">
       <DependentUpon>gd_GiaDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="gd_LapHopDongThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_LapHopDongThuePhong.Designer.cs">
+      <DependentUpon>gd_LapHopDongThuePhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="gd_Phong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,11 +90,29 @@
     <Compile Include="gd_QLDienNuoc.Designer.cs">
       <DependentUpon>gd_QLDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="gd_QLHopDongThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_QLHopDongThuePhong.Designer.cs">
+      <DependentUpon>gd_QLHopDongThuePhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="gd_QLSinhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="gd_QLSinhVien.Designer.cs">
       <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_ThongTinHoaDonDienNuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_ThongTinHoaDonDienNuoc.Designer.cs">
+      <DependentUpon>gd_ThongTinHoaDonDienNuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gd_ThongTinHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_ThongTinHopDong.Designer.cs">
+      <DependentUpon>gd_ThongTinHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="gd_ThongTinPhong.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +127,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QL_DienNuoc.cs" />
+    <Compile Include="QL_HopDongThuePhong.cs" />
     <Compile Include="QL_KTX.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +155,9 @@
     <EmbeddedResource Include="gd_GiaDien.resx">
       <DependentUpon>gd_GiaDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gd_LapHopDongThuePhong.resx">
+      <DependentUpon>gd_LapHopDongThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gd_Phong.resx">
       <DependentUpon>gd_Phong.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,8 +167,17 @@
     <EmbeddedResource Include="gd_QLDienNuoc.resx">
       <DependentUpon>gd_QLDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLHopDongThuePhong.resx">
+      <DependentUpon>gd_QLHopDongThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gd_QLSinhVien.resx">
       <DependentUpon>gd_QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_ThongTinHoaDonDienNuoc.resx">
+      <DependentUpon>gd_ThongTinHoaDonDienNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_ThongTinHopDong.resx">
+      <DependentUpon>gd_ThongTinHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gd_ThongTinPhong.resx">
       <DependentUpon>gd_ThongTinPhong.cs</DependentUpon>

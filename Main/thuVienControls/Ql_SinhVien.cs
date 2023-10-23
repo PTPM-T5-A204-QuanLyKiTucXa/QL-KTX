@@ -15,6 +15,29 @@ namespace thuVienControls
 
         }
 
+        public bool themSinhVien(string maSV,string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string sdt, string diaChi,string email)
+        {
+            var sinhVien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
+            if(sinhVien !=null)
+            {
+                return false;
+            }
+            else
+            {
+                SinhVien sv = new SinhVien();
+                sv.ma_sinh_vien = maSV;
+                sv.ho_ten = hoTen;
+                sv.ngay_sinh = ngaySinh;
+                sv.CCCD = cccd;
+                sv.gioi_tinh = gioiTinh;
+                sv.so_dien_thoai = sdt;
+                sv.dia_chi = diaChi;
+                sv.email = email;
+                QL_KTX.SinhViens.InsertOnSubmit(sv);
+                QL_KTX.SubmitChanges();
+            }
+            return true;
+        }
 
         public object loadDanhSachSinhVien()
         {

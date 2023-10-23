@@ -47,6 +47,7 @@ namespace Main
             this.btn_thoat.TabIndex = 15;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // btn_xoa
             // 

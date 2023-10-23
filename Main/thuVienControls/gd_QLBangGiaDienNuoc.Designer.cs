@@ -36,14 +36,14 @@ namespace thuVienControls
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_DonGia = new System.Windows.Forms.TextBox();
+            this.txt_SoBatDau = new System.Windows.Forms.TextBox();
             this.btn_themNac = new System.Windows.Forms.Button();
             this.btn_xacNhan = new System.Windows.Forms.Button();
             this.btn_huy = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txt_SoBatDau = new System.Windows.Forms.TextBox();
-            this.txt_DonGia = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +92,7 @@ namespace thuVienControls
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(398, 181);
+            this.panel1.Size = new System.Drawing.Size(497, 181);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -116,8 +116,40 @@ namespace thuVienControls
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 450);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(398, 106);
+            this.panel3.Size = new System.Drawing.Size(497, 106);
             this.panel3.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(142, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Đơn giá(VNĐ)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Số bắt đầu";
+            // 
+            // txt_DonGia
+            // 
+            this.txt_DonGia.Location = new System.Drawing.Point(145, 23);
+            this.txt_DonGia.Name = "txt_DonGia";
+            this.txt_DonGia.Size = new System.Drawing.Size(100, 20);
+            this.txt_DonGia.TabIndex = 31;
+            // 
+            // txt_SoBatDau
+            // 
+            this.txt_SoBatDau.Location = new System.Drawing.Point(39, 23);
+            this.txt_SoBatDau.Name = "txt_SoBatDau";
+            this.txt_SoBatDau.Size = new System.Drawing.Size(100, 20);
+            this.txt_SoBatDau.TabIndex = 30;
             // 
             // btn_themNac
             // 
@@ -155,40 +187,8 @@ namespace thuVienControls
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 181);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(398, 269);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(497, 269);
             this.flowLayoutPanel1.TabIndex = 21;
-            // 
-            // txt_SoBatDau
-            // 
-            this.txt_SoBatDau.Location = new System.Drawing.Point(39, 23);
-            this.txt_SoBatDau.Name = "txt_SoBatDau";
-            this.txt_SoBatDau.Size = new System.Drawing.Size(100, 20);
-            this.txt_SoBatDau.TabIndex = 30;
-            // 
-            // txt_DonGia
-            // 
-            this.txt_DonGia.Location = new System.Drawing.Point(145, 23);
-            this.txt_DonGia.Name = "txt_DonGia";
-            this.txt_DonGia.Size = new System.Drawing.Size(100, 20);
-            this.txt_DonGia.TabIndex = 31;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Số bắt đầu";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(142, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Đơn giá(VNĐ)";
             // 
             // gd_QLBangGiaDienNuoc
             // 
@@ -198,7 +198,7 @@ namespace thuVienControls
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "gd_QLBangGiaDienNuoc";
-            this.Size = new System.Drawing.Size(398, 556);
+            this.Size = new System.Drawing.Size(497, 556);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

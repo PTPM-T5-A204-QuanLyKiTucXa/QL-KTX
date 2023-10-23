@@ -10,27 +10,30 @@ using System.Windows.Forms;
 
 namespace thuVienControls
 {
-    public partial class gd_QLDienNuoc : UserControl
+    public partial class gd_QLHopDongThuePhong : UserControl
     {
-        QL_DienNuoc qldn = new QL_DienNuoc();
-        public gd_QLDienNuoc()
+        QL_HopDongThuePhong qlhd = new QL_HopDongThuePhong();
+        public gd_QLHopDongThuePhong()
         {
             InitializeComponent();
+            loadDanhSachHD();
+            loadFullCBX();
         }
 
-        public void loadHoaDon()
+        public void loadDanhSachHD()
         {
-            dgv_dsHD.DataSource = qldn.loadHoaDonDienNuoc();
+            dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhong();
         }
 
-        public void loadHoaDonDaLoc()
+        private void btn_loc_Click(object sender, EventArgs e)
         {
+
             int tuThang = int.Parse((cbx_tuThang.SelectedItem.ToString()).Substring(6)); // Lấy phần con số sau "Tháng "
             int denThang = int.Parse((cbx_denThang.SelectedItem.ToString()).Substring(6));
             int tuNam = (int)cbx_tuNam.SelectedItem;
             int denNam = (int)cbx_denNam.SelectedItem;
             string trangThai = cbx_trangThai.SelectedItem.ToString();
-            dgv_dsHD.DataSource = qldn.locHoaDon(tuThang, tuNam, denThang, denNam, trangThai);
+            dgv_dsHD.DataSource = qlhd.locHoaDon(tuThang, tuNam, denThang, denNam, trangThai);
         }
 
         public void loadFullCBX()
@@ -69,42 +72,30 @@ namespace thuVienControls
             cbx_trangThai.SelectedItem = "Tất cả";
         }
 
-        public event EventHandler btnLocClick;
-
-        private void btn_loc_Click(object sender, EventArgs e)
-        {
-            btnLocClick?.Invoke(this, e);
-        }
-
-        public event EventHandler btnGhiDienNuocClick;
-
-        private void btn_ghiDienNuoc_Click(object sender, EventArgs e)
-        {
-            btnGhiDienNuocClick?.Invoke(this, e);
-        }
-
-        public void ghiDienNuoc()
-        {
-            Form_GhiDienNuoc form = new Form_GhiDienNuoc(txt_soPhong.Text.ToString());
-            form.Show();
-        }
-
-        public event EventHandler btnSuaDonGiaClick;
-
-        private void btn_suaDonGia_Click(object sender, EventArgs e)
-        {
-            btnSuaDonGiaClick?.Invoke(this, e);
-        }
-
-        public int layMaHoaDon()
-        {
-            return int.Parse(dgv_dsHD.CurrentRow.Cells[0].Value.ToString());
-        }
-
         public event EventHandler clickDataGrid;
+
+        public HopDongThuePhong layThongTinHopDong()
+        {
+            int maHD = int.Parse(dgv_dsHD.CurrentRow.Cells[0].Value.ToString());
+            var hdtp = qlhd.loadHopDongThuePhong(maHD);
+            return hdtp;
+        }
+
+        public event EventHandler lapHDClick;
+
+        private void btn_lapHopDong_Click(object sender, EventArgs e)
+        {
+            lapHDClick?.Invoke(this, e);
+        }
+
         private void dgv_dsHD_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             clickDataGrid?.Invoke(this, e);
+        }
+
+        private void btn_xemHopDong_Click(object sender, EventArgs e)
+        {
+            dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
         }
     }
 }

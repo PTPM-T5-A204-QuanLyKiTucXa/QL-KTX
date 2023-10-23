@@ -31,13 +31,32 @@ namespace thuVienControls
             double donGia = double.Parse(txt_DonGia.Text);
 
             int id = int.Parse(lb_stt.Text);
-            if(qldn.capNhatBangGiaDien(id, soBatDau, donGia))
+            if(qldn.CapNhatBangGiaDien(id, soBatDau, donGia))
             {
                 MessageBox.Show("Cập nhật thành công");
             }
             else
             {
                 MessageBox.Show("Cập nhật thất bại");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int soBatDau = int.Parse(txt_SoBatDau.Text);
+            double donGia = double.Parse(txt_DonGia.Text);
+            DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "xóa", MessageBoxButtons.YesNo);
+
+            if (r == DialogResult.Yes)
+            {
+                if (qldn.xoaNacDien(soBatDau, donGia))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại");
+                }
             }
         }
     }

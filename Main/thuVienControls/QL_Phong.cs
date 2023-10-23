@@ -75,6 +75,12 @@ namespace thuVienControls
             }
         }
 
+        public double layGiaTienPhong(int idPhong)
+        {
+            Phong p = QL_KTX.Phongs.Where(t => t.phong_id == idPhong).FirstOrDefault();
+            return double.Parse(p.LoaiPhong.gia_phong.ToString());
+        }
+
         public bool kiemTraSlotPhong(string soPhong)
         {
             int i = int.Parse(DemSoSinhVienTrongPhong(soPhong));

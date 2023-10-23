@@ -30,6 +30,14 @@ namespace Main
             gd.btnLocClick += Gd_btnLocClick;
             gd.btnGhiDienNuocClick += Gd_btnGhiDienNuocClick;
             gd.btnSuaDonGiaClick += Gd_btnSuaDonGiaClick;
+            gd.clickDataGrid += Gd_clickDataGrid;
+        }
+
+        private void Gd_clickDataGrid(object sender, EventArgs e)
+        {
+            int mahd = gd.layMaHoaDon();
+            Form_ThongTinHoaDonDienNuoc form = new Form_ThongTinHoaDonDienNuoc(mahd);
+            form.Show();
         }
 
         private void Gd_btnSuaDonGiaClick(object sender, EventArgs e)

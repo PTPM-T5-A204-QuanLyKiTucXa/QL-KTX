@@ -104,35 +104,75 @@ namespace thuVienControls
             return true;
         }
 
-        public bool capNhatBangGiaDien(int i, int soBatDau, double donGia)
+        public bool xoaNacDien(int soBatDau, double donGia)
         {
             bool kq = false;
-            if (soBatDau == 0)
+            if(soBatDau == 0)
             {
                 kq = false;
-            }
+            }   
             else
             {
-                var giaDien = qlktx.GiaDiens.Where(t => t.ID == i).FirstOrDefault();
-                if(giaDien!=null)
+                var giaDien = qlktx.GiaDiens.Where(t => t.so_bat_dau == soBatDau && t.Gia == (decimal)donGia).FirstOrDefault();
+                if(giaDien!= null)
                 {
-                    giaDien.so_bat_dau = soBatDau;
-                    giaDien.Gia = (decimal)donGia;
+                    qlktx.GiaDiens.DeleteOnSubmit(giaDien);
                     qlktx.SubmitChanges();
                     kq = true;
-                }    
-                else
-                {
-                    kq = false;
                 }    
             }
             return kq;
         }
 
+        public bool CapNhatBangGiaDien(int i, int soBatDau, double donGia)
+        {
+            var giaDien = qlktx.GiaDiens.Where(t => t.ID == i).FirstOrDefault();
+
+            if (giaDien != null)
+            {
+                var giaBacDuoi = qlktx.GiaDiens.Where(g => g.so_bat_dau < soBatDau).OrderByDescending(g => g.so_bat_dau).FirstOrDefault();
+                var giaBacTren = qlktx.GiaDiens.Where(g => g.so_bat_dau > soBatDau).OrderBy(g => g.so_bat_dau).FirstOrDefault();
+
+                if ((giaBacDuoi == null || (soBatDau > giaBacDuoi.so_bat_dau && donGia > (double)giaBacDuoi.Gia)) &&
+                    (giaBacTren == null || (soBatDau < giaBacTren.so_bat_dau && donGia < (double)giaBacTren.Gia)))
+                {
+                    giaDien.so_bat_dau = soBatDau;
+                    giaDien.Gia = (decimal)donGia;
+                    qlktx.SubmitChanges();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+
         public GiaNuoc loadGiaNuoc()
         {
             var gia = qlktx.GiaNuocs.Select(t => t).FirstOrDefault();
             return gia;
+        }
+
+        public bool capNhatHoaDonDienNuoc(int maHD, int soDien, int soNuoc, string trangThai)
+        {
+            HoaDonDienNuoc hd = qlktx.HoaDonDienNuocs.Where(t => t.hoa_don_id == maHD).FirstOrDefault(); ;
+            bool kq = false;
+            double tongTien = TinhTienDien(soDien) + TinhTienNuoc(soNuoc);
+            if (hd != null)
+            {
+                hd.so_dien = soDien;
+                hd.so_khoi_nuoc = soNuoc;
+                hd.tong_tien = (decimal)tongTien;
+                hd.trang_thai = trangThai;
+                qlktx.SubmitChanges();
+                kq = true;
+            }
+            else
+            {
+                kq = false;
+            }
+            return kq;
         }
 
         public bool ghiChiSoDienNuoc(int idPhong, int thang, int nam, int soDien, int soNuoc)
@@ -197,6 +237,12 @@ namespace thuVienControls
         {
             var hoaDons = qlktx.HoaDonDienNuocs.Select(t => new { t.hoa_don_id, t.Phong.so_phong, t.thang, t.nam, t.so_dien, t.so_khoi_nuoc, t.tong_tien, t.trang_thai }).ToList();
             return hoaDons;
+        }
+
+        public HoaDonDienNuoc loadTTHoaDonDienNuocTheoMa(int maHD)
+        {
+            var hoaDon = qlktx.HoaDonDienNuocs.Where(t => t.hoa_don_id == maHD).FirstOrDefault();
+            return hoaDon;
         }
     }
 }

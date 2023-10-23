@@ -42,6 +42,10 @@ namespace thuVienControls
             this.cbx_tuThang = new System.Windows.Forms.ComboBox();
             this.cbx_trangThai = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_soPhong = new System.Windows.Forms.TextBox();
+            this.btn_suaDonGia = new System.Windows.Forms.Button();
+            this.btn_ghiDienNuoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,10 +62,7 @@ namespace thuVienControls
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_ghiDienNuoc = new System.Windows.Forms.Button();
-            this.btn_suaDonGia = new System.Windows.Forms.Button();
-            this.txt_soPhong = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -185,6 +186,7 @@ namespace thuVienControls
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txt_soPhong);
             this.panel2.Controls.Add(this.btn_suaDonGia);
@@ -195,6 +197,42 @@ namespace thuVienControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(806, 118);
             this.panel2.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Số phòng";
+            // 
+            // txt_soPhong
+            // 
+            this.txt_soPhong.Location = new System.Drawing.Point(65, 77);
+            this.txt_soPhong.Name = "txt_soPhong";
+            this.txt_soPhong.Size = new System.Drawing.Size(106, 20);
+            this.txt_soPhong.TabIndex = 3;
+            // 
+            // btn_suaDonGia
+            // 
+            this.btn_suaDonGia.Location = new System.Drawing.Point(584, 75);
+            this.btn_suaDonGia.Name = "btn_suaDonGia";
+            this.btn_suaDonGia.Size = new System.Drawing.Size(219, 23);
+            this.btn_suaDonGia.TabIndex = 2;
+            this.btn_suaDonGia.Text = "SỬA ĐƠN GIÁ ĐIỆN NƯỚC";
+            this.btn_suaDonGia.UseVisualStyleBackColor = true;
+            this.btn_suaDonGia.Click += new System.EventHandler(this.btn_suaDonGia_Click);
+            // 
+            // btn_ghiDienNuoc
+            // 
+            this.btn_ghiDienNuoc.Location = new System.Drawing.Point(381, 75);
+            this.btn_ghiDienNuoc.Name = "btn_ghiDienNuoc";
+            this.btn_ghiDienNuoc.Size = new System.Drawing.Size(197, 23);
+            this.btn_ghiDienNuoc.TabIndex = 1;
+            this.btn_ghiDienNuoc.Text = "GHI CHỈ SỐ ĐIỆN NƯỚC MỚI";
+            this.btn_ghiDienNuoc.UseVisualStyleBackColor = true;
+            this.btn_ghiDienNuoc.Click += new System.EventHandler(this.btn_ghiDienNuoc_Click);
             // 
             // groupBox1
             // 
@@ -278,8 +316,10 @@ namespace thuVienControls
             this.dgv_dsHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_dsHD.Location = new System.Drawing.Point(0, 0);
             this.dgv_dsHD.Name = "dgv_dsHD";
+            this.dgv_dsHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dsHD.Size = new System.Drawing.Size(806, 409);
             this.dgv_dsHD.TabIndex = 0;
+            this.dgv_dsHD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_dsHD_MouseDoubleClick);
             // 
             // Column1
             // 
@@ -329,41 +369,14 @@ namespace thuVienControls
             this.Column8.HeaderText = "Trạng thái";
             this.Column8.Name = "Column8";
             // 
-            // btn_ghiDienNuoc
+            // button2
             // 
-            this.btn_ghiDienNuoc.Location = new System.Drawing.Point(180, 75);
-            this.btn_ghiDienNuoc.Name = "btn_ghiDienNuoc";
-            this.btn_ghiDienNuoc.Size = new System.Drawing.Size(197, 23);
-            this.btn_ghiDienNuoc.TabIndex = 1;
-            this.btn_ghiDienNuoc.Text = "GHI CHỈ SỐ ĐIỆN NƯỚC MỚI";
-            this.btn_ghiDienNuoc.UseVisualStyleBackColor = true;
-            this.btn_ghiDienNuoc.Click += new System.EventHandler(this.btn_ghiDienNuoc_Click);
-            // 
-            // btn_suaDonGia
-            // 
-            this.btn_suaDonGia.Location = new System.Drawing.Point(383, 74);
-            this.btn_suaDonGia.Name = "btn_suaDonGia";
-            this.btn_suaDonGia.Size = new System.Drawing.Size(219, 23);
-            this.btn_suaDonGia.TabIndex = 2;
-            this.btn_suaDonGia.Text = "SỬA ĐƠN GIÁ ĐIỆN NƯỚC";
-            this.btn_suaDonGia.UseVisualStyleBackColor = true;
-            this.btn_suaDonGia.Click += new System.EventHandler(this.btn_suaDonGia_Click);
-            // 
-            // txt_soPhong
-            // 
-            this.txt_soPhong.Location = new System.Drawing.Point(65, 77);
-            this.txt_soPhong.Name = "txt_soPhong";
-            this.txt_soPhong.Size = new System.Drawing.Size(106, 20);
-            this.txt_soPhong.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Số phòng";
+            this.button2.Location = new System.Drawing.Point(180, 75);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(197, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "XEM HÓA ĐƠN ĐIỆN NƯỚC";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // gd_QLDienNuoc
             // 
@@ -421,5 +434,6 @@ namespace thuVienControls
         private System.Windows.Forms.TextBox txt_soPhong;
         private System.Windows.Forms.Button btn_suaDonGia;
         private System.Windows.Forms.Button btn_ghiDienNuoc;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -30,12 +30,12 @@ namespace thuVienControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_stt = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_DonGia = new System.Windows.Forms.TextBox();
             this.txt_SoBatDau = new System.Windows.Forms.TextBox();
-            this.lb_stt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,15 @@ namespace thuVienControls
             this.panel1.Size = new System.Drawing.Size(424, 47);
             this.panel1.TabIndex = 0;
             // 
+            // lb_stt
+            // 
+            this.lb_stt.AutoSize = true;
+            this.lb_stt.Location = new System.Drawing.Point(4, 15);
+            this.lb_stt.Name = "lb_stt";
+            this.lb_stt.Size = new System.Drawing.Size(13, 13);
+            this.lb_stt.TabIndex = 29;
+            this.lb_stt.Text = "1";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(380, 10);
@@ -61,6 +70,7 @@ namespace thuVienControls
             this.button1.TabIndex = 28;
             this.button1.Text = "xóa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -93,15 +103,6 @@ namespace thuVienControls
             this.txt_SoBatDau.Name = "txt_SoBatDau";
             this.txt_SoBatDau.Size = new System.Drawing.Size(100, 20);
             this.txt_SoBatDau.TabIndex = 24;
-            // 
-            // lb_stt
-            // 
-            this.lb_stt.AutoSize = true;
-            this.lb_stt.Location = new System.Drawing.Point(4, 15);
-            this.lb_stt.Name = "lb_stt";
-            this.lb_stt.Size = new System.Drawing.Size(13, 13);
-            this.lb_stt.TabIndex = 29;
-            this.lb_stt.Text = "1";
             // 
             // gd_GiaDien
             // 
