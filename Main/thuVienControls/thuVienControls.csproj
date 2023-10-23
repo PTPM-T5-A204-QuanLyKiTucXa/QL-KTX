@@ -84,6 +84,12 @@
     <Compile Include="gd_QLBangGiaDienNuoc.Designer.cs">
       <DependentUpon>gd_QLBangGiaDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="gd_QLBaoCaoSuCo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_QLBaoCaoSuCo.Designer.cs">
+      <DependentUpon>gd_QLBaoCaoSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="gd_QLDienNuoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     <Compile Include="gd_ThongTinPhong.Designer.cs">
       <DependentUpon>gd_ThongTinPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="gd_ThongTinSuCo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gd_ThongTinSuCo.Designer.cs">
+      <DependentUpon>gd_ThongTinSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -141,6 +153,7 @@
     </Compile>
     <Compile Include="QL_Phong.cs" />
     <Compile Include="Ql_SinhVien.cs" />
+    <Compile Include="QL_SuCo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form_GhiDienNuoc.resx">
@@ -164,6 +177,9 @@
     <EmbeddedResource Include="gd_QLBangGiaDienNuoc.resx">
       <DependentUpon>gd_QLBangGiaDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gd_QLBaoCaoSuCo.resx">
+      <DependentUpon>gd_QLBaoCaoSuCo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gd_QLDienNuoc.resx">
       <DependentUpon>gd_QLDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gd_ThongTinPhong.resx">
       <DependentUpon>gd_ThongTinPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gd_ThongTinSuCo.resx">
+      <DependentUpon>gd_ThongTinSuCo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

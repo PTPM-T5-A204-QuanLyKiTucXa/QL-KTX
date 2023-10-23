@@ -86,6 +86,12 @@
     <Compile Include="Form_QLBangGiaDienNuoc.Designer.cs">
       <DependentUpon>Form_QLBangGiaDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_QLBaoCaoSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_QLBaoCaoSuCo.Designer.cs">
+      <DependentUpon>Form_QLBaoCaoSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_QLDienNuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     <Compile Include="Form_ThongTinSinhVien.Designer.cs">
       <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ThongTinSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThongTinSuCo.Designer.cs">
+      <DependentUpon>Form_ThongTinSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_CauHinh.resx">
@@ -151,6 +163,9 @@
     <EmbeddedResource Include="Form_QLBangGiaDienNuoc.resx">
       <DependentUpon>Form_QLBangGiaDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_QLBaoCaoSuCo.resx">
+      <DependentUpon>Form_QLBaoCaoSuCo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_QLDienNuoc.resx">
       <DependentUpon>Form_QLDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ThongTinSinhVien.resx">
       <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThongTinSuCo.resx">
+      <DependentUpon>Form_ThongTinSuCo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

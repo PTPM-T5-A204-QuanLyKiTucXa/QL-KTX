@@ -61,5 +61,13 @@ namespace Main
             form.MdiParent = this;
             form.Show();
         }
+
+        private void báoCáoSựCốToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_QLBaoCaoSuCo form = new Form_QLBaoCaoSuCo();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

@@ -42,6 +42,7 @@ namespace thuVienControls
             this.cbx_tuThang = new System.Windows.Forms.ComboBox();
             this.cbx_trangThai = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_soPhong = new System.Windows.Forms.TextBox();
             this.btn_suaDonGia = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@ namespace thuVienControls
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -197,6 +197,16 @@ namespace thuVienControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(806, 118);
             this.panel2.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(180, 75);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(197, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "XEM HÓA ĐƠN ĐIỆN NƯỚC";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -368,15 +378,6 @@ namespace thuVienControls
             this.Column8.DataPropertyName = "trang_thai";
             this.Column8.HeaderText = "Trạng thái";
             this.Column8.Name = "Column8";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(180, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "XEM HÓA ĐƠN ĐIỆN NƯỚC";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // gd_QLDienNuoc
             // 

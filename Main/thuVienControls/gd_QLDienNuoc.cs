@@ -106,5 +106,10 @@ namespace thuVienControls
         {
             clickDataGrid?.Invoke(this, e);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgv_dsHD.DataSource = qldn.loadDSHoaDonDienNuocTheoSP(txt_soPhong.Text.ToString());
+        }
     }
 }

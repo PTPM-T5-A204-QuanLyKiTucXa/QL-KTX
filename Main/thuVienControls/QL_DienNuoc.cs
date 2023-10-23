@@ -244,5 +244,10 @@ namespace thuVienControls
             var hoaDon = qlktx.HoaDonDienNuocs.Where(t => t.hoa_don_id == maHD).FirstOrDefault();
             return hoaDon;
         }
+        public object loadDSHoaDonDienNuocTheoSP(string soPhong)
+        {
+            var hoaDons = qlktx.HoaDonDienNuocs.Where(t => t.Phong.so_phong == soPhong).Select(t => new { t.hoa_don_id, t.Phong.so_phong, t.thang, t.nam, t.so_dien, t.so_khoi_nuoc, t.tong_tien, t.trang_thai }).ToList();
+            return hoaDons;
+        }
     }
 }

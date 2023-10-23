@@ -39,6 +39,7 @@ namespace Main
             this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýĐiệnNướcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHợpĐồngThuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoSựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@ namespace Main
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
             this.chứcNăngToolStripMenuItem,
-            this.quảnLýHóaĐơnToolStripMenuItem});
+            this.quảnLýHóaĐơnToolStripMenuItem,
+            this.báoCáoSựCốToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
@@ -124,6 +126,13 @@ namespace Main
             this.quảnLýHợpĐồngThuêPhòngToolStripMenuItem.Text = "Quản lý hợp đồng thuê phòng";
             this.quảnLýHợpĐồngThuêPhòngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHợpĐồngThuêPhòngToolStripMenuItem_Click);
             // 
+            // báoCáoSựCốToolStripMenuItem
+            // 
+            this.báoCáoSựCốToolStripMenuItem.Name = "báoCáoSựCốToolStripMenuItem";
+            this.báoCáoSựCốToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.báoCáoSựCốToolStripMenuItem.Text = "Báo cáo sự cố";
+            this.báoCáoSựCốToolStripMenuItem.Click += new System.EventHandler(this.báoCáoSựCốToolStripMenuItem_Click);
+            // 
             // Form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +163,6 @@ namespace Main
         private System.Windows.Forms.ToolStripMenuItem quảnLýHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýĐiệnNướcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHợpĐồngThuêPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoSựCốToolStripMenuItem;
     }
 }
