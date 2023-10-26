@@ -22,13 +22,33 @@ namespace thuVienControls
         //    return kq;
         //}
 
+        public double tinhTienThu(DateTime ngayBatDau, DateTime ngayKetThuc, int maPhong)
+        {
+            int soThang = ((ngayKetThuc.Year - ngayBatDau.Year) * 12) + (ngayKetThuc.Month - ngayBatDau.Month);
+            double tienThu = 0;
+            double tienPhong = qlp.layGiaTienPhong(maPhong);
+            if (soThang > 12 || soThang < 0)
+            {
+                return -1;
+            }
+            else if (soThang > 6)
+            {
+                tienThu = tienPhong * 2;
+            }
+            else
+            {
+                tienThu = tienPhong;
+            }
+            return tienThu;
+        }
+
         public bool CapNhatHopDongThuePhong(int maHD, int maPhong,DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, string trangThai)
         {
             bool kq = false;
             int soThang = ((ngayKetThuc.Year - ngayBatDau.Year) * 12) + (ngayKetThuc.Month - ngayBatDau.Month);
             double tienThu = 0;
             double tienPhong = qlp.layGiaTienPhong(maPhong);
-            if (soThang > 12 || soThang <= 0)
+            if (soThang > 12 || soThang < 0)
             {
                 kq = false;
                 return kq;
@@ -99,10 +119,20 @@ namespace thuVienControls
             return false;
         }
 
-        public object loadDSHopDongThuePhong()
+        public List<object> loadDSHopDongThuePhong()
         {
-            var hopDongs = qlktx.HopDongThuePhongs.Select(t => new { t.hop_dong_id, t.Phong.so_phong, t.SinhVien.ho_ten, t.tienthu, t.trangthai }).ToList();
-            return hopDongs;
+           // QL_KTXDataContext qlktx = new QL_KTXDataContext();
+            var hopDongs = qlktx.HopDongThuePhongs.Select(t => new
+            {
+                t.hop_dong_id,
+                t.Phong.so_phong,
+                t.SinhVien.ho_ten,
+                t.tienthu,
+                t.trangthai
+            }).ToList();
+
+            // Trả về danh sách các đối tượng với kiểu dữ liệu mặc định (object).
+            return hopDongs.Cast<object>().ToList();
         }
 
         public object loadDSHopDongThuePhongTheoMaSV(string maSV)

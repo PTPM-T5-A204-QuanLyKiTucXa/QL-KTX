@@ -14,6 +14,7 @@ namespace thuVienControls
     {
         QL_KTXDataContext qlktx = new QL_KTXDataContext();
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        QL_Phong qlp = new QL_Phong();
         QL_HopDongThuePhong qlhd = new QL_HopDongThuePhong();
         Dictionary<string, List<string>> cityData = new Dictionary<string, List<string>>()
             {
@@ -48,6 +49,13 @@ namespace thuVienControls
         {
             InitializeComponent();
             loadTinhThanh();
+            loadCBXLoaiPhong();
+        }
+
+        public void loadCBXLoaiPhong()
+        {
+            cbx_loaiPhong.DataSource = qlp.layDSLoaiPhong();
+            cbx_loaiPhong.DisplayMember = "ten_loai_phong";
         }
 
 
@@ -77,7 +85,7 @@ namespace thuVienControls
                     cbx_quanHuyen.Items.AddRange(cities.ToArray());
                     if (cbx_quanHuyen.Items.Count > 0)
                     {
-                        cbx_quanHuyen.SelectedIndex = 0; 
+                        cbx_quanHuyen.SelectedIndex = 0;
                     }
                 }
             }
@@ -90,6 +98,102 @@ namespace thuVienControls
             XacNhanlapHDClick?.Invoke(this, e);
         }
 
-       
+        private void cbx_loaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbx_soPhong.DataSource = qlp.LayDanhSachPhongChuaDayTheoLoaiPhong(cbx_loaiPhong.Text.ToString());
+            cbx_soPhong.DisplayMember = "so_phong";
+            if (cbx_soPhong.Items.Count > 0)
+            {
+                cbx_soPhong.SelectedIndex = 0;
+            }
+        }
+
+        private void dateTimePicker3_CloseUp(object sender, EventArgs e)
+        {
+            if (cbx_soPhong.Items.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng và phòng trước");
+            }
+            else
+            {
+
+                DateTime startDate = dtp_ngayBatDau.Value;
+                DateTime endDate = dtp_ngayKetThuc.Value;
+                DateTime ngayLap = dtp_ngayLap.Value;
+                TimeSpan timeSpan = endDate - startDate;
+                int daysDifference = timeSpan.Days;
+                if (endDate < startDate || daysDifference > 365 || ngayLap > endDate)
+                {
+                    MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
+                    dtp_ngayKetThuc.Value = DateTime.Now;
+                }
+                else
+                {
+                    Phong p = qlp.loadThongTinPhong(cbx_soPhong.Text);
+                    int maPhong = int.Parse(p.phong_id.ToString());
+                    txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, maPhong).ToString();
+
+                }
+            }
+
+        }
+
+        private void dtp_ngayBatDau_CloseUp(object sender, EventArgs e)
+        {
+            if (cbx_soPhong.Items.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng và phòng trước");
+            }
+            else
+            {
+
+                DateTime startDate = dtp_ngayBatDau.Value;
+                DateTime endDate = dtp_ngayKetThuc.Value;
+                DateTime ngayLap = dtp_ngayLap.Value;
+                TimeSpan timeSpan = endDate - startDate;
+                int daysDifference = timeSpan.Days;
+                if (endDate < startDate || daysDifference > 365 || ngayLap > endDate)
+                {
+                    MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
+                    dtp_ngayBatDau.Value = DateTime.Now;
+                }
+                else
+                {
+                    Phong p = qlp.loadThongTinPhong(cbx_soPhong.Text);
+                    int maPhong = int.Parse(p.phong_id.ToString());
+                    txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, maPhong).ToString();
+
+                }
+            }
+        }
+
+        private void dtp_ngayLap_CloseUp(object sender, EventArgs e)
+        {
+            if (cbx_soPhong.Items.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng và phòng trước");
+            }
+            else
+            {
+
+                DateTime startDate = dtp_ngayBatDau.Value;
+                DateTime endDate = dtp_ngayKetThuc.Value;
+                DateTime ngayLap = dtp_ngayLap.Value;
+                TimeSpan timeSpan = endDate - startDate;
+                int daysDifference = timeSpan.Days;
+                if (endDate < startDate || daysDifference > 365 || ngayLap > endDate)
+                {
+                    MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
+                    dtp_ngayLap.Value = DateTime.Now;
+                }
+                else
+                {
+                    Phong p = qlp.loadThongTinPhong(cbx_soPhong.Text);
+                    int maPhong = int.Parse(p.phong_id.ToString());
+                    txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, maPhong).ToString();
+
+                }
+            }
+        }
     }
 }

@@ -146,8 +146,6 @@ namespace thuVienControls
             return false;
         }
 
-
-
         public GiaNuoc loadGiaNuoc()
         {
             var gia = qlktx.GiaNuocs.Select(t => t).FirstOrDefault();

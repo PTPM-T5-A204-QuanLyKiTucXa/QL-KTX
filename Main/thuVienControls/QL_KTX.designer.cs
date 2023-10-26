@@ -650,7 +650,7 @@ namespace thuVienControls
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien", DbType="Decimal(10,3)")]
 		public System.Nullable<decimal> tong_tien
 		{
 			get
@@ -765,7 +765,7 @@ namespace thuVienControls
 		
 		private string _trangthai;
 		
-		private System.Nullable<decimal> _tienthu;
+		private System.Nullable<int> _tienthu;
 		
 		private EntityRef<Phong> _Phong;
 		
@@ -789,7 +789,7 @@ namespace thuVienControls
     partial void Onngay_ket_thuc_thueChanged();
     partial void OntrangthaiChanging(string value);
     partial void OntrangthaiChanged();
-    partial void OntienthuChanging(System.Nullable<decimal> value);
+    partial void OntienthuChanging(System.Nullable<int> value);
     partial void OntienthuChanged();
     #endregion
 		
@@ -948,8 +948,8 @@ namespace thuVienControls
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienthu", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> tienthu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienthu", DbType="Int")]
+		public System.Nullable<int> tienthu
 		{
 			get
 			{
@@ -1069,6 +1069,8 @@ namespace thuVienControls
 		
 		private System.Nullable<decimal> _gia_phong;
 		
+		private System.Nullable<int> _so_nguoi_toi_da;
+		
 		private EntitySet<Phong> _Phongs;
 		
     #region Extensibility Method Definitions
@@ -1081,6 +1083,8 @@ namespace thuVienControls
     partial void Onten_loai_phongChanged();
     partial void Ongia_phongChanging(System.Nullable<decimal> value);
     partial void Ongia_phongChanged();
+    partial void Onso_nguoi_toi_daChanging(System.Nullable<int> value);
+    partial void Onso_nguoi_toi_daChanged();
     #endregion
 		
 		public LoaiPhong()
@@ -1129,7 +1133,7 @@ namespace thuVienControls
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_phong", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_phong", DbType="Decimal(10,3)")]
 		public System.Nullable<decimal> gia_phong
 		{
 			get
@@ -1145,6 +1149,26 @@ namespace thuVienControls
 					this._gia_phong = value;
 					this.SendPropertyChanged("gia_phong");
 					this.Ongia_phongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_nguoi_toi_da", DbType="Int")]
+		public System.Nullable<int> so_nguoi_toi_da
+		{
+			get
+			{
+				return this._so_nguoi_toi_da;
+			}
+			set
+			{
+				if ((this._so_nguoi_toi_da != value))
+				{
+					this.Onso_nguoi_toi_daChanging(value);
+					this.SendPropertyChanging();
+					this._so_nguoi_toi_da = value;
+					this.SendPropertyChanged("so_nguoi_toi_da");
+					this.Onso_nguoi_toi_daChanged();
 				}
 			}
 		}

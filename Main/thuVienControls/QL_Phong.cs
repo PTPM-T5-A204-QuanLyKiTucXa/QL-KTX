@@ -33,7 +33,48 @@ namespace thuVienControls
             return dsSinhVien.ToList();
         }
 
+        public List<Phong> LayDanhSachPhongChuaDayTheoLoaiPhong(string loaiPhong)
+        {
+            List<Phong> danhSachPhongChuaDay = new List<Phong>();
 
+            foreach (Phong phong in QL_KTX.Phongs)
+            {
+                int idPhong = phong.phong_id;
+                string soPhong = phong.so_phong;
+                int i = int.Parse(phong.LoaiPhong.so_nguoi_toi_da.ToString());
+               
+                int soSinhVienTrongPhong = int.Parse(DemSoSinhVienTrongPhong(soPhong));
+
+                if (kiemTraSlotPhong(soPhong) && soSinhVienTrongPhong < i &&
+                    phong.LoaiPhong.ten_loai_phong == loaiPhong)
+                {
+                    danhSachPhongChuaDay.Add(phong);
+                }
+            }
+
+            return danhSachPhongChuaDay;
+        }
+
+
+        public double layGiaTienPhong(int idPhong)
+        {
+            Phong p = QL_KTX.Phongs.Where(t => t.phong_id == idPhong).FirstOrDefault();
+            return double.Parse(p.LoaiPhong.gia_phong.ToString());
+        }
+
+        public bool kiemTraSlotPhong(string soPhong)
+        {
+            int i = int.Parse(DemSoSinhVienTrongPhong(soPhong));
+            int j = kiemTraSoNguoiToiDa(soPhong);
+            if (i < j)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public string DemSoSinhVienTrongPhong(string phongCanDem)
         {
@@ -53,21 +94,14 @@ namespace thuVienControls
             return soSinhVienTrongPhongX.ToString();
         }
 
-        public int kiemTraLoaiPhong(string soPhong)
+        public int kiemTraSoNguoiToiDa(string soPhong)
         {
-            var loaiPhongQuery = from phong in QL_KTX.Phongs where phong.so_phong == soPhong select new { phong.LoaiPhong.loai_phong_id };
+            var loaiPhongQuery = from phong in QL_KTX.Phongs where phong.so_phong == soPhong select new { phong.LoaiPhong.so_nguoi_toi_da };
             var loaiPhong = loaiPhongQuery.FirstOrDefault();
             if(loaiPhong != null)
             {
-                int loai = loaiPhong.loai_phong_id;
-                if (loai == 1)
-                {
-                    return 2;
-                }
-                else
-                {
-                    return 4;
-                }
+                int loai = (int)loaiPhong.so_nguoi_toi_da;
+                return loai;
             }
             else
             {
@@ -75,25 +109,13 @@ namespace thuVienControls
             }
         }
 
-        public double layGiaTienPhong(int idPhong)
+        public object layDSLoaiPhong()
         {
-            Phong p = QL_KTX.Phongs.Where(t => t.phong_id == idPhong).FirstOrDefault();
-            return double.Parse(p.LoaiPhong.gia_phong.ToString());
+            var loais = QL_KTX.LoaiPhongs.Select(t => t).ToList();
+            return loais;
         }
 
-        public bool kiemTraSlotPhong(string soPhong)
-        {
-            int i = int.Parse(DemSoSinhVienTrongPhong(soPhong));
-            int j = kiemTraLoaiPhong(soPhong);
-            if(i<j)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+       
 
 
     }

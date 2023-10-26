@@ -21,6 +21,7 @@ namespace Main.Properties {
             get {
                 return defaultInstance;
             }
+       
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]

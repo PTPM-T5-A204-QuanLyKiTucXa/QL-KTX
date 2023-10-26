@@ -15,7 +15,7 @@ namespace thuVienControls
 
         }
 
-        public bool themSinhVien(string maSV,string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string sdt, string diaChi,string email)
+        public bool TaoMoiSinhVien(string maSV,string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string sdt, string diaChi,string email)
         {
             var sinhVien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
             if(sinhVien !=null)
@@ -38,6 +38,8 @@ namespace thuVienControls
             }
             return true;
         }
+
+
 
         public object loadDanhSachSinhVien()
         {

@@ -58,18 +58,18 @@ namespace thuVienControls
             this.btn_huyBo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbx_loaiPhong = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_tienThu = new System.Windows.Forms.TextBox();
             this.cbx_soPhong = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbx_loaiPhong = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.dtp_ngayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ngayBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ngayLap = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -345,21 +345,39 @@ namespace thuVienControls
             this.groupBox2.Controls.Add(this.cbx_loaiPhong);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txt_tienThu);
             this.groupBox2.Controls.Add(this.cbx_soPhong);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtp_ngayKetThuc);
+            this.groupBox2.Controls.Add(this.dtp_ngayBatDau);
+            this.groupBox2.Controls.Add(this.dtp_ngayLap);
             this.groupBox2.Location = new System.Drawing.Point(3, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(509, 163);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN HỢP ĐÔNG";
+            // 
+            // cbx_loaiPhong
+            // 
+            this.cbx_loaiPhong.FormattingEnabled = true;
+            this.cbx_loaiPhong.Location = new System.Drawing.Point(113, 39);
+            this.cbx_loaiPhong.Name = "cbx_loaiPhong";
+            this.cbx_loaiPhong.Size = new System.Drawing.Size(121, 21);
+            this.cbx_loaiPhong.TabIndex = 28;
+            this.cbx_loaiPhong.SelectedIndexChanged += new System.EventHandler(this.cbx_loaiPhong_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(48, 42);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Loại phòng";
             // 
             // label14
             // 
@@ -370,12 +388,12 @@ namespace thuVienControls
             this.label14.TabIndex = 26;
             this.label14.Text = "Tiền thu";
             // 
-            // textBox1
+            // txt_tienThu
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 25;
+            this.txt_tienThu.Location = new System.Drawing.Point(366, 126);
+            this.txt_tienThu.Name = "txt_tienThu";
+            this.txt_tienThu.Size = new System.Drawing.Size(121, 20);
+            this.txt_tienThu.TabIndex = 25;
             // 
             // cbx_soPhong
             // 
@@ -421,49 +439,35 @@ namespace thuVienControls
             this.label10.TabIndex = 20;
             this.label10.Text = "Ngày lập";
             // 
-            // dateTimePicker3
+            // dtp_ngayKetThuc
             // 
-            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(366, 83);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker3.TabIndex = 19;
+            this.dtp_ngayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngayKetThuc.Location = new System.Drawing.Point(366, 83);
+            this.dtp_ngayKetThuc.Name = "dtp_ngayKetThuc";
+            this.dtp_ngayKetThuc.Size = new System.Drawing.Size(121, 20);
+            this.dtp_ngayKetThuc.TabIndex = 19;
+            this.dtp_ngayKetThuc.CloseUp += new System.EventHandler(this.dateTimePicker3_CloseUp);
             // 
-            // dateTimePicker2
+            // dtp_ngayBatDau
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(113, 83);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dtp_ngayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngayBatDau.Location = new System.Drawing.Point(113, 83);
+            this.dtp_ngayBatDau.Name = "dtp_ngayBatDau";
+            this.dtp_ngayBatDau.Size = new System.Drawing.Size(121, 20);
+            this.dtp_ngayBatDau.TabIndex = 18;
+            this.dtp_ngayBatDau.CloseUp += new System.EventHandler(this.dtp_ngayBatDau_CloseUp);
             // 
-            // dateTimePicker1
+            // dtp_ngayLap
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 127);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // cbx_loaiPhong
-            // 
-            this.cbx_loaiPhong.FormattingEnabled = true;
-            this.cbx_loaiPhong.Location = new System.Drawing.Point(113, 39);
-            this.cbx_loaiPhong.Name = "cbx_loaiPhong";
-            this.cbx_loaiPhong.Size = new System.Drawing.Size(121, 21);
-            this.cbx_loaiPhong.TabIndex = 28;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(48, 42);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 13);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "Loại phòng";
+            this.dtp_ngayLap.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngayLap.Location = new System.Drawing.Point(113, 127);
+            this.dtp_ngayLap.Name = "dtp_ngayLap";
+            this.dtp_ngayLap.Size = new System.Drawing.Size(121, 20);
+            this.dtp_ngayLap.TabIndex = 17;
+            this.dtp_ngayLap.CloseUp += new System.EventHandler(this.dtp_ngayLap_CloseUp);
             // 
             // gd_LapHopDongThuePhong
             // 
@@ -518,15 +522,15 @@ namespace thuVienControls
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbx_gioiTinh;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_tienThu;
         private System.Windows.Forms.ComboBox cbx_soPhong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_ngayKetThuc;
+        private System.Windows.Forms.DateTimePicker dtp_ngayBatDau;
+        private System.Windows.Forms.DateTimePicker dtp_ngayLap;
         private System.Windows.Forms.ComboBox cbx_quanHuyen;
         private System.Windows.Forms.ComboBox cbx_tinhThanh;
         private System.Windows.Forms.ComboBox cbx_loaiPhong;
