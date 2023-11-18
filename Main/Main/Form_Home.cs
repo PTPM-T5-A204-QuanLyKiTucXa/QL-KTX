@@ -69,5 +69,13 @@ namespace Main
             form.MdiParent = this;
             form.Show();
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            testKM form = new testKM();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

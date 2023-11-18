@@ -119,9 +119,9 @@ namespace thuVienControls
             return false;
         }
 
-        public List<object> loadDSHopDongThuePhong()
+        public object loadDSHopDongThuePhong()
         {
-           // QL_KTXDataContext qlktx = new QL_KTXDataContext();
+ 
             var hopDongs = qlktx.HopDongThuePhongs.Select(t => new
             {
                 t.hop_dong_id,
@@ -131,8 +131,8 @@ namespace thuVienControls
                 t.trangthai
             }).ToList();
 
-            // Trả về danh sách các đối tượng với kiểu dữ liệu mặc định (object).
-            return hopDongs.Cast<object>().ToList();
+       
+            return hopDongs.ToList();
         }
 
         public object loadDSHopDongThuePhongTheoMaSV(string maSV)

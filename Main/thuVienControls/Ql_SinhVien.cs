@@ -39,8 +39,6 @@ namespace thuVienControls
             return true;
         }
 
-
-
         public object loadDanhSachSinhVien()
         {
             var dsSinhVien = from sv in QL_KTX.SinhViens select new { sv.ma_sinh_vien, sv.ho_ten, sv.so_dien_thoai, sv.email, sv.gioi_tinh, sv.trang_thai };
@@ -49,7 +47,6 @@ namespace thuVienControls
 
         public object loadDanhSachSinhVienTheoTrangThai(string trangThai)
         {
- 
             var dsSinhVien = from sv in QL_KTX.SinhViens where sv.trang_thai == trangThai select new {sv.ma_sinh_vien, sv.ho_ten, sv.so_dien_thoai, sv.email, sv.gioi_tinh, sv.trang_thai };
             return dsSinhVien.ToList();
         }

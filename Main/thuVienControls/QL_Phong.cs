@@ -94,6 +94,21 @@ namespace thuVienControls
             return soSinhVienTrongPhongX.ToString();
         }
 
+        public int demSoLuongPhong()
+        {
+            var Phongs = QL_KTX.Phongs.Select(t => t).ToList();
+            
+            if (Phongs != null)
+            {
+                int sl = Phongs.Count();
+                return sl;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public int kiemTraSoNguoiToiDa(string soPhong)
         {
             var loaiPhongQuery = from phong in QL_KTX.Phongs where phong.so_phong == soPhong select new { phong.LoaiPhong.so_nguoi_toi_da };
@@ -115,8 +130,24 @@ namespace thuVienControls
             return loais;
         }
 
-       
+        public List<string> LayDSTenPhong()
+        {
+            var tenPhongs = QL_KTX.Phongs.Select(t => t.so_phong).ToList();
+            return tenPhongs;
+        }
 
-
+        public string TimPhongTrong(string[] tenPhong, int soNguoiToiDa)
+        {
+            foreach (var phong in tenPhong)
+            {
+                int soLuongTrongPhong = int.Parse(DemSoSinhVienTrongPhong(phong));
+                int sltda = kiemTraSoNguoiToiDa(phong);
+                if (soLuongTrongPhong < soNguoiToiDa && sltda == soNguoiToiDa)
+                {
+                    return phong;
+                }
+            }
+            return null;
+        }
     }
 }
