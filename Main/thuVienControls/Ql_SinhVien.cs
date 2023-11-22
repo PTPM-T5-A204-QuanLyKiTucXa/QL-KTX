@@ -39,6 +39,22 @@ namespace thuVienControls
             return true;
         }
 
+        public bool xoaSinhVienKhongDuyet(string maSV)
+        {
+            var sinhVien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
+            if (sinhVien == null)
+            {
+                return false;
+            }
+            else
+            {
+                QL_KTX.SinhViens.DeleteOnSubmit(sinhVien);
+                QL_KTX.SubmitChanges();
+                return true;
+            }
+        }
+
+
         public object loadDanhSachSinhVien()
         {
             var dsSinhVien = from sv in QL_KTX.SinhViens select new { sv.ma_sinh_vien, sv.ho_ten, sv.so_dien_thoai, sv.email, sv.gioi_tinh, sv.trang_thai };
@@ -73,6 +89,29 @@ namespace thuVienControls
             }
             return false;
         }
+
+        public bool capNhatTrangThai(string maSV,string trangThai)
+        {
+            var sv = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
+            if(sv==null)
+            {
+                return false;
+            }    
+            else
+            {
+                sv.trang_thai = trangThai;
+                QL_KTX.SubmitChanges();
+                return true;
+            }    
+
+        }
+
+        public int layIDSinhVien(string masv)
+        {
+            var sinhvien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == masv).FirstOrDefault();
+            return sinhvien.sinh_vien_id;
+        }
+
 
         public bool UpdateSinhVien(string ma,string hoten, DateTime ngaysinh, string gioitinh, string sdt, string diachi, string email, string sophong)
         {

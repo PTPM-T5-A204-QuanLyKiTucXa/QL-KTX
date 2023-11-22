@@ -74,7 +74,7 @@ namespace Main
             this.txt_matKhau.Name = "txt_matKhau";
             this.txt_matKhau.Size = new System.Drawing.Size(318, 20);
             this.txt_matKhau.TabIndex = 12;
-            this.txt_matKhau.Text = "matkhau1";
+            this.txt_matKhau.Text = "adminpass";
             // 
             // label3
             // 
@@ -100,7 +100,7 @@ namespace Main
             this.txtChiNhapSo1.Name = "txtChiNhapSo1";
             this.txtChiNhapSo1.Size = new System.Drawing.Size(318, 20);
             this.txtChiNhapSo1.TabIndex = 9;
-            this.txtChiNhapSo1.Text = "sv001";
+            this.txtChiNhapSo1.Text = "admin01";
             // 
             // label1
             // 

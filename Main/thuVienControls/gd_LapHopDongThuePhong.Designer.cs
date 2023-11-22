@@ -32,8 +32,6 @@ namespace thuVienControls
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbx_quanHuyen = new System.Windows.Forms.ComboBox();
-            this.cbx_tinhThanh = new System.Windows.Forms.ComboBox();
             this.cbx_gioiTinh = new System.Windows.Forms.ComboBox();
             this.dtp_ngaySinh = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,14 +60,14 @@ namespace thuVienControls
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_tienThu = new System.Windows.Forms.TextBox();
-            this.cbx_soPhong = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtp_ngayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngayLap = new System.Windows.Forms.DateTimePicker();
+            this.cbx_trangThai = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,8 +99,6 @@ namespace thuVienControls
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbx_quanHuyen);
-            this.groupBox1.Controls.Add(this.cbx_tinhThanh);
             this.groupBox1.Controls.Add(this.cbx_gioiTinh);
             this.groupBox1.Controls.Add(this.dtp_ngaySinh);
             this.groupBox1.Controls.Add(this.label9);
@@ -125,23 +121,6 @@ namespace thuVienControls
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN SINH VIÊN";
-            // 
-            // cbx_quanHuyen
-            // 
-            this.cbx_quanHuyen.FormattingEnabled = true;
-            this.cbx_quanHuyen.Location = new System.Drawing.Point(240, 148);
-            this.cbx_quanHuyen.Name = "cbx_quanHuyen";
-            this.cbx_quanHuyen.Size = new System.Drawing.Size(121, 21);
-            this.cbx_quanHuyen.TabIndex = 19;
-            // 
-            // cbx_tinhThanh
-            // 
-            this.cbx_tinhThanh.FormattingEnabled = true;
-            this.cbx_tinhThanh.Location = new System.Drawing.Point(113, 148);
-            this.cbx_tinhThanh.Name = "cbx_tinhThanh";
-            this.cbx_tinhThanh.Size = new System.Drawing.Size(121, 21);
-            this.cbx_tinhThanh.TabIndex = 18;
-            this.cbx_tinhThanh.SelectedIndexChanged += new System.EventHandler(this.cbx_tinhThanh_SelectedIndexChanged);
             // 
             // cbx_gioiTinh
             // 
@@ -262,9 +241,9 @@ namespace thuVienControls
             // 
             // txt_diaChi
             // 
-            this.txt_diaChi.Location = new System.Drawing.Point(366, 148);
+            this.txt_diaChi.Location = new System.Drawing.Point(113, 148);
             this.txt_diaChi.Name = "txt_diaChi";
-            this.txt_diaChi.Size = new System.Drawing.Size(121, 20);
+            this.txt_diaChi.Size = new System.Drawing.Size(374, 20);
             this.txt_diaChi.TabIndex = 3;
             // 
             // txt_tenSV
@@ -342,12 +321,12 @@ namespace thuVienControls
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.cbx_trangThai);
             this.groupBox2.Controls.Add(this.cbx_loaiPhong);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.txt_tienThu);
-            this.groupBox2.Controls.Add(this.cbx_soPhong);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
@@ -368,7 +347,6 @@ namespace thuVienControls
             this.cbx_loaiPhong.Name = "cbx_loaiPhong";
             this.cbx_loaiPhong.Size = new System.Drawing.Size(121, 21);
             this.cbx_loaiPhong.TabIndex = 28;
-            this.cbx_loaiPhong.SelectedIndexChanged += new System.EventHandler(this.cbx_loaiPhong_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -394,23 +372,6 @@ namespace thuVienControls
             this.txt_tienThu.Name = "txt_tienThu";
             this.txt_tienThu.Size = new System.Drawing.Size(121, 20);
             this.txt_tienThu.TabIndex = 25;
-            // 
-            // cbx_soPhong
-            // 
-            this.cbx_soPhong.FormattingEnabled = true;
-            this.cbx_soPhong.Location = new System.Drawing.Point(366, 39);
-            this.cbx_soPhong.Name = "cbx_soPhong";
-            this.cbx_soPhong.Size = new System.Drawing.Size(121, 21);
-            this.cbx_soPhong.TabIndex = 24;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(320, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 13);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Phòng";
             // 
             // label12
             // 
@@ -469,6 +430,23 @@ namespace thuVienControls
             this.dtp_ngayLap.TabIndex = 17;
             this.dtp_ngayLap.CloseUp += new System.EventHandler(this.dtp_ngayLap_CloseUp);
             // 
+            // cbx_trangThai
+            // 
+            this.cbx_trangThai.FormattingEnabled = true;
+            this.cbx_trangThai.Location = new System.Drawing.Point(366, 39);
+            this.cbx_trangThai.Name = "cbx_trangThai";
+            this.cbx_trangThai.Size = new System.Drawing.Size(121, 21);
+            this.cbx_trangThai.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(252, 42);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(109, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Trạng thái thanh toán";
+            // 
             // gd_LapHopDongThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,17 +501,15 @@ namespace thuVienControls
         private System.Windows.Forms.ComboBox cbx_gioiTinh;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_tienThu;
-        private System.Windows.Forms.ComboBox cbx_soPhong;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtp_ngayKetThuc;
         private System.Windows.Forms.DateTimePicker dtp_ngayBatDau;
         private System.Windows.Forms.DateTimePicker dtp_ngayLap;
-        private System.Windows.Forms.ComboBox cbx_quanHuyen;
-        private System.Windows.Forms.ComboBox cbx_tinhThanh;
         private System.Windows.Forms.ComboBox cbx_loaiPhong;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbx_trangThai;
     }
 }

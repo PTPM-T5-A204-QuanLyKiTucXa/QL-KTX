@@ -11,22 +11,85 @@ namespace thuVienControls
         QL_KTXDataContext qlktx = new QL_KTXDataContext();
         QL_Phong qlp = new QL_Phong();
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        Ql_NguoiDung qlnd = new Ql_NguoiDung();
+        ThuatToanKMeans tt = new ThuatToanKMeans();
         public QL_HopDongThuePhong()
         {
 
         }
 
-        //public bool lapHopDongThuePhong(string maSV,)
-        //{
+        public int lapHopDongThuePhong(string maSV, string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string loaiPhong, string sdt, string diaChi, string email,DateTime ngayLap, DateTime ngayBD, DateTime ngayKT, string trangThai, double tienThu)
+        {
+            var sv = qlktx.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
             
-        //    return kq;
-        //}
+            if (sv != null)
+            {
+                var hd = qlktx.HopDongThuePhongs.Where(t => t.sinh_vien_id == sv.sinh_vien_id && t.ngay_ket_thuc_thue > DateTime.Now).FirstOrDefault();
+                if(hd !=null)
+                {
+                    return 0;
+                }    
+                else
+                {
+                    HopDongThuePhong hdnew = new HopDongThuePhong();
+                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                    hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
+                    hdnew.ngay_lap = ngayLap;
+                    hdnew.ngay_bat_dau_thue = ngayBD;
+                    hdnew.ngay_ket_thuc_thue = ngayKT;
+                    hdnew.tienthu = (int)tienThu;
+                    hdnew.trangthai = trangThai;
+                    qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
+                    qlktx.SubmitChanges();
+                    return 2;
+                }    
+            }
+            else
+            {
+                bool kq1 = qlsv.TaoMoiSinhVien(maSV,hoTen,ngaySinh,cccd,gioiTinh,sdt,diaChi,email);
+                bool kq2 = qlnd.themTaiKhoanSinhVien(maSV, sdt);
+                if (kq1 && kq2)
+                {
+                    HopDongThuePhong hdnew = new HopDongThuePhong();
+                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                    hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
+                    hdnew.ngay_lap = ngayLap;
+                    hdnew.ngay_bat_dau_thue = ngayBD;
+                    hdnew.ngay_ket_thuc_thue = ngayKT;
+                    hdnew.tienthu = (int)tienThu;
+                    hdnew.trangthai = trangThai;
 
-        public double tinhTienThu(DateTime ngayBatDau, DateTime ngayKetThuc, int maPhong)
+                    qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
+                    qlktx.SubmitChanges();
+                    return 2;
+                }
+                else if(kq1 && !kq2)
+                {
+                    HopDongThuePhong hdnew = new HopDongThuePhong();
+                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                    hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
+                    hdnew.ngay_lap = ngayLap;
+                    hdnew.ngay_bat_dau_thue = ngayBD;
+                    hdnew.ngay_ket_thuc_thue = ngayKT;
+                    hdnew.tienthu = (int)tienThu;
+                    hdnew.trangthai = trangThai;
+
+                    qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
+                    qlktx.SubmitChanges();
+                    return 2;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+        }
+
+        public double tinhTienThu(DateTime ngayBatDau, DateTime ngayKetThuc, string  tenLoaiPhong)
         {
             int soThang = ((ngayKetThuc.Year - ngayBatDau.Year) * 12) + (ngayKetThuc.Month - ngayBatDau.Month);
             double tienThu = 0;
-            double tienPhong = qlp.layGiaTienPhong(maPhong);
+            double tienPhong = qlp.layGiaTienPhong(tenLoaiPhong);
             if (soThang > 12 || soThang < 0)
             {
                 return -1;
@@ -42,12 +105,12 @@ namespace thuVienControls
             return tienThu;
         }
 
-        public bool CapNhatHopDongThuePhong(int maHD, int maPhong,DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, string trangThai)
+        public bool CapNhatHopDongThuePhong(int maHD, string tenLoaiPhong,DateTime ngayLap, DateTime ngayBatDau, DateTime ngayKetThuc, string trangThai)
         {
             bool kq = false;
             int soThang = ((ngayKetThuc.Year - ngayBatDau.Year) * 12) + (ngayKetThuc.Month - ngayBatDau.Month);
             double tienThu = 0;
-            double tienPhong = qlp.layGiaTienPhong(maPhong);
+            double tienPhong = qlp.layGiaTienPhong(tenLoaiPhong);
             if (soThang > 12 || soThang < 0)
             {
                 kq = false;

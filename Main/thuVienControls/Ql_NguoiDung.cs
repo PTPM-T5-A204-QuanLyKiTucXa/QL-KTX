@@ -10,6 +10,7 @@ namespace thuVienControls
 {
     public class Ql_NguoiDung
     {
+        QL_KTXDataContext QL_KTX = new QL_KTXDataContext();
         public Ql_NguoiDung()
         {
 
@@ -36,7 +37,7 @@ namespace thuVienControls
         }
         public int check_user(string user, string pass)
         {
-            string cauLenh = "select * from NguoiDung where ten_nguoi_dung ='" + user + "' and mat_khau ='" + pass + "'";
+            string cauLenh = "select * from NguoiDung where ten_nguoi_dung ='" + user + "' and mat_khau ='" + pass + "' and vai_tro_id='1'";
             SqlDataAdapter da_checkuser = new SqlDataAdapter(cauLenh, Properties.Settings.Default.LTWNCConn);
             DataTable dt = new DataTable();
             da_checkuser.Fill(dt);
@@ -73,7 +74,24 @@ namespace thuVienControls
             thuVienControls.Properties.Settings.Default.Save();
         }
 
-
-
+        public bool themTaiKhoanSinhVien(string maSV, string sdt)
+        {
+            var nguoiDung = QL_KTX.NguoiDungs.Where(t => t.ten_nguoi_dung == maSV).FirstOrDefault();
+            if (nguoiDung != null)
+            {
+                return false;
+            }
+            else
+            {
+                NguoiDung nd = new NguoiDung();
+                nd.ten_nguoi_dung = maSV;
+                nd.mat_khau = sdt;
+                nd.trang_thai = true;
+                nd.vai_tro_id = 2;
+                QL_KTX.NguoiDungs.InsertOnSubmit(nd);
+                QL_KTX.SubmitChanges();
+            }
+            return true;
+        }
     }
 }

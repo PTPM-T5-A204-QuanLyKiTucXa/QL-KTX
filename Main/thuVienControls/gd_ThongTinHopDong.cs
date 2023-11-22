@@ -14,6 +14,7 @@ namespace thuVienControls
     {
 
         QL_HopDongThuePhong qlhd = new QL_HopDongThuePhong();
+        QL_Phong qlp = new QL_Phong();
         public gd_ThongTinHopDong()
         {
             InitializeComponent();
@@ -52,9 +53,9 @@ namespace thuVienControls
             {
                 int maHD = int.Parse(txt_maHD.Text.ToString());
                 HopDongThuePhong hd = qlhd.loadHopDongThuePhong(maHD);
-                int maPhong = int.Parse(hd.phong_id.ToString());
+                string tenLoaiPhong = qlp.layLoaiPhong(int.Parse(hd.phong_id.ToString()));
 
-                if (qlhd.CapNhatHopDongThuePhong(maHD,maPhong,dtp_ngayLap.Value,dtp_ngayBatDau.Value, dtp_ngayKetThuc.Value,cbx_trangThai.SelectedItem.ToString()))
+                if (qlhd.CapNhatHopDongThuePhong(maHD, tenLoaiPhong, dtp_ngayLap.Value,dtp_ngayBatDau.Value, dtp_ngayKetThuc.Value,cbx_trangThai.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Cập nhật hóa đơn thành công");
                 }

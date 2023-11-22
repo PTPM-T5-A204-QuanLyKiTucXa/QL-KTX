@@ -11,26 +11,26 @@ namespace thuVienControls
         Ql_SinhVien QL_sv = new Ql_SinhVien();
         double[][] moHinhHuanLuyen =
               {
-                    new double[] { 1, 1 },
-                    new double[] { 2, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 2 },
-                    new double[] { 1, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 1 },
-                    new double[] { 1, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 2 },
-                    new double[] { 1, 1 },
-                    new double[] { 2, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 2 },
-                    new double[] { 1, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 1 },
-                    new double[] { 1, 1 },
-                    new double[] { 1, 2 },
-                    new double[] { 2, 2 }
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 1 },
+                    new double[] { 2 },
+                    new double[] { 1 },
+                    new double[] { 1 },
+                    new double[] { 2 }
                 };
         public ThuatToanKMeans()
         {
@@ -63,22 +63,15 @@ namespace thuVienControls
             {
                 gt = 2;
             }
-            if (loaiPhong == "Phòng 2 người")
-            {
-                lp = 1;
-            }
-            else
-            {
-                lp = 2;
-            }
+
             double[][] sinhVienData = {
                 // Thay thế các giá trị sau đây bằng giới tính và loại phòng của sinh viên cụ thể
-                new double[] { gt, lp },
+                new double[] { gt }
             };
 
             ThuatToanKMeans tt = new ThuatToanKMeans();
             QL_Phong qlp = new QL_Phong();
-            List<string> dsten = qlp.LayDSTenPhong();
+            List<string> dsten = qlp.LayDSTenPhongTheoLoaiPhong(loaiPhong);
             string[] tenPhong = dsten.ToArray();
             int[] phong = tt.ttKmean(moHinhHuanLuyen, sinhVienData, moHinhHuanLuyen.Length);
 

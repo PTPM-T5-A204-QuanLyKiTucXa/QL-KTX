@@ -13,6 +13,7 @@ namespace thuVienControls
     public partial class Form_ThongTinSinhVien : Form
     {
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        Ql_NguoiDung qlnd = new Ql_NguoiDung();
         private string MaSV;
         public Form_ThongTinSinhVien()
         {
@@ -87,12 +88,39 @@ namespace thuVienControls
 
         private void btn_duyet_Click(object sender, EventArgs e)
         {
+            string maSV = txt_maSV.Text;
+            string sdt = txt_sdt.Text;
+            DialogResult r = MessageBox.Show("Xác nhận duyệt đơn đăng ký?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                if (qlnd.themTaiKhoanSinhVien(maSV, sdt))
+                {
+                    qlsv.capNhatTrangThai(maSV, "Đã duyệt");
+                    MessageBox.Show("Thao tác thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thao tác thất bại, tài khoản đã tồn tại trong hệ thống");
+                }
+            }
 
         }
 
         private void btn_khongDuyet_Click(object sender, EventArgs e)
         {
-
+            string maSV = txt_maSV.Text;
+            DialogResult r = MessageBox.Show("Xác nhận không duyệt đơn đăng ký?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                if (qlsv.xoaSinhVienKhongDuyet(maSV))
+                {
+                    MessageBox.Show("Thao tác thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thao tác thất bại");
+                }
+            }
         }
     }
 }
