@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>D:\file_BT_TH_HQTCSDL\Máy tính\XuatBaoCaoWordBangMailMergeAspose-main\Dll\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="s, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\thuVienControls\bin\Debug\s.dll</HintPath>
@@ -160,6 +163,7 @@
     <Compile Include="Form_ThongTinSuCo.Designer.cs">
       <DependentUpon>Form_ThongTinSuCo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\ReportExtensionMethod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testKM.cs">
@@ -246,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Template\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

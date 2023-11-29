@@ -123,27 +123,89 @@ namespace thuVienControls
             string email = txt_email.Text;
             string trangThai = cbx_trangThai.Text;
             string tienThu = txt_tienThu.Text;
-           DialogResult r=MessageBox.Show("Bạn muốn lập hợp đồng cho sinh viên "+txt_tenSV.Text+" ?","Thông Báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(r==DialogResult.Yes) 
+            Ql_SinhVien ql_sv=new Ql_SinhVien();
+            if (ql_sv.IsEmailValid(txt_email.Text))
             {
-                int kq = qlhd.lapHopDongThuePhong(masv, hoTen, ngaySinh, cccd, gioiTinh, loaiPhong, sdt, diaChi, email, ngayLap, startDate, endDate, trangThai, double.Parse(tienThu));
-                if (kq == 0)
+                DialogResult r = MessageBox.Show("Bạn muốn lập hợp đồng cho sinh viên " + txt_tenSV.Text + " ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Không thể lập hợp đồng do sinh viên đang có hợp đồng còn giá trị!");
-                }
-                else if (kq == 1)
-                {
-                    MessageBox.Show("Lập hợp đồng thất bại");
+                    int kq = qlhd.lapHopDongThuePhong(masv, hoTen, ngaySinh, cccd, gioiTinh, loaiPhong, sdt, diaChi, email, ngayLap, startDate, endDate, trangThai, double.Parse(tienThu));
+                    if (kq == 0)
+                    {
+                        MessageBox.Show("Không thể lập hợp đồng do sinh viên đang có hợp đồng còn giá trị!");
+                    }
+                    else if (kq == 1)
+                    {
+                        MessageBox.Show("Lập hợp đồng thất bại");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lập hợp đồng thành công");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lập hợp đồng thành công");
+                    MessageBox.Show("Hủy thành công !");
                 }
             }
             else
             {
-                MessageBox.Show("Hủy thành công !");
+                MessageBox.Show("Email nhập sai rồi!");
             }    
+        }
+
+        private void txt_maSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_tenSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_CCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || txt_CCCD.Text.Length >= 12)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_diaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txt_tienThu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

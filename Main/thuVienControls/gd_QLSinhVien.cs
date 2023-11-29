@@ -16,8 +16,7 @@ namespace thuVienControls
         QL_KTXDataContext QL_KTX = new QL_KTXDataContext();
         Ql_SinhVien qlsv = new Ql_SinhVien();
         string massv;
-        DataTable dt=new DataTable();
-       
+        DataGridView dgv=new DataGridView();
         public string Massv { get => massv; set => massv = value; }
 
         public gd_QLSinhVien()
@@ -83,7 +82,7 @@ namespace thuVienControls
           themSVClick?.Invoke(this, e);
         }
 
-
+      
         public DataGridView GetDataGrid()
         {
             return grid_dssv;
@@ -93,6 +92,17 @@ namespace thuVienControls
         private void grid_dssv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewCellClick?.Invoke(this, e);
+        }
+        
+        private void btn_tailai_Click(object sender, EventArgs e)
+        {
+            grid_dssv.DataSource = qlsv.loadDanhSachSinhVien();
+            cbx_trangThai.SelectedIndex = 0;
+        }
+        public event EventHandler laphopdong_Click;
+        private void btn_laphopdong_Click(object sender, EventArgs e)
+        {
+            laphopdong_Click?.Invoke(this, e);
         }
 
 

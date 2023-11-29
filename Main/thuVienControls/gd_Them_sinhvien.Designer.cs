@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_masket_ngaysinh = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txt_masket_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,17 +80,6 @@
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ngày sinh";
-            // 
-            // txt_masket_ngaysinh
-            // 
-            this.txt_masket_ngaysinh.Culture = new System.Globalization.CultureInfo("vi-VN");
-            this.txt_masket_ngaysinh.Location = new System.Drawing.Point(203, 196);
-            this.txt_masket_ngaysinh.Mask = "00/00/0000";
-            this.txt_masket_ngaysinh.Name = "txt_masket_ngaysinh";
-            this.txt_masket_ngaysinh.Size = new System.Drawing.Size(201, 22);
-            this.txt_masket_ngaysinh.TabIndex = 6;
-            this.txt_masket_ngaysinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_masket_ngaysinh.ValidatingType = typeof(System.DateTime);
             // 
             // label4
             // 
@@ -143,6 +132,7 @@
             this.txt_masv.Name = "txt_masv";
             this.txt_masv.Size = new System.Drawing.Size(201, 22);
             this.txt_masv.TabIndex = 13;
+            this.txt_masv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_masv_KeyPress);
             // 
             // txt_hotensv
             // 
@@ -150,6 +140,7 @@
             this.txt_hotensv.Name = "txt_hotensv";
             this.txt_hotensv.Size = new System.Drawing.Size(201, 22);
             this.txt_hotensv.TabIndex = 14;
+            this.txt_hotensv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hotensv_KeyPress);
             // 
             // txt_cccd
             // 
@@ -157,6 +148,7 @@
             this.txt_cccd.Name = "txt_cccd";
             this.txt_cccd.Size = new System.Drawing.Size(201, 22);
             this.txt_cccd.TabIndex = 15;
+            this.txt_cccd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cccd_KeyPress);
             // 
             // txtEmail1
             // 
@@ -171,6 +163,7 @@
             this.txt_sodienthoai.Name = "txt_sodienthoai";
             this.txt_sodienthoai.Size = new System.Drawing.Size(201, 22);
             this.txt_sodienthoai.TabIndex = 17;
+            this.txt_sodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sodienthoai_KeyPress);
             // 
             // groupBox1
             // 
@@ -218,6 +211,8 @@
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(200, 22);
             this.txt_diachi.TabIndex = 20;
+            this.txt_diachi.TextChanged += new System.EventHandler(this.txt_diachi_TextChanged);
+            this.txt_diachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diachi_KeyPress);
             // 
             // button1
             // 
@@ -250,10 +245,21 @@
             this.linkLabel1.Text = "Thoát";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // txt_masket_ngaysinh
+            // 
+            this.txt_masket_ngaysinh.CustomFormat = "dd/MM/yyyy";
+            this.txt_masket_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_masket_ngaysinh.Location = new System.Drawing.Point(203, 196);
+            this.txt_masket_ngaysinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_masket_ngaysinh.Name = "txt_masket_ngaysinh";
+            this.txt_masket_ngaysinh.Size = new System.Drawing.Size(201, 22);
+            this.txt_masket_ngaysinh.TabIndex = 25;
+            // 
             // gd_Them_sinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_masket_ngaysinh);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
@@ -270,7 +276,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_masket_ngaysinh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,7 +293,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox txt_masket_ngaysinh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -308,5 +312,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.DateTimePicker txt_masket_ngaysinh;
     }
 }

@@ -40,13 +40,14 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(701, 541);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // Form1
+            // Form_ThongTinPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 541);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "Form_ThongTinPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 

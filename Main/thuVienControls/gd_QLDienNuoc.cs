@@ -116,5 +116,27 @@ namespace thuVienControls
         {
 
         }
+
+        private void txt_soPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void btn_tailai_Click(object sender, EventArgs e)
+        {
+            loadHoaDon();
+            txt_soPhong.Text=string.Empty;
+            cbx_denNam.SelectedItem = 0;
+            cbx_denThang.SelectedItem = 0;
+            cbx_trangThai.SelectedItem = 0;
+            cbx_tuNam.SelectedItem = 0;
+            cbx_tuThang.SelectedItem = 0;
+            cbx_xuatNam.SelectedItem = 0;
+            cbx_xuatThang.SelectedItem = 0;
+        }
     }
 }

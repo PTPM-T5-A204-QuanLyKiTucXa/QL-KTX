@@ -75,8 +75,7 @@ namespace Main
                 string sdt = txt_sdt.Text;
                 string diaChi = txt_diaChi.Text;
                 string email = txt_email.Text;
-                string soPhong = txt_soPhong.Text;
-                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email, soPhong))
+                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email))
                 {
                     MessageBox.Show("Lưu thành công");
                 }

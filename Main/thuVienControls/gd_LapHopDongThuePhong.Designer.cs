@@ -237,6 +237,7 @@ namespace thuVienControls
             this.txt_maSV.Name = "txt_maSV";
             this.txt_maSV.Size = new System.Drawing.Size(160, 22);
             this.txt_maSV.TabIndex = 6;
+            this.txt_maSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_maSV_KeyPress);
             // 
             // txt_CCCD
             // 
@@ -245,6 +246,7 @@ namespace thuVienControls
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(160, 22);
             this.txt_CCCD.TabIndex = 5;
+            this.txt_CCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CCCD_KeyPress);
             // 
             // txt_SDT
             // 
@@ -253,6 +255,7 @@ namespace thuVienControls
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(160, 22);
             this.txt_SDT.TabIndex = 4;
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_diaChi
             // 
@@ -261,6 +264,7 @@ namespace thuVienControls
             this.txt_diaChi.Name = "txt_diaChi";
             this.txt_diaChi.Size = new System.Drawing.Size(497, 22);
             this.txt_diaChi.TabIndex = 3;
+            this.txt_diaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diaChi_KeyPress);
             // 
             // txt_tenSV
             // 
@@ -269,6 +273,7 @@ namespace thuVienControls
             this.txt_tenSV.Name = "txt_tenSV";
             this.txt_tenSV.Size = new System.Drawing.Size(160, 22);
             this.txt_tenSV.TabIndex = 2;
+            this.txt_tenSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tenSV_KeyPress);
             // 
             // panel3
             // 
@@ -400,6 +405,7 @@ namespace thuVienControls
             this.txt_tienThu.Name = "txt_tienThu";
             this.txt_tienThu.Size = new System.Drawing.Size(160, 22);
             this.txt_tienThu.TabIndex = 25;
+            this.txt_tienThu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tienThu_KeyPress);
             // 
             // label12
             // 

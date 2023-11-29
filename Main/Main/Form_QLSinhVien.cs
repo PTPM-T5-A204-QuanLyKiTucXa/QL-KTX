@@ -35,23 +35,28 @@ namespace Main
             flowLayoutPanel1.Controls.Add(gd);
             gd.themSVClick += Gd_themSVClick;
             gd.DataGridViewCellClick += Gd_DataGridViewCellClick;
+            gd.laphopdong_Click += Gd_laphopdong_Click;
 
 
+        }
+
+        private void Gd_laphopdong_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = gd.GetDataGrid().CurrentRow;
+            if (selectedRow != null)
+            {
+                string masv = selectedRow.Cells[0].Value.ToString();
+                Form_LapHopDongThuePhong lap = new Form_LapHopDongThuePhong(masv);
+                lap.Massv = masv;
+                lap.Show();
+            }
         }
 
         private void Gd_DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
          
-            DataGridViewRow selectedRow =gd.GetDataGrid().CurrentRow;
-            if (selectedRow != null)
-            {
-                string masv = selectedRow.Cells[0].Value.ToString();
-                Form_LapHopDongThuePhong lap=new Form_LapHopDongThuePhong(masv);
-                lap.Massv = masv;
-                lap.Show();
-
-             
-            }
+            
+          
         }
 
         private void Gd_themSVClick(object sender, EventArgs e)

@@ -46,11 +46,15 @@ namespace thuVienControls
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+
+
+
             Phong phong = p.loadThongTinPhong(SoPhong);
-            gd_QLPhong ql=new gd_QLPhong(phong);
+            gd_QLPhong ql = new gd_QLPhong(phong);
+            ql.Enabled(true);
             Controlsclick_sua?.Invoke(this, e);
             ql.load_sua(phong);
-
+     
        
         }
 
@@ -59,9 +63,17 @@ namespace thuVienControls
             DialogResult r = MessageBox.Show("Bạn có muốn xóa phòng " + this.SoPhong + " không ?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (r == DialogResult.Yes) 
             {
-                p.xoa_Phong(this.SoPhong);
-                MessageBox.Show("Đã xóa thành công !", "Thông báo", MessageBoxButtons.OK);
-                Controlsclick_xoa?.Invoke(this, e);
+              bool kq= p.xoa_Phong(this.SoPhong);
+                if (kq)
+                {
+                    MessageBox.Show("Đã xóa thành công phòng "+this.SoPhong+"", "Thông báo", MessageBoxButtons.OK);
+                    Controlsclick_xoa?.Invoke(this, e);
+                }
+                else
+                {
+                    MessageBox.Show("Phòng "+this.SoPhong+" hiện đang có người ở không xóa được !", "Thông báo", MessageBoxButtons.OK);
+
+                }
             }
            
         }

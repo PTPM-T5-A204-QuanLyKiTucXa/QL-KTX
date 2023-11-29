@@ -22,15 +22,17 @@ namespace thuVienControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (kiemtra_dulieunhapdu())
+            Ql_SinhVien sv = new Ql_SinhVien();
+            if (kiemtra_dulieunhapdu() && sv.IsEmailValid(txtEmail1.Text))
             {
                 DialogResult result = MessageBox.Show($"Bạn muốn thêm sinh viên {txt_hotensv.Text} này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    Ql_SinhVien sv = new Ql_SinhVien();
-                    DateTime ngaysinh = DateTime.Parse(txt_masket_ngaysinh.Text).Date;
-                   bool kq= sv.TaoMoiSinhVien(
+
+                    DateTime ngaysinh = txt_masket_ngaysinh.Value;
+               
+                    bool kq= sv.TaoMoiSinhVien(
                         txt_masv.Text,
                         txt_hotensv.Text,
                         ngaysinh.Date,
@@ -50,6 +52,10 @@ namespace thuVienControls
                     }    
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ dữ liệu hoặc viết thông tin sai cú pháp ?", "Thông báo", MessageBoxButtons.OK);
+            }    
         }
 
 
@@ -104,6 +110,51 @@ namespace thuVienControls
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
            ThoatClick?.Invoke(this, e);
+        }
+
+        private void txt_masv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_hotensv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_cccd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || txt_cccd.Text.Length >= 12)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_sodienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) ||  txt_sodienthoai.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_diachi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_diachi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

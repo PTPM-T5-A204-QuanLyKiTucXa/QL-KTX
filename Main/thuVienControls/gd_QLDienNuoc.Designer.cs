@@ -63,6 +63,7 @@ namespace thuVienControls
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_tailai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -87,15 +88,15 @@ namespace thuVienControls
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 213);
+            this.panel1.Size = new System.Drawing.Size(1273, 169);
             this.panel1.TabIndex = 0;
             // 
             // btn_loc
             // 
-            this.btn_loc.Location = new System.Drawing.Point(35, 166);
+            this.btn_loc.Location = new System.Drawing.Point(727, 122);
             this.btn_loc.Margin = new System.Windows.Forms.Padding(4);
             this.btn_loc.Name = "btn_loc";
-            this.btn_loc.Size = new System.Drawing.Size(141, 28);
+            this.btn_loc.Size = new System.Drawing.Size(257, 28);
             this.btn_loc.TabIndex = 10;
             this.btn_loc.Text = "Lọc";
             this.btn_loc.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@ namespace thuVienControls
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(453, 82);
+            this.label5.Location = new System.Drawing.Point(652, 81);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
@@ -114,7 +115,7 @@ namespace thuVienControls
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(451, 36);
+            this.label4.Location = new System.Drawing.Point(650, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
@@ -124,7 +125,7 @@ namespace thuVienControls
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 130);
+            this.label3.Location = new System.Drawing.Point(199, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 16);
@@ -134,7 +135,7 @@ namespace thuVienControls
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 82);
+            this.label2.Location = new System.Drawing.Point(208, 81);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 16);
@@ -144,7 +145,7 @@ namespace thuVienControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 36);
+            this.label1.Location = new System.Drawing.Point(130, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 16);
@@ -154,25 +155,25 @@ namespace thuVienControls
             // cbx_denNam
             // 
             this.cbx_denNam.FormattingEnabled = true;
-            this.cbx_denNam.Location = new System.Drawing.Point(528, 79);
+            this.cbx_denNam.Location = new System.Drawing.Point(727, 78);
             this.cbx_denNam.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_denNam.Name = "cbx_denNam";
-            this.cbx_denNam.Size = new System.Drawing.Size(191, 24);
+            this.cbx_denNam.Size = new System.Drawing.Size(257, 24);
             this.cbx_denNam.TabIndex = 4;
             // 
             // cbx_tuNam
             // 
             this.cbx_tuNam.FormattingEnabled = true;
-            this.cbx_tuNam.Location = new System.Drawing.Point(528, 31);
+            this.cbx_tuNam.Location = new System.Drawing.Point(727, 30);
             this.cbx_tuNam.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_tuNam.Name = "cbx_tuNam";
-            this.cbx_tuNam.Size = new System.Drawing.Size(191, 24);
+            this.cbx_tuNam.Size = new System.Drawing.Size(257, 24);
             this.cbx_tuNam.TabIndex = 3;
             // 
             // cbx_denThang
             // 
             this.cbx_denThang.FormattingEnabled = true;
-            this.cbx_denThang.Location = new System.Drawing.Point(184, 127);
+            this.cbx_denThang.Location = new System.Drawing.Point(283, 126);
             this.cbx_denThang.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_denThang.Name = "cbx_denThang";
             this.cbx_denThang.Size = new System.Drawing.Size(211, 24);
@@ -181,7 +182,7 @@ namespace thuVienControls
             // cbx_tuThang
             // 
             this.cbx_tuThang.FormattingEnabled = true;
-            this.cbx_tuThang.Location = new System.Drawing.Point(184, 79);
+            this.cbx_tuThang.Location = new System.Drawing.Point(283, 78);
             this.cbx_tuThang.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_tuThang.Name = "cbx_tuThang";
             this.cbx_tuThang.Size = new System.Drawing.Size(211, 24);
@@ -190,7 +191,7 @@ namespace thuVienControls
             // cbx_trangThai
             // 
             this.cbx_trangThai.FormattingEnabled = true;
-            this.cbx_trangThai.Location = new System.Drawing.Point(184, 32);
+            this.cbx_trangThai.Location = new System.Drawing.Point(283, 31);
             this.cbx_trangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_trangThai.Name = "cbx_trangThai";
             this.cbx_trangThai.Size = new System.Drawing.Size(211, 24);
@@ -198,6 +199,7 @@ namespace thuVienControls
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_tailai);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txt_soPhong);
@@ -205,10 +207,10 @@ namespace thuVienControls
             this.panel2.Controls.Add(this.btn_ghiDienNuoc);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 213);
+            this.panel2.Location = new System.Drawing.Point(0, 169);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1075, 145);
+            this.panel2.Size = new System.Drawing.Size(1273, 145);
             this.panel2.TabIndex = 1;
             // 
             // button2
@@ -239,6 +241,7 @@ namespace thuVienControls
             this.txt_soPhong.Name = "txt_soPhong";
             this.txt_soPhong.Size = new System.Drawing.Size(140, 22);
             this.txt_soPhong.TabIndex = 3;
+            this.txt_soPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soPhong_KeyPress);
             // 
             // btn_suaDonGia
             // 
@@ -269,7 +272,7 @@ namespace thuVienControls
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbx_xuatNam);
             this.groupBox1.Controls.Add(this.cbx_xuatThang);
-            this.groupBox1.Location = new System.Drawing.Point(4, 7);
+            this.groupBox1.Location = new System.Drawing.Point(211, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -280,7 +283,7 @@ namespace thuVienControls
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(437, 21);
+            this.button1.Location = new System.Drawing.Point(568, 23);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 28);
@@ -291,7 +294,7 @@ namespace thuVienControls
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(232, 27);
+            this.label7.Location = new System.Drawing.Point(295, 30);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 16);
@@ -301,7 +304,7 @@ namespace thuVienControls
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 27);
+            this.label6.Location = new System.Drawing.Point(64, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
@@ -311,7 +314,7 @@ namespace thuVienControls
             // cbx_xuatNam
             // 
             this.cbx_xuatNam.FormattingEnabled = true;
-            this.cbx_xuatNam.Location = new System.Drawing.Point(279, 23);
+            this.cbx_xuatNam.Location = new System.Drawing.Point(342, 26);
             this.cbx_xuatNam.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_xuatNam.Name = "cbx_xuatNam";
             this.cbx_xuatNam.Size = new System.Drawing.Size(149, 24);
@@ -320,7 +323,7 @@ namespace thuVienControls
             // cbx_xuatThang
             // 
             this.cbx_xuatThang.FormattingEnabled = true;
-            this.cbx_xuatThang.Location = new System.Drawing.Point(83, 23);
+            this.cbx_xuatThang.Location = new System.Drawing.Point(120, 23);
             this.cbx_xuatThang.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_xuatThang.Name = "cbx_xuatThang";
             this.cbx_xuatThang.Size = new System.Drawing.Size(140, 24);
@@ -330,10 +333,10 @@ namespace thuVienControls
             // 
             this.panel3.Controls.Add(this.dgv_dsHD);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 358);
+            this.panel3.Location = new System.Drawing.Point(0, 314);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1075, 504);
+            this.panel3.Size = new System.Drawing.Size(1273, 287);
             this.panel3.TabIndex = 2;
             // 
             // dgv_dsHD
@@ -355,7 +358,7 @@ namespace thuVienControls
             this.dgv_dsHD.Name = "dgv_dsHD";
             this.dgv_dsHD.RowHeadersWidth = 51;
             this.dgv_dsHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_dsHD.Size = new System.Drawing.Size(1075, 504);
+            this.dgv_dsHD.Size = new System.Drawing.Size(1273, 287);
             this.dgv_dsHD.TabIndex = 0;
             this.dgv_dsHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dsHD_CellContentClick);
             this.dgv_dsHD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_dsHD_MouseDoubleClick);
@@ -416,6 +419,17 @@ namespace thuVienControls
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             // 
+            // btn_tailai
+            // 
+            this.btn_tailai.Location = new System.Drawing.Point(1113, 8);
+            this.btn_tailai.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_tailai.Name = "btn_tailai";
+            this.btn_tailai.Size = new System.Drawing.Size(91, 113);
+            this.btn_tailai.TabIndex = 11;
+            this.btn_tailai.Text = "Tải Lại";
+            this.btn_tailai.UseVisualStyleBackColor = true;
+            this.btn_tailai.Click += new System.EventHandler(this.btn_tailai_Click);
+            // 
             // gd_QLDienNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,7 +439,7 @@ namespace thuVienControls
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "gd_QLDienNuoc";
-            this.Size = new System.Drawing.Size(1075, 862);
+            this.Size = new System.Drawing.Size(1273, 601);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -474,5 +488,6 @@ namespace thuVienControls
         private System.Windows.Forms.Button btn_suaDonGia;
         private System.Windows.Forms.Button btn_ghiDienNuoc;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_tailai;
     }
 }

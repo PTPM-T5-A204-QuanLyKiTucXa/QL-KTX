@@ -155,6 +155,12 @@ namespace thuVienControls
             return phong.LoaiPhong.ten_loai_phong;
         }
 
+        public int lay_maloaiphong(string tenloai)
+        {
+            var phong = QL_KTX.LoaiPhongs.Where(t => t.ten_loai_phong.Contains(tenloai)).FirstOrDefault();
+            return phong.loai_phong_id;
+        }
+
         public string TimPhongTrong(string[] tenPhong, int soNguoiToiDa)
         {
             foreach (var phong in tenPhong)
@@ -173,8 +179,19 @@ namespace thuVienControls
             var ls=QL_KTX.LoaiPhongs.Select(p => p.loai_phong_id).Distinct().ToList();
             return ls;
         }
-        public List<Phong> them_Phong(string sophong,int tang, string trangthai,int loaiphong)
+
+        public List<string> laytenloaiPhong_khongtrung()
         {
+            var ls = QL_KTX.LoaiPhongs.Select(p => p.ten_loai_phong).Distinct().ToList();
+            return ls;
+        }
+        public bool them_Phong(string sophong,int tang, string trangthai,int loaiphong)
+        {
+            var kt=QL_KTX.Phongs.Where(p=>p.so_phong.Contains(sophong)).Select(p=>p).FirstOrDefault();
+            if(kt!=null)
+            {
+                return false;
+            }    
             Phong phong = new Phong
             {
                 so_phong = sophong,
@@ -182,39 +199,41 @@ namespace thuVienControls
                 trang_thai = trangthai,
                 loai_phong_id = loaiphong
             };
-
             QL_KTX.Phongs.InsertOnSubmit(phong);
             QL_KTX.SubmitChanges();
 
-            return QL_KTX.Phongs.ToList();
+            return true;
         }
-        public List<Phong> update_Phong(string sophong, int tang, string trangthai, int loaiphong)
+        public bool update_Phong(string sophong, int loaiphong)
         {
- 
             Phong phongToUpdate = QL_KTX.Phongs.FirstOrDefault(p => p.so_phong ==sophong);
 
-            if (phongToUpdate != null)
+            if(phongToUpdate!=null)
             {
-      
-                phongToUpdate.so_phong = sophong;
-                phongToUpdate.tang = tang;
-                phongToUpdate.trang_thai = trangthai;
+               
                 phongToUpdate.loai_phong_id = loaiphong;
                 QL_KTX.SubmitChanges();
+                return true;
+            }    
+            else 
+            {
+                return false;
             }
-            return QL_KTX.Phongs.ToList();
+           
         }
 
-        public List<Phong> xoa_Phong(string phongCanXoa)
+        public bool  xoa_Phong(string phongCanXoa)
         {
+            
             Phong phongToDelete = QL_KTX.Phongs.FirstOrDefault(p => p.so_phong == phongCanXoa);
-
-            if (phongToDelete != null)
+            int soluong = int.Parse(DemSoSinhVienTrongPhong(phongCanXoa));
+            if(phongToDelete!=null && soluong==0)
             {
                 QL_KTX.Phongs.DeleteOnSubmit(phongToDelete);
                 QL_KTX.SubmitChanges();
-            }
-            return QL_KTX.Phongs.ToList();
+                return true;
+            }    
+            return false;
         }
         public List<Phong> LocTheoTrangThai(string trangthai)
         {

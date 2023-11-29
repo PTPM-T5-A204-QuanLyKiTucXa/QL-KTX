@@ -30,20 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.phanQuyenDKDataGridView = new System.Windows.Forms.DataGridView();
-            this.vaiTroDataGridView = new System.Windows.Forms.DataGridView();
-            this.btn_luu = new System.Windows.Forms.Button();
-            this.vaiTroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phanQuyenDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vaiTroDataGridView = new System.Windows.Forms.DataGridView();
+            this.vaiTroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_luu = new System.Windows.Forms.Button();
             this.phanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,116 +47,68 @@
             this.phanQuyenDKDataGridView.AutoGenerateColumns = false;
             this.phanQuyenDKDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.phanQuyenDKDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phanQuyenDKDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn1});
             this.phanQuyenDKDataGridView.DataSource = this.phanQuyenDKBindingSource;
-            this.phanQuyenDKDataGridView.Location = new System.Drawing.Point(305, 118);
+            this.phanQuyenDKDataGridView.Location = new System.Drawing.Point(663, 64);
+            this.phanQuyenDKDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phanQuyenDKDataGridView.Name = "phanQuyenDKDataGridView";
-            this.phanQuyenDKDataGridView.Size = new System.Drawing.Size(346, 302);
+            this.phanQuyenDKDataGridView.RowHeadersWidth = 51;
+            this.phanQuyenDKDataGridView.Size = new System.Drawing.Size(518, 409);
             this.phanQuyenDKDataGridView.TabIndex = 2;
+            // 
+            // phanQuyenDKBindingSource
+            // 
+            this.phanQuyenDKBindingSource.DataMember = "PhanQuyenDK";
             // 
             // vaiTroDataGridView
             // 
             this.vaiTroDataGridView.AutoGenerateColumns = false;
             this.vaiTroDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vaiTroDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vaiTroDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
             this.vaiTroDataGridView.DataSource = this.vaiTroBindingSource;
-            this.vaiTroDataGridView.Location = new System.Drawing.Point(-1, 118);
+            this.vaiTroDataGridView.Location = new System.Drawing.Point(50, 91);
+            this.vaiTroDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vaiTroDataGridView.Name = "vaiTroDataGridView";
-            this.vaiTroDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.vaiTroDataGridView.RowHeadersWidth = 51;
+            this.vaiTroDataGridView.Size = new System.Drawing.Size(529, 318);
             this.vaiTroDataGridView.TabIndex = 3;
             this.vaiTroDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vaiTroDataGridView_CellClick);
-            // 
-            // btn_luu
-            // 
-            this.btn_luu.Location = new System.Drawing.Point(0, 364);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(299, 23);
-            this.btn_luu.TabIndex = 4;
-            this.btn_luu.Text = "Lưu";
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // vaiTroBindingSource
             // 
             this.vaiTroBindingSource.DataMember = "VaiTro";
             // 
-            // ql_KTX_DATASET
+            // btn_luu
             // 
-            // 
-            // phanQuyenDKBindingSource
-            // 
-            this.phanQuyenDKBindingSource.DataMember = "PhanQuyenDK";
-            // 
-            // phanQuyenDKTableAdapter
-            // 
-            // 
-            // tableAdapterManager
-            // 
-            // 
-            // phanQuyenTableAdapter
-            // 
-            // 
-            // vaiTroTableAdapter
-            // 
+            this.btn_luu.Location = new System.Drawing.Point(103, 456);
+            this.btn_luu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(399, 28);
+            this.btn_luu.TabIndex = 4;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // phanQuyenBindingSource
             // 
             this.phanQuyenBindingSource.DataMember = "PhanQuyen";
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "vai_tro_id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Vai trò";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ten_vai_tro";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên vai trò";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Ma_Man_Hinh";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã màn hình";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Ten_Man_Hinh";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên màn hình";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Co_Quyen";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Có quyền";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
             // Form_PhanQuyen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 680);
+            this.ClientSize = new System.Drawing.Size(1255, 554);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.vaiTroDataGridView);
             this.Controls.Add(this.phanQuyenDKDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_PhanQuyen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_PhanQuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vaiTroBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).EndInit();
             this.ResumeLayout(false);
 

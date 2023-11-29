@@ -38,6 +38,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_laphopdong = new System.Windows.Forms.Button();
+            this.btn_tailai = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbx_trangThai = new System.Windows.Forms.ComboBox();
@@ -65,7 +67,7 @@
             this.grid_dssv.Name = "grid_dssv";
             this.grid_dssv.RowHeadersWidth = 72;
             this.grid_dssv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_dssv.Size = new System.Drawing.Size(1212, 833);
+            this.grid_dssv.Size = new System.Drawing.Size(1273, 489);
             this.grid_dssv.TabIndex = 0;
             this.grid_dssv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_dssv_CellContentClick);
             this.grid_dssv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.grid_dssv_MouseDoubleClick);
@@ -120,21 +122,23 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1212, 930);
+            this.panel1.Size = new System.Drawing.Size(1273, 601);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.grid_dssv);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 97);
+            this.panel3.Location = new System.Drawing.Point(0, 112);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1212, 833);
+            this.panel3.Size = new System.Drawing.Size(1273, 489);
             this.panel3.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_laphopdong);
+            this.panel2.Controls.Add(this.btn_tailai);
             this.panel2.Controls.Add(this.btn_them);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cbx_trangThai);
@@ -143,8 +147,28 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1212, 97);
+            this.panel2.Size = new System.Drawing.Size(1273, 112);
             this.panel2.TabIndex = 0;
+            // 
+            // btn_laphopdong
+            // 
+            this.btn_laphopdong.Location = new System.Drawing.Point(905, 33);
+            this.btn_laphopdong.Name = "btn_laphopdong";
+            this.btn_laphopdong.Size = new System.Drawing.Size(149, 46);
+            this.btn_laphopdong.TabIndex = 6;
+            this.btn_laphopdong.Text = "Lập hợp đồng";
+            this.btn_laphopdong.UseVisualStyleBackColor = true;
+            this.btn_laphopdong.Click += new System.EventHandler(this.btn_laphopdong_Click);
+            // 
+            // btn_tailai
+            // 
+            this.btn_tailai.Location = new System.Drawing.Point(674, 32);
+            this.btn_tailai.Name = "btn_tailai";
+            this.btn_tailai.Size = new System.Drawing.Size(149, 46);
+            this.btn_tailai.TabIndex = 5;
+            this.btn_tailai.Text = "Tải lại";
+            this.btn_tailai.UseVisualStyleBackColor = true;
+            this.btn_tailai.Click += new System.EventHandler(this.btn_tailai_Click);
             // 
             // btn_them
             // 
@@ -193,7 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "gd_QLSinhVien";
-            this.Size = new System.Drawing.Size(1212, 930);
+            this.Size = new System.Drawing.Size(1273, 601);
             ((System.ComponentModel.ISupportInitialize)(this.grid_dssv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -219,5 +243,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btn_them;
+        private System.Windows.Forms.Button btn_tailai;
+        private System.Windows.Forms.Button btn_laphopdong;
     }
 }

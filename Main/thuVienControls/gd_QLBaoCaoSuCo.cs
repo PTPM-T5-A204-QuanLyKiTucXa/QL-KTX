@@ -47,5 +47,11 @@ namespace thuVienControls
             string trangThai = cbx_trangThai.SelectedItem.ToString();
             dgv_dsSuCo.DataSource = qlsuCo.loadLocDanhSachSuCo(trangThai, dtp_tuNgay.Value, dtp_denNgay.Value);
         }
+
+        private void btn_tailai_Click(object sender, EventArgs e)
+        {
+            loadDanhSachSuCo();
+            cbx_trangThai.SelectedItem = 0;
+        }
     }
 }

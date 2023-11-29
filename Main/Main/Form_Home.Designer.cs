@@ -41,6 +41,7 @@ namespace Main
             this.quảnLýHợpĐồngThuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoSựCốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_trangchu = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +73,14 @@ namespace Main
             // phânQuyềnToolStripMenuItem
             // 
             this.phânQuyềnToolStripMenuItem.Name = "phânQuyềnToolStripMenuItem";
-            this.phânQuyềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phânQuyềnToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.phânQuyềnToolStripMenuItem.Text = "Phân quyền";
             this.phânQuyềnToolStripMenuItem.Click += new System.EventHandler(this.phânQuyềnToolStripMenuItem_Click);
             // 
             // ngườiDùngToolStripMenuItem
             // 
             this.ngườiDùngToolStripMenuItem.Name = "ngườiDùngToolStripMenuItem";
-            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ngườiDùngToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.ngườiDùngToolStripMenuItem.Text = "Người dùng";
             this.ngườiDùngToolStripMenuItem.Click += new System.EventHandler(this.ngườiDùngToolStripMenuItem_Click);
             // 
@@ -143,15 +144,23 @@ namespace Main
             this.testToolStripMenuItem.Text = "test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
+            // panel_trangchu
+            // 
+            this.panel_trangchu.Location = new System.Drawing.Point(0, 29);
+            this.panel_trangchu.Name = "panel_trangchu";
+            this.panel_trangchu.Size = new System.Drawing.Size(1301, 609);
+            this.panel_trangchu.TabIndex = 6;
+            // 
             // Form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 708);
+            this.ClientSize = new System.Drawing.Size(1301, 637);
+            this.Controls.Add(this.panel_trangchu);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_KTX HUIT";
@@ -176,5 +185,6 @@ namespace Main
         private System.Windows.Forms.ToolStripMenuItem quảnLýHợpĐồngThuêPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoSựCốToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_trangchu;
     }
 }

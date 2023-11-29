@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_email = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbx_gioiTinh = new System.Windows.Forms.ComboBox();
             this.dtp_ngaySinh = new System.Windows.Forms.DateTimePicker();
@@ -48,15 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_email = new thietKeControls.txtEmail();
             this.SuspendLayout();
-            // 
-            // txt_email
-            // 
-            this.txt_email.Location = new System.Drawing.Point(586, 273);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(265, 22);
-            this.txt_email.TabIndex = 39;
             // 
             // label9
             // 
@@ -95,6 +87,7 @@
             this.btn_khongDuyet.TabIndex = 35;
             this.btn_khongDuyet.Text = "Không duyệt";
             this.btn_khongDuyet.UseVisualStyleBackColor = true;
+            this.btn_khongDuyet.Click += new System.EventHandler(this.btn_khongDuyet_Click);
             // 
             // btn_luu
             // 
@@ -114,6 +107,7 @@
             this.txt_diaChi.Name = "txt_diaChi";
             this.txt_diaChi.Size = new System.Drawing.Size(265, 22);
             this.txt_diaChi.TabIndex = 33;
+            this.txt_diaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diaChi_KeyPress);
             // 
             // txt_soPhong
             // 
@@ -122,6 +116,7 @@
             this.txt_soPhong.Name = "txt_soPhong";
             this.txt_soPhong.Size = new System.Drawing.Size(265, 22);
             this.txt_soPhong.TabIndex = 32;
+            this.txt_soPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soPhong_KeyPress);
             // 
             // txt_sdt
             // 
@@ -130,6 +125,7 @@
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(265, 22);
             this.txt_sdt.TabIndex = 31;
+            this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
             // 
             // txt_hoTen
             // 
@@ -138,6 +134,7 @@
             this.txt_hoTen.Name = "txt_hoTen";
             this.txt_hoTen.Size = new System.Drawing.Size(265, 22);
             this.txt_hoTen.TabIndex = 30;
+            this.txt_hoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hoTen_KeyPress);
             // 
             // txt_maSV
             // 
@@ -146,6 +143,7 @@
             this.txt_maSV.Name = "txt_maSV";
             this.txt_maSV.Size = new System.Drawing.Size(265, 22);
             this.txt_maSV.TabIndex = 29;
+            this.txt_maSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_maSV_KeyPress);
             // 
             // btn_duyet
             // 
@@ -156,6 +154,7 @@
             this.btn_duyet.TabIndex = 28;
             this.btn_duyet.Text = "Duyệt";
             this.btn_duyet.UseVisualStyleBackColor = true;
+            this.btn_duyet.Click += new System.EventHandler(this.btn_duyet_Click);
             // 
             // label8
             // 
@@ -237,7 +236,14 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "THÔNG TIN SINH VIÊN";
             // 
-            // Form1
+            // txt_email
+            // 
+            this.txt_email.Location = new System.Drawing.Point(586, 270);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(265, 22);
+            this.txt_email.TabIndex = 40;
+            // 
+            // Form_ThongTinSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,16 +268,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Form_ThongTinSinhVien";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form_ThongTinSinhVien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbx_gioiTinh;
         private System.Windows.Forms.DateTimePicker dtp_ngaySinh;
@@ -291,5 +296,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private thietKeControls.txtEmail txt_email;
     }
 }

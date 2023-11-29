@@ -26,9 +26,10 @@ namespace Main
         {
             gd_QLPhong ql=new gd_QLPhong();
             panel1.Controls.Add(ql);
+            ql.Gd_Controlsclick += Ql_Gd_Controlsclick;
         }
 
-        private void Gd_Controlsclick(object sender, EventArgs e)
+        private void Ql_Gd_Controlsclick(object sender, EventArgs e)
         {
             gd_Phong gd = sender as gd_Phong;
             if (gd != null)
@@ -38,6 +39,8 @@ namespace Main
                 form.Show();
             }
         }
+
+ 
 
         private void Form_DSPhong_Load(object sender, EventArgs e)
         {

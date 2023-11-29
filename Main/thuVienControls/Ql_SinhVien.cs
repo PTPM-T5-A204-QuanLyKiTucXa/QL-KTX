@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace thuVienControls
@@ -115,7 +116,7 @@ namespace thuVienControls
         }
 
 
-        public bool UpdateSinhVien(string ma,string hoten, DateTime ngaysinh, string gioitinh, string sdt, string diachi, string email, string sophong)
+        public bool UpdateSinhVien(string ma,string hoten, DateTime ngaysinh, string gioitinh, string sdt, string diachi, string email)
         {
             var sinhVien = (from sv in QL_KTX.SinhViens where sv.ma_sinh_vien == ma select sv).FirstOrDefault();
             if (sinhVien != null)
@@ -126,27 +127,19 @@ namespace thuVienControls
                 sinhVien.so_dien_thoai = sdt;
                 sinhVien.dia_chi = diachi;
                 sinhVien.email = email;
-                if (kiemTraSinhVienCoTrongPhong(ma, sophong))
-                {
                     QL_KTX.SubmitChanges();
                     return true;
-                }
-                else
-                {
-                    if (QL_Phong.kiemTraSlotPhong(sophong))
-                    {
-                        sinhVien.so_phong = sophong;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Phòng đã đủ người");
-                        return false;
-                    }
-                }
-                QL_KTX.SubmitChanges();
-                return true;
             }
             return false;
+        }
+
+
+
+        public bool IsEmailValid(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            return Regex.IsMatch(email, pattern);
         }
     }
 }

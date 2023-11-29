@@ -41,9 +41,10 @@ namespace Main
             // 
             // btn_thoat
             // 
-            this.btn_thoat.Location = new System.Drawing.Point(357, 186);
+            this.btn_thoat.Location = new System.Drawing.Point(317, 285);
+            this.btn_thoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(112, 23);
+            this.btn_thoat.Size = new System.Drawing.Size(149, 54);
             this.btn_thoat.TabIndex = 15;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
@@ -51,18 +52,20 @@ namespace Main
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(196, 186);
+            this.btn_xoa.Location = new System.Drawing.Point(115, 285);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(112, 23);
+            this.btn_xoa.Size = new System.Drawing.Size(149, 54);
             this.btn_xoa.TabIndex = 14;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.UseVisualStyleBackColor = true;
             // 
             // btn_dangNhap
             // 
-            this.btn_dangNhap.Location = new System.Drawing.Point(41, 186);
+            this.btn_dangNhap.Location = new System.Drawing.Point(216, 218);
+            this.btn_dangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_dangNhap.Name = "btn_dangNhap";
-            this.btn_dangNhap.Size = new System.Drawing.Size(112, 23);
+            this.btn_dangNhap.Size = new System.Drawing.Size(149, 54);
             this.btn_dangNhap.TabIndex = 13;
             this.btn_dangNhap.Text = "Đăng nhập";
             this.btn_dangNhap.UseVisualStyleBackColor = true;
@@ -70,35 +73,40 @@ namespace Main
             // 
             // txt_matKhau
             // 
-            this.txt_matKhau.Location = new System.Drawing.Point(151, 136);
+            this.txt_matKhau.Location = new System.Drawing.Point(181, 157);
+            this.txt_matKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_matKhau.Name = "txt_matKhau";
-            this.txt_matKhau.Size = new System.Drawing.Size(318, 20);
+            this.txt_matKhau.PasswordChar = '*';
+            this.txt_matKhau.Size = new System.Drawing.Size(230, 22);
             this.txt_matKhau.TabIndex = 12;
             this.txt_matKhau.Text = "adminpass";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 139);
+            this.label3.Location = new System.Drawing.Point(31, 161);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "MẬT KHẨU:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 106);
+            this.label2.Location = new System.Drawing.Point(31, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(130, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "TÀI KHOẢN (MSSV):";
             // 
             // txtChiNhapSo1
             // 
-            this.txtChiNhapSo1.Location = new System.Drawing.Point(151, 103);
+            this.txtChiNhapSo1.Location = new System.Drawing.Point(181, 117);
+            this.txtChiNhapSo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChiNhapSo1.Name = "txtChiNhapSo1";
-            this.txtChiNhapSo1.Size = new System.Drawing.Size(318, 20);
+            this.txtChiNhapSo1.Size = new System.Drawing.Size(227, 22);
             this.txtChiNhapSo1.TabIndex = 9;
             this.txtChiNhapSo1.Text = "admin01";
             // 
@@ -107,17 +115,18 @@ namespace Main
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Menu;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(145, 29);
+            this.label1.Location = new System.Drawing.Point(108, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 31);
+            this.label1.Size = new System.Drawing.Size(410, 39);
             this.label1.TabIndex = 8;
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
             // Form_DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 286);
+            this.ClientSize = new System.Drawing.Size(570, 352);
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_dangNhap);
@@ -126,6 +135,7 @@ namespace Main
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtChiNhapSo1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

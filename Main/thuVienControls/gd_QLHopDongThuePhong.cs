@@ -97,5 +97,26 @@ namespace thuVienControls
         {
             dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
         }
+
+        private void txt_maSinhVien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_tailai_Click(object sender, EventArgs e)
+        {
+            loadDanhSachHD();
+            txt_maSinhVien.Text=string.Empty;
+            cbx_denNam.SelectedItem = 0;
+            cbx_denThang.SelectedItem = 0;
+            cbx_trangThai.SelectedItem = 0;
+            cbx_tuNam.SelectedItem = 0;
+            cbx_tuThang.SelectedItem = 0;
+            cbx_xuatNam.SelectedItem = 0;
+            cbx_xuatThang.SelectedItem = 0;
+        }
     }
 }

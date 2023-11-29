@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thietKeControls;
 using thuVienControls;
 
 namespace Main
@@ -53,13 +54,7 @@ namespace Main
             {
                 cbx_gioiTinh.SelectedItem = gioiTinh;
             }
-
-            //if(sv.trang_thai=="Chờ duyệt")
-            //{
-            //    btn_luu.Visible = false;
-            //}
-
-            if (sv.trang_thai == "Đang ở")
+            if (sv.trang_thai == "Đang ở" || sv.trang_thai=="Đã duyệt")
             {
                 btn_duyet.Visible = false;
                 btn_khongDuyet.Visible = false;
@@ -75,8 +70,8 @@ namespace Main
                 string sdt = txt_sdt.Text;
                 string diaChi = txt_diaChi.Text;
                 string email = txt_email.Text;
-                string soPhong = txt_soPhong.Text;
-                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email, soPhong))
+      
+                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email))
                 {
                     MessageBox.Show("Lưu thành công");
                 }
@@ -84,6 +79,82 @@ namespace Main
                 {
                     MessageBox.Show("Lưu thất bại");
                 }
+        }
+
+        private void btn_duyet_Click(object sender, EventArgs e)
+        {
+            Ql_SinhVien ql=new Ql_SinhVien();
+           if(ql.capNhatTrangThai(txt_maSV.Text, "Đã duyệt"))
+            {
+                Ql_NguoiDung qlnd = new Ql_NguoiDung();
+                if(qlnd.themTaiKhoanSinhVien(txt_maSV.Text,txt_sdt.Text))
+                {
+                    MessageBox.Show(txt_hoTen.Text + " được duyệt thành công", "Thông Báo", MessageBoxButtons.OK);
+                    this.Close();
+                }    
+            }   
+           else 
+            {
+                MessageBox.Show(txt_maSV.Text + " duyệt thật bại!", "Thông Báo", MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void btn_khongDuyet_Click(object sender, EventArgs e)
+        {
+            Ql_SinhVien ql= new Ql_SinhVien();
+            if(ql.xoaSinhVienKhongDuyet(txt_maSV.Text))
+            {
+                MessageBox.Show("Sinh viên:"+txt_hoTen.Text+" có mã số sinh viên: "+txt_maSV.Text+"không được duyệt ", "Thông Báo", MessageBoxButtons.OK);
+                this.Close();
+            }    
+        }
+
+        private void Form_ThongTinSinhVien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_maSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txt_hoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_sdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) || txt_sdt.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_soPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_diaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }
