@@ -77,5 +77,13 @@ namespace Main
             form.MdiParent = this;
             form.Show();
         }
+
+        private void ngườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_NguoiDung form =new Form_NguoiDung();
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using thuVienControls;
+
 namespace Main
 {
     public partial class Form_ThongTinPhong : Form
@@ -19,7 +20,6 @@ namespace Main
             InitializeComponent();
             loadThongTin();
         }
-
         public Form_ThongTinPhong(string soPhong)
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Main
             DataGridView dgv = new DataGridView();
             dgv.DataSource = qlp.loadDanhSachSinhVienTheoPhong(this.SoPhong);
             gd.loadGridSinhVien(dgv);
-            flowLayoutPanel1.Controls.Add(gd);            
+            flowLayoutPanel1.Controls.Add(gd);
         }
     }
 }

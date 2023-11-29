@@ -54,7 +54,7 @@ namespace thuVienControls
 
         public string TimPhongPhuHop(string gioiTinh, string loaiPhong)
         {
-            int gt, lp;
+            int gt;
             if(gioiTinh=="Nam")
             {
                 gt = 1;

@@ -13,10 +13,18 @@ namespace Main
     public partial class Form_LapHopDongThuePhong : Form
     {
         gd_LapHopDongThuePhong gd = new gd_LapHopDongThuePhong();
+        string massv;
+        public Form_LapHopDongThuePhong(string masv)
+        {
+            InitializeComponent();
+            gd.load_thongtin(masv);
+            flowLayoutPanel1.Controls.Add(gd);
+        }
         public Form_LapHopDongThuePhong()
         {
             InitializeComponent();
             flowLayoutPanel1.Controls.Add(gd);
         }
+        public string Massv { get => massv; set => massv = value; }
     }
 }

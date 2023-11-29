@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="s, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\thuVienControls\bin\Debug\s.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,8 +46,36 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="thietKeControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\thuVienControls\bin\Debug\thietKeControls.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_NguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NguoiDung.Designer.cs">
+      <DependentUpon>Form_NguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThemSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThemSinhVien.Designer.cs">
+      <DependentUpon>Form_ThemSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThongTinSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThongTinSinhVien.Designer.cs">
+      <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThongTinPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThongTinPhong.Designer.cs">
+      <DependentUpon>Form_ThongTinPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_CauHinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,18 +154,6 @@
     <Compile Include="Form_ThongTinHopDong.Designer.cs">
       <DependentUpon>Form_ThongTinHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ThongTinPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ThongTinPhong.Designer.cs">
-      <DependentUpon>Form_ThongTinPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_ThongTinSinhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ThongTinSinhVien.Designer.cs">
-      <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ThongTinSuCo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +168,18 @@
     <Compile Include="testKM.Designer.cs">
       <DependentUpon>testKM.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_NguoiDung.resx">
+      <DependentUpon>Form_NguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThemSinhVien.resx">
+      <DependentUpon>Form_ThemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThongTinSinhVien.resx">
+      <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThongTinPhong.resx">
+      <DependentUpon>Form_ThongTinPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_CauHinh.resx">
       <DependentUpon>Form_CauHinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,12 +219,6 @@
     <EmbeddedResource Include="Form_ThongTinHopDong.resx">
       <DependentUpon>Form_ThongTinHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ThongTinPhong.resx">
-      <DependentUpon>Form_ThongTinPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ThongTinSinhVien.resx">
-      <DependentUpon>Form_ThongTinSinhVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_ThongTinSuCo.resx">
       <DependentUpon>Form_ThongTinSuCo.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,16 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\thietKeControls\thietKeControls.csproj">
-      <Project>{11C03CC9-E94A-422E-B68F-D6BED1C0B83E}</Project>
-      <Name>thietKeControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\thuVienControls\thuVienControls.csproj">
-      <Project>{39E46E87-09D0-4AF2-8048-C4079F97C740}</Project>
-      <Name>thuVienControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿namespace Main
 {
-    partial class Form_DSPhong
+    partial class Form_ThemSinhVien
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,21 @@
             // 
             // panel1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1101, 709);
+            this.panel1.Size = new System.Drawing.Size(451, 661);
             this.panel1.TabIndex = 0;
             // 
-            // Form_DSPhong
+            // Form_ThemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 708);
+            this.ClientSize = new System.Drawing.Size(451, 661);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form_DSPhong";
+            this.Name = "Form_ThemSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form_DSPhong_Load);
+            this.Text = "Form_ThemSinhVien";
             this.ResumeLayout(false);
 
         }

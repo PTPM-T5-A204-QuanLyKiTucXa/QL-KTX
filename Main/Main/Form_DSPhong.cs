@@ -18,24 +18,14 @@ namespace Main
         {
             InitializeComponent();
             loadPhong();
-            // Khởi tạo biến thành viên
+            
             
         }
 
         public void loadPhong()
         {
-            List<Phong> phongs = qlp.loadDSPhong();
-            foreach(Phong p in phongs)
-            {
-                gd_Phong gd = new gd_Phong();
-                //gd.Width = 250;
-                //gd.Height = 250;
-                gd.BackColor = Color.Aqua;
-                gd.loadThongTinPhong(p.so_phong, p.LoaiPhong.ten_loai_phong, qlp.DemSoSinhVienTrongPhong(p.so_phong));
-                gd.Controlsclick += Gd_Controlsclick; ; ;
-                gd.SoPhong = p.so_phong;
-                flowLayoutPanel1.Controls.Add(gd);
-            }
+            gd_QLPhong ql=new gd_QLPhong();
+            panel1.Controls.Add(ql);
         }
 
         private void Gd_Controlsclick(object sender, EventArgs e)

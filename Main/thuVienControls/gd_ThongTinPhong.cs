@@ -31,5 +31,10 @@ namespace thuVienControls
         {
             grid_sinhVien.DataSource = dgv.DataSource;
         }
+
+        private void grid_sinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main;
 
 namespace thuVienControls
 {
@@ -14,9 +15,20 @@ namespace thuVienControls
     {
         QL_KTXDataContext QL_KTX = new QL_KTXDataContext();
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        string massv;
+        DataTable dt=new DataTable();
+       
+        public string Massv { get => massv; set => massv = value; }
+
         public gd_QLSinhVien()
         {
             InitializeComponent();
+            Load += Gd_QLSinhVien_Load;
+        }
+
+        private void Gd_QLSinhVien_Load(object sender, EventArgs e)
+        {
+            
         }
 
         public void loadGridSinhVien(DataGridView dgv)
@@ -38,6 +50,7 @@ namespace thuVienControls
             string trangThai = cbx_trangThai.SelectedItem.ToString();
             if(trangThai=="Tất cả")
             {
+
                 grid_dssv.DataSource = qlsv.loadDanhSachSinhVien();
             }
             else if (trangThai == "Chờ duyệt")
@@ -60,9 +73,35 @@ namespace thuVienControls
             if (selectedRow != null)
             {
                 string masv = selectedRow.Cells[0].Value.ToString();
-                Form_ThongTinSinhVien form = new Form_ThongTinSinhVien(masv);
-                form.Show();
+                Form_ThongTinSinhVien frm=new Form_ThongTinSinhVien(masv);
+                frm.Show();
             }
         }
+        public event EventHandler themSVClick;
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+          themSVClick?.Invoke(this, e);
+        }
+
+
+        public DataGridView GetDataGrid()
+        {
+            return grid_dssv;
+        }
+
+        public event EventHandler<DataGridViewCellEventArgs> DataGridViewCellClick;
+        private void grid_dssv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellClick?.Invoke(this, e);
+        }
+
+
+
+
+
+        //--------------------------------------------------------------------
+
+
+
     }
 }

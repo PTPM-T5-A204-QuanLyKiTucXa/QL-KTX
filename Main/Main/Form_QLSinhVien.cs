@@ -13,21 +13,51 @@ namespace Main
     public partial class Form_QLSinhVien : Form
     {
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        gd_QLSinhVien gd = new gd_QLSinhVien();
+        gd_LapHopDongThuePhong gd_lhd=new gd_LapHopDongThuePhong();
+        DataGridView dgv = new DataGridView();
         public Form_QLSinhVien()
         {
             InitializeComponent();
             loadDSSinhVien();
+           
         }
+
+
 
         public void loadDSSinhVien()
         {
-            gd_QLSinhVien gd = new gd_QLSinhVien();
-            DataGridView dgv = new DataGridView();
+
             dgv.DataSource = qlsv.loadDanhSachSinhVien();
             gd.loadGridSinhVien(dgv);
             gd.loadCbxTrangThai();
             
             flowLayoutPanel1.Controls.Add(gd);
+            gd.themSVClick += Gd_themSVClick;
+            gd.DataGridViewCellClick += Gd_DataGridViewCellClick;
+
+
+        }
+
+        private void Gd_DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
+            DataGridViewRow selectedRow =gd.GetDataGrid().CurrentRow;
+            if (selectedRow != null)
+            {
+                string masv = selectedRow.Cells[0].Value.ToString();
+                Form_LapHopDongThuePhong lap=new Form_LapHopDongThuePhong(masv);
+                lap.Massv = masv;
+                lap.Show();
+
+             
+            }
+        }
+
+        private void Gd_themSVClick(object sender, EventArgs e)
+        {
+           Form_ThemSinhVien frm=new Form_ThemSinhVien();
+            frm.Show();
         }
     }
 }

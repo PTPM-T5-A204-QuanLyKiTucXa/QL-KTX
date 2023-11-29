@@ -111,5 +111,10 @@ namespace thuVienControls
         {
             dgv_dsHD.DataSource = qldn.loadDSHoaDonDienNuocTheoSP(txt_soPhong.Text.ToString());
         }
+
+        private void dgv_dsHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

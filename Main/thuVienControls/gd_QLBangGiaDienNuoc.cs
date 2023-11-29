@@ -71,7 +71,6 @@ namespace thuVienControls
             huyClick?.Invoke(this, e);
         }
 
-        public event EventHandler themNacClick;
         private void button3_Click(object sender, EventArgs e)
         {
             double gia = double.Parse(txt_DonGia.Text);

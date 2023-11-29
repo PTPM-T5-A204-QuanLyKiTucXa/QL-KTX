@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuVienControls;
 
-namespace thuVienControls
+namespace Main
 {
     public partial class Form_ThongTinSinhVien : Form
     {
         Ql_SinhVien qlsv = new Ql_SinhVien();
-        Ql_NguoiDung qlnd = new Ql_NguoiDung();
         private string MaSV;
         public Form_ThongTinSinhVien()
         {
@@ -21,15 +21,15 @@ namespace thuVienControls
             loadCBXGioiTinh();
             loadSinhVien();
         }
-
         public Form_ThongTinSinhVien(string masv)
-        { 
+        {
             InitializeComponent();
             this.MaSV = masv;
             loadCBXGioiTinh();
             loadSinhVien();
-            
+
         }
+
 
         public void loadCBXGioiTinh()
         {
@@ -59,7 +59,7 @@ namespace thuVienControls
             //    btn_luu.Visible = false;
             //}
 
-            if(sv.trang_thai == "Đang ở")
+            if (sv.trang_thai == "Đang ở")
             {
                 btn_duyet.Visible = false;
                 btn_khongDuyet.Visible = false;
@@ -68,59 +68,22 @@ namespace thuVienControls
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            string maSV = txt_maSV.Text;
-            string hoTen = txt_hoTen.Text;
-            DateTime ngaysinh = dtp_ngaySinh.Value ;
-            string gioiTinh = cbx_gioiTinh.Text.ToString();
-            string sdt = txt_sdt.Text;
-            string diaChi = txt_diaChi.Text;
-            string email = txt_email.Text;
-            string soPhong = txt_soPhong.Text;
-            if(qlsv.UpdateSinhVien(maSV,hoTen,ngaysinh,gioiTinh,sdt,diaChi,email,soPhong))
-            {
-                MessageBox.Show("Lưu thành công");
-            }
-            else
-            {
-                MessageBox.Show("Lưu thất bại");
-            }
-        }
-
-        private void btn_duyet_Click(object sender, EventArgs e)
-        {
-            string maSV = txt_maSV.Text;
-            string sdt = txt_sdt.Text;
-            DialogResult r = MessageBox.Show("Xác nhận duyệt đơn đăng ký?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (r == DialogResult.Yes)
-            {
-                if (qlnd.themTaiKhoanSinhVien(maSV, sdt))
+                string maSV = txt_maSV.Text;
+                string hoTen = txt_hoTen.Text;
+                DateTime ngaysinh = dtp_ngaySinh.Value;
+                string gioiTinh = cbx_gioiTinh.Text.ToString();
+                string sdt = txt_sdt.Text;
+                string diaChi = txt_diaChi.Text;
+                string email = txt_email.Text;
+                string soPhong = txt_soPhong.Text;
+                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email, soPhong))
                 {
-                    qlsv.capNhatTrangThai(maSV, "Đã duyệt");
-                    MessageBox.Show("Thao tác thành công");
+                    MessageBox.Show("Lưu thành công");
                 }
                 else
                 {
-                    MessageBox.Show("Thao tác thất bại, tài khoản đã tồn tại trong hệ thống");
+                    MessageBox.Show("Lưu thất bại");
                 }
-            }
-
-        }
-
-        private void btn_khongDuyet_Click(object sender, EventArgs e)
-        {
-            string maSV = txt_maSV.Text;
-            DialogResult r = MessageBox.Show("Xác nhận không duyệt đơn đăng ký?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (r == DialogResult.Yes)
-            {
-                if (qlsv.xoaSinhVienKhongDuyet(maSV))
-                {
-                    MessageBox.Show("Thao tác thành công");
-                }
-                else
-                {
-                    MessageBox.Show("Thao tác thất bại");
-                }
-            }
         }
     }
 }

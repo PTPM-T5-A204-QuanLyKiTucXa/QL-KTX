@@ -12,7 +12,7 @@ namespace Main
 {
     public partial class Form_ThongTinHoaDonDienNuoc : Form
     {
-        int maHD;
+ 
         gd_ThongTinHoaDonDienNuoc gd = new gd_ThongTinHoaDonDienNuoc();
         public Form_ThongTinHoaDonDienNuoc()
         {

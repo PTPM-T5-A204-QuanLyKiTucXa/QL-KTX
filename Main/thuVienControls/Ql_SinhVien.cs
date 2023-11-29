@@ -25,6 +25,7 @@ namespace thuVienControls
             else
             {
                 SinhVien sv = new SinhVien();
+                sv.nguoi_dung_id = 2;
                 sv.ma_sinh_vien = maSV;
                 sv.ho_ten = hoTen;
                 sv.ngay_sinh = ngaySinh;
@@ -33,6 +34,7 @@ namespace thuVienControls
                 sv.so_dien_thoai = sdt;
                 sv.dia_chi = diaChi;
                 sv.email = email;
+                sv.trang_thai = "Chờ duyệt";
                 QL_KTX.SinhViens.InsertOnSubmit(sv);
                 QL_KTX.SubmitChanges();
             }
