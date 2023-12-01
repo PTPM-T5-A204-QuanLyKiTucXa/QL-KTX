@@ -47,6 +47,6 @@ public class RegisterRequestDto {
 
     private String soPhong;
 
-
+    private Integer nguoiDung;
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class PhongService implements IPhongService {
+
     @Autowired
     private IPhongRepository PhongRepository;
     @Override

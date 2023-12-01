@@ -213,7 +213,7 @@
                 </div>
                 <!-- email input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerEmail" class="form-control" name="email"/>
+                    <input type="email" id="registerEmail" class="form-control" name="email"/>
                     <label class="form-label" for="registerEmail">Email</label>
                 </div>
 
@@ -275,15 +275,20 @@
                 console.log(response);
                 localStorage.setItem("token", response.jwtToken);
 
-                // window.location.href="home";
-                console.log(response.jwtToken)
-                let role = response.role;
+                if (typeof response === 'string') {
+                    console.log(response);
+                    alert("Đang chờ duyệt");
+                } else {
+                    console.log(response);
+                    localStorage.setItem("token", response.jwtToken);
+                    let role = response.role;
 
-                if(role === "ROLE_USER"){
-                    window.location.href="home";
-                }
-                if (role === "ROLE_ADMIN"){
-                    window.location.href="admin";
+                    if (role === "ROLE_USER") {
+                        window.location.href = "home";
+                    }
+                    if (role === "ROLE_ADMIN") {
+                        window.location.href = "admin";
+                    }
                 }
             },
             error: (e) => {
@@ -305,8 +310,9 @@
         register['soDienThoai'] = $('#registerSoDienThoai').val();
         register['diaChi'] = $('#registerDiaChi').val();
         register['email'] = $('#registerEmail').val();
-        register['trangThai'] = "Chờ Duyệt";
+        register['trangThai'] = "Chờ duyệt";
         register['soPhong'] = "";
+        register['nguoiDung']=2;
 
         $.ajax({
             headers: {

@@ -44,4 +44,6 @@ public class SinhVienInforRequestDto {
 
 
     private String soPhong;
+
+    private Integer nguoiDung;
 }

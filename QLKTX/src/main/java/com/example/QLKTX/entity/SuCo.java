@@ -34,7 +34,7 @@ public class SuCo {
 //    private Phong phongId;
 
     @Column(name = "phong_id")
-    private int phongId;
+    private Integer phongId;
 
     @Column(name = "ngay_bao_cao")
     private Date ngayBaoCao;

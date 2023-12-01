@@ -1,11 +1,7 @@
 package com.example.QLKTX.controller.resful;
 import com.example.QLKTX.dto.*;
-import com.example.QLKTX.entity.SinhVien;
-import com.example.QLKTX.entity.SuCo;
-import com.example.QLKTX.service.IHopDongThuePhongService;
-import com.example.QLKTX.service.IPhongService;
-import com.example.QLKTX.service.ISinhVienService;
-import com.example.QLKTX.service.ISuCoService;
+import com.example.QLKTX.entity.*;
+import com.example.QLKTX.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,18 +18,16 @@ public class HomeRestController {
 
     @Autowired
     private ISinhVienService svService;
-
     @Autowired
     private IHopDongThuePhongService hdService;
-
     @Autowired
     private ISuCoService suCoService;
     @Autowired
     private IPhongService phongService;
-
+    @Autowired
+    IHoaDonDienNuocService hoaDonDienNuocService;
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
-
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
@@ -41,9 +35,9 @@ public class HomeRestController {
     public ResponseEntity<?> createAuthenticationToken(HttpServletRequest request){
         String token = jwtRequestFilter.getJwtFromRequest(request);
         String MaSinhVien = jwtTokenUtil.getMaSinhVienFromJWT(token);
-        SinhVienInforRequestDto sinhvien = new SinhVienInforRequestDto();
-        BeanUtils.copyProperties(svService.getSinhVienbyMaSinhVien(MaSinhVien), sinhvien);
-        return ResponseEntity.ok(sinhvien);
+        SinhVien sv = new SinhVien();
+        sv = svService.getSinhVienbyMaSinhVien(MaSinhVien);
+        return ResponseEntity.ok(sv);
     }
 
     @PutMapping ("/edit")
@@ -63,25 +57,36 @@ public class HomeRestController {
         String MaSinhVien = jwtTokenUtil.getMaSinhVienFromJWT(token);
         SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(MaSinhVien);
         Integer sinhVienId = sinhVien.getSinhVienId();
-        HopDongInfoRequestDto hopdong = new HopDongInfoRequestDto();
-        BeanUtils.copyProperties(hdService.getHopDongThuePhongbySinhVienID(sinhVienId), hopdong);
-
-        return ResponseEntity.ok(hopdong);
+        HopDongThuePhong hd = new HopDongThuePhong();
+        hd=hdService.getHopDongThuePhongbySinhVienID(sinhVienId);
+        return ResponseEntity.ok(hd);
     }
     @PostMapping(value = "/report")
-    public ResponseEntity<?> register(@RequestBody SuCoInfoRequestDto  suCoInfoRequest){
+    public ResponseEntity<?> report(@RequestBody SuCoInfoRequestDto  suCoInfoRequest){
         SuCo suCo = suCoService.report(suCoInfoRequest);
         return ResponseEntity.ok(suCo);
     }
 
     @GetMapping("/room")
-    public ResponseEntity<?> getroom(HttpServletRequest request){
+    public ResponseEntity<?> getRoom(HttpServletRequest request){
         String token = jwtRequestFilter.getJwtFromRequest(request);
         String MaSinhVien = jwtTokenUtil.getMaSinhVienFromJWT(token);
         SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(MaSinhVien);
         String soPhong = sinhVien.getSoPhong();
-        PhongInfoRequestDto phong = new PhongInfoRequestDto();
-        BeanUtils.copyProperties(phongService.getPhongbySoPhongSinhVien(soPhong), phong);
-        return ResponseEntity.ok(phong);
+        Phong p = new Phong();
+        p = phongService.getPhongbySoPhongSinhVien(soPhong);
+        return ResponseEntity.ok(p);
+    }
+    @GetMapping("/bill")
+    public ResponseEntity<?> getElectricityAndWaterBill(HttpServletRequest request){
+        String token = jwtRequestFilter.getJwtFromRequest(request);
+        String MaSinhVien = jwtTokenUtil.getMaSinhVienFromJWT(token);
+        SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(MaSinhVien);
+        String soPhong = sinhVien.getSoPhong();
+        Phong p = new Phong();
+        p = phongService.getPhongbySoPhongSinhVien(soPhong);
+        HoaDonDienNuoc hoaDonDienNuoc = new HoaDonDienNuoc();
+        hoaDonDienNuoc = hoaDonDienNuocService.gethdbyPhongid(p.getPhongId());
+        return ResponseEntity.ok(hoaDonDienNuoc);
     }
 }

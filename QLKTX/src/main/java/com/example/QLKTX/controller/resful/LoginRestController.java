@@ -35,21 +35,27 @@ public class LoginRestController {
 
     @PostMapping(value = "/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginRequestDto authenticationRequest){
-
         String token = svService.login(authenticationRequest);
         String username = jwtTokenUtil.getMaSinhVienFromJWT(token);
-        SinhVien user = svService.getSinhVienbyMaSinhVien(username);
+        SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(username);
         NguoiDung nguoidung = nguoiDungService.getNguoiDungByTenNguoiDung(username);
-        int vaitro = nguoidung.getVaiTroId();
+        String trangthai =sinhVien.getTrangThai();
+        Integer vaitro = nguoidung.getVaiTroId();
         String role="";
-
-        if (vaitro ==1)
+        if (trangthai.equals("Chờ duyệt"))
         {
-             role="ROLE_ADMIN";
+            return  ResponseEntity.ok("Đang chờ duyệt");
         }
-        if (vaitro ==2)
+        if (trangthai.equals("Đang ở")||trangthai.equals("Đã duyệt"))
         {
-             role="ROLE_USER";
+            if (vaitro ==1)
+            {
+                role="ROLE_ADMIN";
+            }
+            if (vaitro ==2)
+            {
+                role="ROLE_USER";
+            }
         }
         return ResponseEntity.ok(new JwtResponse(token,role));
     }
