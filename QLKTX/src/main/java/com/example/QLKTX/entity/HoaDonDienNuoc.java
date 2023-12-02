@@ -47,7 +47,9 @@ public class HoaDonDienNuoc {
     @Column(name = "trang_thai")
     private String trangThai;
 
-    @OneToOne
-    @JoinColumn(referencedColumnName = "phong_id",name ="phong_id")
-    private Phong phongId;
+    @Column(name = "phong_id")
+    private Integer phongId;
+//    @OneToOne
+//    @JoinColumn(referencedColumnName = "phong_id",name ="phong_id")
+//    private Phong phongId;
 }

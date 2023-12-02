@@ -47,6 +47,7 @@ public class SinhVienService implements ISinhVienService {
         sv.setEmail(registerRequest.getEmail());
         sv.setTrangThai(registerRequest.getTrangThai());
         sv.setSoPhong(registerRequest.getSoPhong());
+        sv.setNguoiDung(registerRequest.getNguoiDung());
         repository.save(sv);
         return sv;
     }
@@ -80,6 +81,7 @@ public class SinhVienService implements ISinhVienService {
         svs.setEmail(sinhVien.getEmail());
         svs.setTrangThai(sinhVien.getTrangThai());
         svs.setSoPhong(sinhVien.getSoPhong());
+        svs.setNguoiDung(sinhVien.getNguoiDung());
         repository.save(svs);
 
     }

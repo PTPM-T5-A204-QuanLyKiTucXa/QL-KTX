@@ -65,10 +65,15 @@ public class SinhVien {
     @Column(name = "so_phong")
     private String soPhong;
 
+    @Column(name = "nguoi_dung_id")
+    private Integer nguoiDung;
+
     @OneToMany(mappedBy = "sinhVienId",targetEntity = HopDongThuePhong.class)
     private Set<HopDongThuePhong> hopDongThuePhongs = new HashSet<>();
 
-    @OneToOne
-    @JoinColumn(name = "nguoi_dung_id",referencedColumnName = "nguoi_dung_id")
-    private NguoiDung nguoiDung;
+//    @OneToOne
+//    @JoinColumn(name = "nguoi_dung_id",referencedColumnName = "nguoi_dung_id")
+//    private NguoiDung nguoiDung;
+
+
 }

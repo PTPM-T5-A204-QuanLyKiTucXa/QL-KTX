@@ -36,12 +36,12 @@ public class NguoiDung {
     private String trangThai;
 
     @Column(name = "vai_tro_id")
-    private int vaiTroId;
+    private Integer vaiTroId;
 
 //    @ManyToOne
 //    @JoinColumn(name = "vai_tro_id",referencedColumnName = "vai_tro_id")
 //    private VaiTro vaiTroId;
 
-    @OneToOne(mappedBy = "nguoiDung",targetEntity = SinhVien.class)
-    private SinhVien sinhVien;
+//    @OneToOne(mappedBy = "nguoiDung",targetEntity = SinhVien.class)
+//    private SinhVien sinhVien;
 }
