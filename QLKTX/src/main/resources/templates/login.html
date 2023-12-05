@@ -177,13 +177,20 @@
 
                 <!-- MaSinhVien input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registermaSinhVien" class="form-control" name="maSinhVien"/>
+                    <input type="text" id="registermaSinhVien" class="form-control" name="maSinhVien" oninput="validateStudentID(this)" />
                     <label class="form-label" for="registermaSinhVien"> Mã Sinh Viên</label>
                 </div>
 
+                <script>
+                    function validateStudentID(input) {
+                        // Remove any non-alphanumeric characters
+                        input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
+                    }
+                </script>
+
                 <!-- HoTen input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerHoTen" class="form-control" name="hoTen"/>
+                    <input type="text" id="registerHoTen" class="form-control" name="hoTen" />
                     <label class="form-label" for="registerHoTen">Họ Tên</label>
                 </div>
                 <!-- NgaySinh input -->
@@ -193,7 +200,7 @@
                 </div>
                 <!-- CCCD input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerCCCD" class="form-control" name="cccd"/>
+                    <input type="number" id="registerCCCD" class="form-control" name="cccd" />
                     <label class="form-label" for="registerCCCD">Căn Cước CCCD</label>
                 </div>
                 <!-- GioiTinh input -->
@@ -203,7 +210,7 @@
                 </div>
                 <!-- SoDienThoai input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerSoDienThoai" class="form-control" name="soDienThoai"/>
+                    <input type="number" id="registerSoDienThoai" class="form-control" name="soDienThoai"/>
                     <label class="form-label" for="registerSoDienThoai">Số Điện Thoại</label>
                 </div>
                 <!-- DiaChi input -->
@@ -217,11 +224,7 @@
                     <label class="form-label" for="registerEmail">Email</label>
                 </div>
 
-<!--                &lt;!&ndash; SoPhong input &ndash;&gt;-->
-<!--                <div class="form-outline mb-4">-->
-<!--                    <input type="hidden" id="registerSoPhong" class="form-control" name="soPhong"/>-->
-<!--                    <label class="form-label" for="registerSoPhong">Số Phòng</label>-->
-<!--                </div>-->
+
 
 
                 <!-- Checkbox -->
@@ -313,24 +316,25 @@
         register['trangThai'] = "Chờ duyệt";
         register['soPhong'] = "";
         register['nguoiDung']=2;
-
         $.ajax({
+            url: "http://localhost:8080/api/register",
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
             },
-            type: "post",
+            type: "Post",
             data: JSON.stringify(register),
-
-            url: "http://localhost:8080/api/register",
-
+            contentType: 'application/json',
+            dataType: 'json',
             success: (response) => {
-                console.log(response);
-                alert("Register Success")
-            },
-            error: (e) => {
-                alert("Register Fail")
-                console.log(e);
+                if (response.status === "error") {
+                    console.log(response.message);
+                    alert("Đăng kí thất bại: " + response.message);
+                } else if (response.status === "success") {
+                    console.log(response.message);
+                    alert("Đăng kí thành công");
+                } else {
+                    console.log("Unknown response:", response);
+                }
             }
 
         });

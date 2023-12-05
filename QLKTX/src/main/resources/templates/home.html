@@ -231,14 +231,17 @@
             data: data,
             contentType: 'application/json',
             success: (response) => {
-                console.log(response);
-                alert("Chỉnh sửa thông tin thành công");
-            },
-            error: (e) => {
-                console.log(e);
-                alert("Chỉnh sửa thông tin thất bại");
+                const jsonResponse = JSON.parse(response);
+                if (jsonResponse.status === "error") {
+                    console.log(jsonResponse.message);
+                    alert("Chỉnh sửa thông tin thất bại : "+ jsonResponse.message);
+                } else if (jsonResponse.status === "success") {
+                    console.log(jsonResponse.message);
+                    alert("Chỉnh sửa thông tin thành công");
+                } else {
+                    console.log("Unknown response:", jsonResponse);
+                }
             }
-
         });
     }
     function report() {
@@ -347,10 +350,11 @@
             '              <p class="mb-0">Mã Sinh Viên</p>\n' +
             '              </div>\n' +
             '              <div class="col-sm-9">\n' +
-            '                  <input type="text" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'"/>\n' +
+            '                  <input type="text" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'" oninput="validateStudentID(this)"/>\n' +
             '              </div>\n' +
             '          </div>\n' +
             '          <hr>\n' +
+
 
             '            <div class="row">\n' +
             '                <div class="col-sm-3">\n' +
@@ -780,6 +784,12 @@
     }
 
 
+</script>
+<script>
+    function validateStudentID(input) {
+        // Remove any non-alphanumeric characters
+        input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
+    }
 </script>
 </body>
 </html>

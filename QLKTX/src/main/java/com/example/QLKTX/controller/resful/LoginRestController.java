@@ -27,9 +27,23 @@ public class LoginRestController {
     private JwtTokenUtil jwtTokenUtil;
 
     @PostMapping(value = "/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequestDto registerRequest){
+    public ResponseEntity<?> register(@RequestBody RegisterRequestDto registerRequest) {
+        if (svService.isSinhVienIsExists(registerRequest.getMaSinhVien()))
+        {
+            return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \" Mã sinh viên đã tồn tại\"}");
+        }
+        if (svService.isCccdIsValid(registerRequest.getCccd())==false)
+        {
+            return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \"Cccd không hợp lệ\"}");
+
+        }
+        if (svService.isEmailIsValid(registerRequest.getEmail())==false)
+        {
+            return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \"Email không hợp lệ\"}");
+        }
         SinhVien sv = svService.register(registerRequest);
-        return ResponseEntity.ok(sv);
+        return ResponseEntity.ok().body("{\"status\": \"success\", \"message\": \"Đăng kí thành công\"}");
+
     }
 
 

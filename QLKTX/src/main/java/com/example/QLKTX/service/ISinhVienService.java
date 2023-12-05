@@ -14,5 +14,8 @@ public interface ISinhVienService {
     void edit(SinhVienInforRequestDto sinhVien);
     String login(LoginRequestDto authenticationRequest);
     List<SinhVien> getAll();
+    boolean isSinhVienIsExists (String maSinhVien);
+    boolean isCccdIsValid(String Cccd);
+    boolean isEmailIsValid(String Email);
 
 }
