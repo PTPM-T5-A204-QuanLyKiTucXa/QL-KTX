@@ -22,6 +22,13 @@
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             rel="stylesheet"
     />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <style>
         .navbar {
             background-color: #fad9f3;
@@ -193,21 +200,27 @@
                     <input type="text" id="registerHoTen" class="form-control" name="hoTen" />
                     <label class="form-label" for="registerHoTen">Họ Tên</label>
                 </div>
-                <!-- NgaySinh input -->
+
                 <div class="form-outline mb-4">
                     <input type="text" id="registerNgaySinh" class="form-control" name="ngaySinh"/>
                     <label class="form-label" for="registerNgaySinh">Ngày Sinh</label>
                 </div>
+
                 <!-- CCCD input -->
                 <div class="form-outline mb-4">
                     <input type="number" id="registerCCCD" class="form-control" name="cccd" />
                     <label class="form-label" for="registerCCCD">Căn Cước CCCD</label>
                 </div>
-                <!-- GioiTinh input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="registerGioiTinh" class="form-control" name="gioiTinh"/>
-                    <label class="form-label" for="registerGioiTinh">Giới Tính</label>
+                <!-- Giới Tính dropdown -->
+                <div >
+                    <label class="form-label" for="registerGioiTinh">  Giới Tính</label>
+                    <select class="form-select" id="registerGioiTinh" name="gioiTinh">
+                        <option value="Nam">Nam</option>
+                        <option value="Nu">Nữ</option>
+                    </select>
+
                 </div>
+                <br>
                 <!-- SoDienThoai input -->
                 <div class="form-outline mb-4">
                     <input type="number" id="registerSoDienThoai" class="form-control" name="soDienThoai"/>
@@ -223,9 +236,6 @@
                     <input type="email" id="registerEmail" class="form-control" name="email"/>
                     <label class="form-label" for="registerEmail">Email</label>
                 </div>
-
-
-
 
                 <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-center mb-4">
@@ -255,6 +265,39 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
 ></script>
+<script>
+    $(function () {
+        // Lấy ngày hiện tại
+        var currentDate = new Date();
+
+        // Kích hoạt Datepicker và thiết lập ngày tháng năm
+        $("#registerNgaySinh").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            maxDate: currentDate,  // Đặt maxDate để ngăn chọn ngày lớn hơn ngày hiện tại
+            beforeShow: function (input, inst) {
+                // Lấy năm hiện tại
+                var currentYear = new Date().getFullYear();
+
+                // Tính năm bắt đầu cho dropdown (100 năm trước)
+                var startYear = currentYear - 100;
+
+                // Tạo danh sách năm
+                var yearList = [];
+                for (var i = 0; i < 100; i++) {
+                    yearList.push(startYear + i);
+                }
+
+                // Đặt danh sách năm cho dropdown
+                $(this).datepicker('option', 'yearRange', yearList[0] + ':' + yearList[yearList.length - 1]);
+            }
+        });
+    });
+
+</script>
+
 <script>
 
 
