@@ -147,5 +147,25 @@ namespace thuVienControls
                 e.Handled = true;
             }
         }
+
+        private void dtp_ngayKetThuc_CloseUp(object sender, EventArgs e)
+        {
+            DateTime ngaykt = dtp_ngayKetThuc.Value;
+            if (ngaykt < dtp_ngayBatDau.Value)
+            {
+                MessageBox.Show("Ngày tháng  hợp đồng không hợp lệ !");
+                dtp_ngayKetThuc.Value = DateTime.Now;
+            }
+        }
+
+        private void dtp_ngayBatDau_CloseUp(object sender, EventArgs e)
+        {
+            DateTime ngaysinh = dtp_ngayBatDau.Value;
+            if (ngaysinh > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ !");
+                dtp_ngayBatDau.Value = DateTime.Now;
+            }
+        }
     }
 }

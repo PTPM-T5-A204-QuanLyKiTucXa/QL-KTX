@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thietKeControls;
 
 namespace thuVienControls
 {
@@ -124,7 +126,7 @@ namespace thuVienControls
             string trangThai = cbx_trangThai.Text;
             string tienThu = txt_tienThu.Text;
             Ql_SinhVien ql_sv=new Ql_SinhVien();
-            if (!string.IsNullOrEmpty(tienThu))
+            if (!string.IsNullOrEmpty(tienThu) && IsEmailValid(email))
             {
                 DialogResult r = MessageBox.Show("Bạn muốn lập hợp đồng cho sinh viên " + txt_tenSV.Text + " ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
@@ -216,6 +218,12 @@ namespace thuVienControls
             {
                 e.Handled = true;
             }
+        }
+        public bool IsEmailValid(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            return Regex.IsMatch(email, pattern);
         }
     }
 }

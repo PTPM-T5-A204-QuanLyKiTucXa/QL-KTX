@@ -37,7 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_masv = new thietKeControls.txtChiNhapSo();
-            this.txt_hotensv = new thietKeControls.txtChiNhapChu();
             this.txt_cccd = new thietKeControls.txtCCCD();
             this.txtEmail1 = new thietKeControls.txtEmail();
             this.txt_sodienthoai = new thietKeControls.txtChiNhapSo();
@@ -51,6 +50,7 @@
             this.txt_masket_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.button1 = new Guna.UI.WinForms.GunaGradientButton();
             this.btn_thoat = new Guna.UI.WinForms.GunaGradientButton();
+            this.txt_hotensv = new Guna.UI.WinForms.GunaTextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,15 +142,6 @@
             this.txt_masv.Size = new System.Drawing.Size(201, 28);
             this.txt_masv.TabIndex = 13;
             this.txt_masv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_masv_KeyPress);
-            // 
-            // txt_hotensv
-            // 
-            this.txt_hotensv.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txt_hotensv.Location = new System.Drawing.Point(203, 142);
-            this.txt_hotensv.Name = "txt_hotensv";
-            this.txt_hotensv.Size = new System.Drawing.Size(201, 28);
-            this.txt_hotensv.TabIndex = 14;
-            this.txt_hotensv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hotensv_KeyPress);
             // 
             // txt_cccd
             // 
@@ -250,6 +241,7 @@
             this.txt_masket_ngaysinh.Name = "txt_masket_ngaysinh";
             this.txt_masket_ngaysinh.Size = new System.Drawing.Size(201, 28);
             this.txt_masket_ngaysinh.TabIndex = 25;
+            this.txt_masket_ngaysinh.CloseUp += new System.EventHandler(this.txt_masket_ngaysinh_CloseUp);
             // 
             // button1
             // 
@@ -304,11 +296,30 @@
             this.btn_thoat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
+            // txt_hotensv
+            // 
+            this.txt_hotensv.BaseColor = System.Drawing.Color.White;
+            this.txt_hotensv.BorderColor = System.Drawing.Color.Silver;
+            this.txt_hotensv.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_hotensv.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_hotensv.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_hotensv.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_hotensv.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_hotensv.Location = new System.Drawing.Point(203, 131);
+            this.txt_hotensv.Name = "txt_hotensv";
+            this.txt_hotensv.PasswordChar = '\0';
+            this.txt_hotensv.SelectedText = "";
+            this.txt_hotensv.Size = new System.Drawing.Size(200, 32);
+            this.txt_hotensv.TabIndex = 44;
+            this.txt_hotensv.Text = "gunaTextBox1";
+            this.txt_hotensv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hotensv_KeyPress_1);
+            // 
             // gd_Them_sinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txt_hotensv);
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_masket_ngaysinh);
@@ -319,7 +330,6 @@
             this.Controls.Add(this.txt_sodienthoai);
             this.Controls.Add(this.txtEmail1);
             this.Controls.Add(this.txt_cccd);
-            this.Controls.Add(this.txt_hotensv);
             this.Controls.Add(this.txt_masv);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -349,7 +359,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private thietKeControls.txtChiNhapSo txt_masv;
-        private thietKeControls.txtChiNhapChu txt_hotensv;
         private thietKeControls.txtCCCD txt_cccd;
         private thietKeControls.txtEmail txtEmail1;
         private thietKeControls.txtChiNhapSo txt_sodienthoai;
@@ -363,5 +372,6 @@
         private System.Windows.Forms.DateTimePicker txt_masket_ngaysinh;
         private Guna.UI.WinForms.GunaGradientButton button1;
         private Guna.UI.WinForms.GunaGradientButton btn_thoat;
+        private Guna.UI.WinForms.GunaTextBox txt_hotensv;
     }
 }

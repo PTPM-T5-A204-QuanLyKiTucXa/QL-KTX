@@ -270,9 +270,7 @@
             this.grid_dssv.ThemeStyle.RowsStyle.Height = 24;
             this.grid_dssv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.grid_dssv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.grid_dssv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_dssv_CellClick);
-            this.grid_dssv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_dssv_CellContentClick);
-            this.grid_dssv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grid_dssv_MouseDoubleClick);
+            this.grid_dssv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.grid_dssv_MouseDoubleClick);
             // 
             // ma_sinh_vien
             // 

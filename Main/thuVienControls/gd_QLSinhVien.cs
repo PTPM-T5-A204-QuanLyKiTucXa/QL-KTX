@@ -91,7 +91,7 @@ namespace thuVienControls
         public event EventHandler<DataGridViewCellEventArgs> DataGridViewCellClick;
         private void grid_dssv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewCellClick?.Invoke(this, e);
+          
         }
         
         private void btn_tailai_Click(object sender, EventArgs e)

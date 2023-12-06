@@ -228,7 +228,9 @@ namespace thuVienControls
             Phong phongToDelete = QL_KTX.Phongs.FirstOrDefault(p => p.so_phong == phongCanXoa);
             var kq = QL_KTX.HoaDonDienNuocs.Where(p => p.phong_id == phongToDelete.phong_id).Select(p=>p.hoa_don_id).FirstOrDefault();
             int soluong = int.Parse(DemSoSinhVienTrongPhong(phongCanXoa));
-            if(kq==null || soluong==0)
+  
+
+            if(kq==0 && soluong==0)
             {
                 QL_KTX.Phongs.DeleteOnSubmit(phongToDelete);
                 QL_KTX.SubmitChanges();

@@ -119,10 +119,11 @@ namespace thuVienControls
 
         private void txt_hotensv_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
             {
                 e.Handled = true;
             }
+
         }
 
         private void txt_cccd_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,7 +133,7 @@ namespace thuVienControls
                 e.Handled = true;
             }
 
-            if (txt_cccd.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
+            if (txt_cccd.Text.Length >= 12 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
@@ -167,6 +168,24 @@ namespace thuVienControls
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             ThoatClick?.Invoke(this, e);
+        }
+
+        private void txt_masket_ngaysinh_CloseUp(object sender, EventArgs e)
+        {
+            DateTime ngaysinh = txt_masket_ngaysinh.Value;
+            if (ngaysinh > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ !");
+                txt_masket_ngaysinh.Value = DateTime.Now;
+            }
+        }
+
+        private void txt_hotensv_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

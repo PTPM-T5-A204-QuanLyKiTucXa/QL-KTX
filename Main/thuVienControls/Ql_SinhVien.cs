@@ -26,7 +26,7 @@ namespace thuVienControls
             else
             {
                 SinhVien sv = new SinhVien();
-                sv.nguoi_dung_id = 2;
+
                 sv.ma_sinh_vien = maSV;
                 sv.ho_ten = hoTen;
                 sv.ngay_sinh = ngaySinh;

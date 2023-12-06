@@ -22,27 +22,59 @@ namespace thuVienControls
         {
             var sv = qlktx.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
             
-            if (sv != null)
+            var  tk=qlktx.NguoiDungs.Where(t=>t.ten_nguoi_dung==sv.ma_sinh_vien).Select(p=>p.nguoi_dung_id).FirstOrDefault();
+            if (sv != null )
             {
-                var hd = qlktx.HopDongThuePhongs.Where(t => t.sinh_vien_id == sv.sinh_vien_id && t.ngay_ket_thuc_thue > DateTime.Now).FirstOrDefault();
-                if(hd !=null)
+                if (tk == 0)
                 {
+                    bool kq2 = qlnd.themTaiKhoanSinhVien(maSV, sdt);
+                    if (kq2)
+                    {
+                        var hd = qlktx.HopDongThuePhongs.Where(t => t.sinh_vien_id == sv.sinh_vien_id && t.ngay_ket_thuc_thue > DateTime.Now).FirstOrDefault();
+                        if (hd != null)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            HopDongThuePhong hdnew = new HopDongThuePhong();
+                            hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                            hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
+                            hdnew.ngay_lap = ngayLap;
+                            hdnew.ngay_bat_dau_thue = ngayBD;
+                            hdnew.ngay_ket_thuc_thue = ngayKT;
+                            hdnew.tienthu = (int)tienThu;
+                            hdnew.trangthai = trangThai;
+                            qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
+                            qlktx.SubmitChanges();
+                            return 2;
+                        }
+                    }
                     return 0;
-                }    
+                }
                 else
                 {
-                    HopDongThuePhong hdnew = new HopDongThuePhong();
-                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
-                    hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
-                    hdnew.ngay_lap = ngayLap;
-                    hdnew.ngay_bat_dau_thue = ngayBD;
-                    hdnew.ngay_ket_thuc_thue = ngayKT;
-                    hdnew.tienthu = (int)tienThu;
-                    hdnew.trangthai = trangThai;
-                    qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
-                    qlktx.SubmitChanges();
-                    return 2;
-                }    
+
+                    var hd = qlktx.HopDongThuePhongs.Where(t => t.sinh_vien_id == sv.sinh_vien_id && t.ngay_ket_thuc_thue > DateTime.Now).FirstOrDefault();
+                    if (hd != null)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        HopDongThuePhong hdnew = new HopDongThuePhong();
+                        hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                        hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
+                        hdnew.ngay_lap = ngayLap;
+                        hdnew.ngay_bat_dau_thue = ngayBD;
+                        hdnew.ngay_ket_thuc_thue = ngayKT;
+                        hdnew.tienthu = (int)tienThu;
+                        hdnew.trangthai = trangThai;
+                        qlktx.HopDongThuePhongs.InsertOnSubmit(hdnew);
+                        qlktx.SubmitChanges();
+                        return 2;
+                    }
+                }
             }
             else
             {
@@ -200,7 +232,12 @@ namespace thuVienControls
 
         public object loadDSHopDongThuePhongTheoMaSV(string maSV)
         {
+           
             SinhVien sv = qlsv.loadThongTinSinhVienTheoMa(maSV);
+            if(sv == null)
+            {
+                return null;
+            }    
             var hopDongs = qlktx.HopDongThuePhongs.Where(t=>t.sinh_vien_id== sv.sinh_vien_id).Select(t => new { t.hop_dong_id, t.Phong.so_phong, t.SinhVien.ho_ten, t.tienthu, t.trangthai }).ToList();
             return hopDongs;
         }

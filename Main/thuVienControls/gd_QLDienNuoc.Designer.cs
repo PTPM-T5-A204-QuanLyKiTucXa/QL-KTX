@@ -506,7 +506,7 @@ namespace thuVienControls
             this.dgv_dsHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_dsHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_dsHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dsHD_CellClick);
-            this.dgv_dsHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dsHD_CellContentClick);
+            this.dgv_dsHD.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_dsHD_MouseDoubleClick);
             // 
             // hoa_don_id
             // 

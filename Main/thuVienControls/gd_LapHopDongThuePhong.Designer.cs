@@ -42,7 +42,6 @@ namespace thuVienControls
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_maSV = new System.Windows.Forms.TextBox();
             this.txt_CCCD = new System.Windows.Forms.TextBox();
             this.txt_SDT = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@ namespace thuVienControls
             this.dtp_ngayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngayLap = new System.Windows.Forms.DateTimePicker();
+            this.txt_email = new thietKeControls.txtEmail();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -98,6 +98,7 @@ namespace thuVienControls
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_email);
             this.groupBox1.Controls.Add(this.cbx_gioiTinh);
             this.groupBox1.Controls.Add(this.dtp_ngaySinh);
             this.groupBox1.Controls.Add(this.label9);
@@ -108,7 +109,6 @@ namespace thuVienControls
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_email);
             this.groupBox1.Controls.Add(this.txt_maSV);
             this.groupBox1.Controls.Add(this.txt_CCCD);
             this.groupBox1.Controls.Add(this.txt_SDT);
@@ -229,14 +229,6 @@ namespace thuVienControls
             this.label2.Size = new System.Drawing.Size(89, 18);
             this.label2.TabIndex = 8;
             this.label2.Text = "Mã sinh viên";
-            // 
-            // txt_email
-            // 
-            this.txt_email.Location = new System.Drawing.Point(151, 252);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(497, 26);
-            this.txt_email.TabIndex = 7;
             // 
             // txt_maSV
             // 
@@ -501,6 +493,13 @@ namespace thuVienControls
             this.dtp_ngayLap.TabIndex = 17;
             this.dtp_ngayLap.CloseUp += new System.EventHandler(this.dtp_ngayLap_CloseUp);
             // 
+            // txt_email
+            // 
+            this.txt_email.Location = new System.Drawing.Point(151, 252);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(497, 26);
+            this.txt_email.TabIndex = 2;
+            // 
             // gd_LapHopDongThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -540,7 +539,6 @@ namespace thuVienControls
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_maSV;
         private System.Windows.Forms.TextBox txt_CCCD;
         private System.Windows.Forms.TextBox txt_SDT;
@@ -565,5 +563,6 @@ namespace thuVienControls
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbx_trangThai;
         private Guna.UI.WinForms.GunaGradientButton txn_lapHD;
+        private thietKeControls.txtEmail txt_email;
     }
 }

@@ -40,7 +40,7 @@ namespace Main
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(697, 298);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(709, 389);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // gunaAnimateWindow1
@@ -53,7 +53,7 @@ namespace Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 298);
+            this.ClientSize = new System.Drawing.Size(709, 389);
             this.ControlBox = false;
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -87,30 +87,35 @@ namespace thuVienControls
         private void btn_lapHopDong_Click(object sender, EventArgs e)
         {
        
-            if (!string.IsNullOrEmpty(txt_maSinhVien.Text))
-            {
+
                 lapHDClick?.Invoke(this, e);
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng điền mã số sinh viên !");
-            }
         }
 
         private void dgv_dsHD_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-           clickDataGrid?.Invoke(this, e);
+            clickDataGrid?.Invoke(this, e);
         }
 
         private void btn_xemHopDong_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txt_maSinhVien.Text))
             {
-                dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
+                if (qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString())==null)
+                {
+                    MessageBox.Show("Mã sinh viên không tồn tại nhập lại !");
+                }
+                else
+                {
+                    dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
+                }    
+               
+                
+               
             }
             else
             {
                 MessageBox.Show("Vui lòng điền mã số sinh viên !");
+              
             }    
         }
 
@@ -124,6 +129,7 @@ namespace thuVienControls
 
         private void btn_tailai_Click(object sender, EventArgs e)
         {
+
             loadDanhSachHD();
             txt_maSinhVien.Text=string.Empty;
             cbx_denNam.SelectedItem = 0;
@@ -137,7 +143,7 @@ namespace thuVienControls
 
         private void dgv_dsHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            clickDataGrid?.Invoke(this, e);
+
         }
     }
 }

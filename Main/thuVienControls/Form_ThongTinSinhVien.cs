@@ -21,6 +21,8 @@ namespace Main
             InitializeComponent();
             loadCBXGioiTinh();
             loadSinhVien();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public Form_ThongTinSinhVien(string masv)
         {
@@ -28,6 +30,8 @@ namespace Main
             this.MaSV = masv;
             loadCBXGioiTinh();
             loadSinhVien();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
         }
 

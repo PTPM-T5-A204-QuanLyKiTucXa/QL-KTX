@@ -220,6 +220,7 @@ namespace thuVienControls
             // dtp_ngayLap
             // 
             this.dtp_ngayLap.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngayLap.Enabled = false;
             this.dtp_ngayLap.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtp_ngayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngayLap.Location = new System.Drawing.Point(483, 76);
@@ -238,6 +239,7 @@ namespace thuVienControls
             this.dtp_ngayKetThuc.Name = "dtp_ngayKetThuc";
             this.dtp_ngayKetThuc.Size = new System.Drawing.Size(160, 28);
             this.dtp_ngayKetThuc.TabIndex = 16;
+            this.dtp_ngayKetThuc.CloseUp += new System.EventHandler(this.dtp_ngayKetThuc_CloseUp);
             // 
             // dtp_ngayBatDau
             // 
@@ -249,6 +251,7 @@ namespace thuVienControls
             this.dtp_ngayBatDau.Name = "dtp_ngayBatDau";
             this.dtp_ngayBatDau.Size = new System.Drawing.Size(160, 28);
             this.dtp_ngayBatDau.TabIndex = 15;
+            this.dtp_ngayBatDau.CloseUp += new System.EventHandler(this.dtp_ngayBatDau_CloseUp);
             // 
             // label6
             // 
@@ -296,6 +299,7 @@ namespace thuVienControls
             // 
             // txt_tenSV
             // 
+            this.txt_tenSV.Enabled = false;
             this.txt_tenSV.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_tenSV.Location = new System.Drawing.Point(483, 175);
             this.txt_tenSV.Margin = new System.Windows.Forms.Padding(4);
@@ -306,6 +310,7 @@ namespace thuVienControls
             // 
             // txt_tienThu
             // 
+            this.txt_tienThu.Enabled = false;
             this.txt_tienThu.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_tienThu.Location = new System.Drawing.Point(147, 342);
             this.txt_tienThu.Margin = new System.Windows.Forms.Padding(4);
@@ -316,6 +321,7 @@ namespace thuVienControls
             // 
             // txt_soPhong
             // 
+            this.txt_soPhong.Enabled = false;
             this.txt_soPhong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_soPhong.Location = new System.Drawing.Point(147, 175);
             this.txt_soPhong.Margin = new System.Windows.Forms.Padding(4);
@@ -326,6 +332,7 @@ namespace thuVienControls
             // 
             // txt_maHD
             // 
+            this.txt_maHD.Enabled = false;
             this.txt_maHD.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_maHD.Location = new System.Drawing.Point(147, 76);
             this.txt_maHD.Margin = new System.Windows.Forms.Padding(4);

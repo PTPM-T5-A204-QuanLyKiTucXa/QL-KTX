@@ -175,6 +175,7 @@ namespace thuVienControls
             // 
             // txt_tongTien
             // 
+            this.txt_tongTien.Enabled = false;
             this.txt_tongTien.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_tongTien.Location = new System.Drawing.Point(146, 247);
             this.txt_tongTien.Margin = new System.Windows.Forms.Padding(4);
@@ -205,6 +206,7 @@ namespace thuVienControls
             // 
             // txt_namGhi
             // 
+            this.txt_namGhi.Enabled = false;
             this.txt_namGhi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_namGhi.Location = new System.Drawing.Point(535, 122);
             this.txt_namGhi.Margin = new System.Windows.Forms.Padding(4);
@@ -215,6 +217,7 @@ namespace thuVienControls
             // 
             // txt_thangGhi
             // 
+            this.txt_thangGhi.Enabled = false;
             this.txt_thangGhi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_thangGhi.Location = new System.Drawing.Point(146, 121);
             this.txt_thangGhi.Margin = new System.Windows.Forms.Padding(4);
@@ -225,6 +228,7 @@ namespace thuVienControls
             // 
             // txt_soPhong
             // 
+            this.txt_soPhong.Enabled = false;
             this.txt_soPhong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_soPhong.Location = new System.Drawing.Point(535, 66);
             this.txt_soPhong.Margin = new System.Windows.Forms.Padding(4);
@@ -235,6 +239,7 @@ namespace thuVienControls
             // 
             // txt_maHD
             // 
+            this.txt_maHD.Enabled = false;
             this.txt_maHD.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_maHD.Location = new System.Drawing.Point(146, 65);
             this.txt_maHD.Margin = new System.Windows.Forms.Padding(4);
