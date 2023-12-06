@@ -22,6 +22,13 @@
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             rel="stylesheet"
     />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link
             th:href="@{css/style.css}"
             rel="stylesheet"
@@ -195,7 +202,37 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
 ></script>
+<script>
+    $(function () {
+        // Lấy ngày hiện tại
+        var currentDate = new Date();
 
+        // Kích hoạt Datepicker và thiết lập ngày tháng năm
+        $("#ngaySinh").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            maxDate: currentDate,  // Đặt maxDate để ngăn chọn ngày lớn hơn ngày hiện tại
+            beforeShow: function (input, inst) {
+                // Lấy năm hiện tại
+                var currentYear = new Date().getFullYear();
+
+                // Tính năm bắt đầu cho dropdown (100 năm trước)
+                var startYear = currentYear - 100;
+
+                // Tạo danh sách năm
+                var yearList = [];
+                for (var i = 0; i < 100; i++) {
+                    yearList.push(startYear + i);
+                }
+
+                // Đặt danh sách năm cho dropdown
+                $(this).datepicker('option', 'yearRange', yearList[0] + ':' + yearList[yearList.length - 1]);
+            }
+        });
+    });
+</script>
 <script>
     const token = localStorage.getItem("token");
 
@@ -231,14 +268,17 @@
             data: data,
             contentType: 'application/json',
             success: (response) => {
-                console.log(response);
-                alert("Chỉnh sửa thông tin thành công");
-            },
-            error: (e) => {
-                console.log(e);
-                alert("Chỉnh sửa thông tin thất bại");
+                const jsonResponse = JSON.parse(response);
+                if (jsonResponse.status === "error") {
+                    console.log(jsonResponse.message);
+                    alert("Chỉnh sửa thông tin thất bại : "+ jsonResponse.message);
+                } else if (jsonResponse.status === "success") {
+                    console.log(jsonResponse.message);
+                    alert("Chỉnh sửa thông tin thành công");
+                } else {
+                    console.log("Unknown response:", jsonResponse);
+                }
             }
-
         });
     }
     function report() {
@@ -290,16 +330,7 @@
             '            </div>\n' +
             '            <hr>\n' +
 
-            //
-            // '            <div class="row">\n' +
-            // '              <div class="col-sm-3">\n' +
-            // '              <p class="mb-0">Ngày Báo Cáo</p>\n' +
-            // '              </div>\n' +
-            // '              <div class="col-sm-9">\n' +
-            // '                  <input type="hidden" id="ngayBaoCao" name="ngayBaoCao" class="form-control" />\n' +
-            // '              </div>\n' +
-            // '          </div>\n' +
-            // '          <hr>\n' +
+
 
             '            <div class="row">\n' +
             '                <div class="col-sm-3">\n' +
@@ -334,7 +365,7 @@
             '            </div>\n' +
             '            <div class="row">\n' +
             '                <div class="col-sm-3">\n' +
-            '                <p class="mb-0">Họ Tên :</p>\n' +
+            '                <p class="mb-0">Họ và tên </p>\n' +
             '                </div>\n' +
             '                <div class="col-sm-9">\n' +
             '                    <input type="text" id="hoTen" name="hoTen" class="form-control" value="'+user.hoTen+'" />\n' +
@@ -347,17 +378,18 @@
             '              <p class="mb-0">Mã Sinh Viên</p>\n' +
             '              </div>\n' +
             '              <div class="col-sm-9">\n' +
-            '                  <input type="text" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'"/>\n' +
+            '                  <input type="text" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'" oninput="validateStudentID(this)"/>\n' +
             '              </div>\n' +
             '          </div>\n' +
             '          <hr>\n' +
+
 
             '            <div class="row">\n' +
             '                <div class="col-sm-3">\n' +
             '                <p class="mb-0">Căn cước công dân</p>\n' +
             '                </div>\n' +
             '                <div class="col-sm-9">\n' +
-            '                    <input type="text" id="cccd" name="cccd" class="form-control" value="'+user.cccd+'"/>\n' +
+            '                    <input type="number" id="cccd" name="cccd" class="form-control" value="'+user.cccd+'"/>\n' +
             '                </div>\n' +
             '            </div>\n' +
             '            <hr>\n' +
@@ -366,7 +398,7 @@
             '              <p class="mb-0">Số điện thoại</p>\n' +
             '              </div>\n' +
             '              <div class="col-sm-9">\n' +
-            '                  <input type="text" id="soDienThoai" name="soDienThoai" class="form-control" value="'+user.soDienThoai+'"/>\n' +
+            '                  <input type="number" id="soDienThoai" name="soDienThoai" class="form-control" value="'+user.soDienThoai+'"/>\n' +
             '              </div>\n' +
             '          </div>\n' +
 
@@ -386,7 +418,7 @@
             '                <p class="mb-0">Ngày sinh</p>\n' +
             '                </div>\n' +
             '                <div class="col-sm-9">\n' +
-            '                    <input type="text" id="ngaySinh" name="ngaySinh" class="form-control" value="'+user.ngaySinh+'"/>\n' +
+            '                    <input type="date" id="ngaySinh" name="ngaySinh" class="form-control" value="'+user.ngaySinh+'"/>\n' +
             '                </div>\n' +
             '            </div>\n' +
             '            <hr>\n' +
@@ -543,7 +575,7 @@
 
             '    <div class="row">\n' +
             '        <div class="col-sm-3">\n' +
-            '            <p class="mb-0">Số Phòng</p>\n' +
+            '            <p class="mb-0">Ngày sinh</p>\n' +
             '        </div>\n' +
             '        <div class="col-sm-9">\n' +
             '            <p class="text-muted mb-0"> '+data.ngaySinh+'</p>\n' +
@@ -781,5 +813,12 @@
 
 
 </script>
+<script>
+    function validateStudentID(input) {
+        // Remove any non-alphanumeric characters
+        input.value = input.value.replace(/[^a-zA-Z0-9]/g, '');
+    }
+</script>
+
 </body>
 </html>

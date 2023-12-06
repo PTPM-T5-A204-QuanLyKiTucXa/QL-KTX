@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 @RequiredArgsConstructor
@@ -61,6 +63,12 @@ public class SinhVienService implements ISinhVienService {
         return jwtTokenUtil.generateToken(sv);
 
     }
+
+    @Override
+    public List<SinhVien> getAll() {
+        return repository.findAll();
+    }
+
     @Override
     public  SinhVien getSinhVienbyMaSinhVien(String MaSinhVien)
     {return repository.findSinhVienByMaSinhVien(MaSinhVien);}
@@ -87,7 +95,26 @@ public class SinhVienService implements ISinhVienService {
     }
 
     @Override
-    public List<SinhVien> getAll() {
-        return repository.findAll();
+    public  boolean isSinhVienIsExists(String maSinhVien)
+    {
+        List<SinhVien> list= getAll();
+        return list.stream().anyMatch(sinhVien -> sinhVien.getMaSinhVien().equals(maSinhVien));
+    }
+
+    @Override
+    public boolean isCccdIsValid(String Cccd) {
+        return Cccd != null && Cccd.length()==12;
+    }
+
+    @Override
+    public boolean isEmailIsValid(String Email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        // Create a Pattern object
+        Pattern pattern = Pattern.compile(emailRegex);
+        // Create a matcher object
+        Matcher matcher = pattern.matcher(Email);
+        // Return true if the email matches the pattern, otherwise false
+        return matcher.matches();
+
     }
 }

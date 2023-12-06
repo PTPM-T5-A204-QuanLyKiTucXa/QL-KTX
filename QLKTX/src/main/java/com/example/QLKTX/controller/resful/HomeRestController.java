@@ -41,9 +41,40 @@ public class HomeRestController {
     }
 
     @PutMapping ("/edit")
-    public ResponseEntity<?> editInfo(@RequestBody SinhVienInforRequestDto sinhVien){
-        svService.edit(sinhVien);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<?> editInfo(@RequestBody SinhVienInforRequestDto sinhVien,HttpServletRequest request){
+        String token = jwtRequestFilter.getJwtFromRequest(request);
+        String MaSinhVien = jwtTokenUtil.getMaSinhVienFromJWT(token);
+        String masv = sinhVien.getMaSinhVien();
+        if (MaSinhVien.equals(masv))
+        {
+            if (svService.isCccdIsValid(sinhVien.getCccd())==false)
+            {
+                return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \"Cccd không hợp lệ\"}");
+            }
+            if (svService.isEmailIsValid(sinhVien.getEmail())==false)
+            {
+                return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \"Email không hợp lệ\"}");
+            }
+            svService.edit(sinhVien);
+            return ResponseEntity.ok().body("{\"status\": \"success\", \"message\": \"Chỉnh sửa thông tin thành công\"}");
+        }
+        else
+        {
+            if (svService.isSinhVienIsExists(masv)) {
+                return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \" Mã sinh viên đã tồn tại\"}");
+            }
+
+            if (svService.isCccdIsValid(sinhVien.getCccd())==false)
+            {
+                return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \" Cccd không hợp lệ\"}");
+            }
+            if (svService.isEmailIsValid(sinhVien.getEmail())==false)
+            {
+                return ResponseEntity.ok().body("{\"status\": \"error\", \"message\": \" Email không hợp lệ\"}");
+            }
+            svService.edit(sinhVien);
+            return ResponseEntity.ok().body("{\"status\": \"success\", \"message\": \"Chỉnh sửa thông tin thành công\"}");
+        }
     }
 
     @GetMapping("/logout")
