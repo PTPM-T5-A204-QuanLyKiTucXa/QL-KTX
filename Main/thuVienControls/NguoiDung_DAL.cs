@@ -12,7 +12,8 @@ namespace thuVienControls
         public NguoiDung_DAL() { }
         public List<NguoiDung> getNguoiDung() 
         {
-            return db.NguoiDungs.ToList();    
+            var kq=db.NguoiDungs.Where(p=>p.vai_tro_id==2).ToList();
+            return kq; 
         }
         public List<string> layList_tenvaitro()
         {

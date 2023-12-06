@@ -80,7 +80,15 @@ namespace thuVienControls
 
         private void btn_ghiDienNuoc_Click(object sender, EventArgs e)
         {
-            btnGhiDienNuocClick?.Invoke(this, e);
+         
+            if (!string.IsNullOrEmpty(txt_soPhong.Text))
+            {
+                btnGhiDienNuocClick?.Invoke(this, e);
+            }
+            else
+            {
+                MessageBox.Show("vui lòng nhập số phòng !");
+            }
         }
 
         public void ghiDienNuoc()
@@ -93,7 +101,15 @@ namespace thuVienControls
 
         private void btn_suaDonGia_Click(object sender, EventArgs e)
         {
-            btnSuaDonGiaClick?.Invoke(this, e);
+          
+            if (!string.IsNullOrEmpty(txt_soPhong.Text))
+            {
+                btnSuaDonGiaClick?.Invoke(this, e);
+            }
+            else
+            {
+                MessageBox.Show("vui lòng nhập số phòng !");
+            }
         }
 
         public int layMaHoaDon()
@@ -109,7 +125,14 @@ namespace thuVienControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dgv_dsHD.DataSource = qldn.loadDSHoaDonDienNuocTheoSP(txt_soPhong.Text.ToString());
+            if (!string.IsNullOrEmpty(txt_soPhong.Text))
+            {
+                dgv_dsHD.DataSource = qldn.loadDSHoaDonDienNuocTheoSP(txt_soPhong.Text.ToString());
+            }
+            else
+            {
+                MessageBox.Show("vui lòng nhập số phòng !");
+            }    
         }
 
         private void dgv_dsHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,6 +160,11 @@ namespace thuVienControls
             cbx_tuThang.SelectedItem = 0;
             cbx_xuatNam.SelectedItem = 0;
             cbx_xuatThang.SelectedItem = 0;
+        }
+
+        private void dgv_dsHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_soPhong.Text = dgv_dsHD.CurrentRow.Cells["so_phong"].Value.ToString();
         }
     }
 }

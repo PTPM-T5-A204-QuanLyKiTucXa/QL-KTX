@@ -107,10 +107,7 @@ namespace thuVienControls
         public event EventHandler ThoatClick;
 
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           ThoatClick?.Invoke(this, e);
-        }
+
 
         private void txt_masv_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -130,7 +127,12 @@ namespace thuVienControls
 
         private void txt_cccd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || txt_cccd.Text.Length >= 12)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txt_cccd.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
@@ -138,7 +140,12 @@ namespace thuVienControls
 
         private void txt_sodienthoai_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) ||  txt_sodienthoai.Text.Length >= 10)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txt_sodienthoai.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
@@ -155,6 +162,11 @@ namespace thuVienControls
             {
                 e.Handled = true;
             }
+        }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            ThoatClick?.Invoke(this, e);
         }
     }
 }

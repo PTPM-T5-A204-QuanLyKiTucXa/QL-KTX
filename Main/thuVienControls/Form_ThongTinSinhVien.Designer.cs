@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ThongTinSinhVien));
             this.label9 = new System.Windows.Forms.Label();
             this.cbx_gioiTinh = new System.Windows.Forms.ComboBox();
             this.dtp_ngaySinh = new System.Windows.Forms.DateTimePicker();
-            this.btn_khongDuyet = new System.Windows.Forms.Button();
-            this.btn_luu = new System.Windows.Forms.Button();
             this.txt_diaChi = new System.Windows.Forms.TextBox();
             this.txt_soPhong = new System.Windows.Forms.TextBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.txt_hoTen = new System.Windows.Forms.TextBox();
             this.txt_maSV = new System.Windows.Forms.TextBox();
-            this.btn_duyet = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,219 +45,218 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_duyet = new Guna.UI.WinForms.GunaGradientButton();
+            this.btn_luu = new Guna.UI.WinForms.GunaGradientButton();
+            this.btn_khongDuyet = new Guna.UI.WinForms.GunaGradientButton();
             this.txt_email = new thietKeControls.txtEmail();
+            this.btn_thoat = new Guna.UI.WinForms.GunaGradientButton();
             this.SuspendLayout();
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(531, 276);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 16);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Email:";
             // 
             // cbx_gioiTinh
             // 
+            resources.ApplyResources(this.cbx_gioiTinh, "cbx_gioiTinh");
             this.cbx_gioiTinh.FormattingEnabled = true;
-            this.cbx_gioiTinh.Location = new System.Drawing.Point(586, 141);
-            this.cbx_gioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_gioiTinh.Name = "cbx_gioiTinh";
-            this.cbx_gioiTinh.Size = new System.Drawing.Size(265, 24);
-            this.cbx_gioiTinh.TabIndex = 37;
             // 
             // dtp_ngaySinh
             // 
-            this.dtp_ngaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtp_ngaySinh.Location = new System.Drawing.Point(586, 79);
-            this.dtp_ngaySinh.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.dtp_ngaySinh, "dtp_ngaySinh");
+            this.dtp_ngaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngaySinh.MaxDate = new System.DateTime(2555, 12, 31, 0, 0, 0, 0);
             this.dtp_ngaySinh.Name = "dtp_ngaySinh";
-            this.dtp_ngaySinh.Size = new System.Drawing.Size(265, 22);
-            this.dtp_ngaySinh.TabIndex = 36;
-            // 
-            // btn_khongDuyet
-            // 
-            this.btn_khongDuyet.Location = new System.Drawing.Point(535, 403);
-            this.btn_khongDuyet.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_khongDuyet.Name = "btn_khongDuyet";
-            this.btn_khongDuyet.Size = new System.Drawing.Size(220, 68);
-            this.btn_khongDuyet.TabIndex = 35;
-            this.btn_khongDuyet.Text = "Không duyệt";
-            this.btn_khongDuyet.UseVisualStyleBackColor = true;
-            this.btn_khongDuyet.Click += new System.EventHandler(this.btn_khongDuyet_Click);
-            // 
-            // btn_luu
-            // 
-            this.btn_luu.Location = new System.Drawing.Point(301, 322);
-            this.btn_luu.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(368, 60);
-            this.btn_luu.TabIndex = 34;
-            this.btn_luu.Text = "Lưu";
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            this.dtp_ngaySinh.CloseUp += new System.EventHandler(this.dtp_ngaySinh_CloseUp);
             // 
             // txt_diaChi
             // 
-            this.txt_diaChi.Location = new System.Drawing.Point(586, 206);
-            this.txt_diaChi.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txt_diaChi, "txt_diaChi");
             this.txt_diaChi.Name = "txt_diaChi";
-            this.txt_diaChi.Size = new System.Drawing.Size(265, 22);
-            this.txt_diaChi.TabIndex = 33;
             this.txt_diaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diaChi_KeyPress);
             // 
             // txt_soPhong
             // 
-            this.txt_soPhong.Location = new System.Drawing.Point(157, 273);
-            this.txt_soPhong.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txt_soPhong, "txt_soPhong");
             this.txt_soPhong.Name = "txt_soPhong";
-            this.txt_soPhong.Size = new System.Drawing.Size(265, 22);
-            this.txt_soPhong.TabIndex = 32;
             this.txt_soPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soPhong_KeyPress);
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(157, 206);
-            this.txt_sdt.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txt_sdt, "txt_sdt");
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(265, 22);
-            this.txt_sdt.TabIndex = 31;
             this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
             // 
             // txt_hoTen
             // 
-            this.txt_hoTen.Location = new System.Drawing.Point(157, 141);
-            this.txt_hoTen.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txt_hoTen, "txt_hoTen");
             this.txt_hoTen.Name = "txt_hoTen";
-            this.txt_hoTen.Size = new System.Drawing.Size(265, 22);
-            this.txt_hoTen.TabIndex = 30;
             this.txt_hoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hoTen_KeyPress);
             // 
             // txt_maSV
             // 
-            this.txt_maSV.Location = new System.Drawing.Point(157, 76);
-            this.txt_maSV.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txt_maSV, "txt_maSV");
             this.txt_maSV.Name = "txt_maSV";
-            this.txt_maSV.Size = new System.Drawing.Size(265, 22);
-            this.txt_maSV.TabIndex = 29;
             this.txt_maSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_maSV_KeyPress);
-            // 
-            // btn_duyet
-            // 
-            this.btn_duyet.Location = new System.Drawing.Point(199, 403);
-            this.btn_duyet.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_duyet.Name = "btn_duyet";
-            this.btn_duyet.Size = new System.Drawing.Size(224, 68);
-            this.btn_duyet.TabIndex = 28;
-            this.btn_duyet.Text = "Duyệt";
-            this.btn_duyet.UseVisualStyleBackColor = true;
-            this.btn_duyet.Click += new System.EventHandler(this.btn_duyet_Click);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 276);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 16);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Số phòng đang ở:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(521, 210);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 16);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Địa chỉ:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 210);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Số điện thoại:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(511, 145);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Giới tính:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 79);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Ngày sinh:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 145);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Họ tên:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Mã sinh viên:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(391, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "THÔNG TIN SINH VIÊN";
+            // 
+            // btn_duyet
+            // 
+            this.btn_duyet.AnimationHoverSpeed = 0.07F;
+            this.btn_duyet.AnimationSpeed = 0.03F;
+            this.btn_duyet.BaseColor1 = System.Drawing.Color.Indigo;
+            this.btn_duyet.BaseColor2 = System.Drawing.Color.BlueViolet;
+            this.btn_duyet.BorderColor = System.Drawing.Color.Black;
+            this.btn_duyet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_duyet.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btn_duyet, "btn_duyet");
+            this.btn_duyet.ForeColor = System.Drawing.Color.White;
+            this.btn_duyet.Image = null;
+            this.btn_duyet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_duyet.Name = "btn_duyet";
+            this.btn_duyet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btn_duyet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btn_duyet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_duyet.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_duyet.OnHoverImage = null;
+            this.btn_duyet.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_duyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_duyet.Click += new System.EventHandler(this.btn_duyet_Click);
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.AnimationHoverSpeed = 0.07F;
+            this.btn_luu.AnimationSpeed = 0.03F;
+            this.btn_luu.BaseColor1 = System.Drawing.Color.Indigo;
+            this.btn_luu.BaseColor2 = System.Drawing.Color.BlueViolet;
+            this.btn_luu.BorderColor = System.Drawing.Color.Black;
+            this.btn_luu.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_luu.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btn_luu, "btn_luu");
+            this.btn_luu.ForeColor = System.Drawing.Color.White;
+            this.btn_luu.Image = null;
+            this.btn_luu.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btn_luu.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btn_luu.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_luu.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_luu.OnHoverImage = null;
+            this.btn_luu.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_luu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
+            // btn_khongDuyet
+            // 
+            this.btn_khongDuyet.AnimationHoverSpeed = 0.07F;
+            this.btn_khongDuyet.AnimationSpeed = 0.03F;
+            this.btn_khongDuyet.BaseColor1 = System.Drawing.Color.Indigo;
+            this.btn_khongDuyet.BaseColor2 = System.Drawing.Color.BlueViolet;
+            this.btn_khongDuyet.BorderColor = System.Drawing.Color.Black;
+            this.btn_khongDuyet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_khongDuyet.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btn_khongDuyet, "btn_khongDuyet");
+            this.btn_khongDuyet.ForeColor = System.Drawing.Color.White;
+            this.btn_khongDuyet.Image = null;
+            this.btn_khongDuyet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_khongDuyet.Name = "btn_khongDuyet";
+            this.btn_khongDuyet.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btn_khongDuyet.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btn_khongDuyet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_khongDuyet.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_khongDuyet.OnHoverImage = null;
+            this.btn_khongDuyet.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_khongDuyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_khongDuyet.Click += new System.EventHandler(this.btn_khongDuyet_Click);
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(586, 270);
+            resources.ApplyResources(this.txt_email, "txt_email");
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(265, 22);
-            this.txt_email.TabIndex = 40;
+            // 
+            // btn_thoat
+            // 
+            this.btn_thoat.AnimationHoverSpeed = 0.07F;
+            this.btn_thoat.AnimationSpeed = 0.03F;
+            this.btn_thoat.BaseColor1 = System.Drawing.Color.Indigo;
+            this.btn_thoat.BaseColor2 = System.Drawing.Color.BlueViolet;
+            this.btn_thoat.BorderColor = System.Drawing.Color.Black;
+            this.btn_thoat.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_thoat.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btn_thoat, "btn_thoat");
+            this.btn_thoat.ForeColor = System.Drawing.Color.White;
+            this.btn_thoat.Image = null;
+            this.btn_thoat.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_thoat.Name = "btn_thoat";
+            this.btn_thoat.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btn_thoat.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btn_thoat.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_thoat.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_thoat.OnHoverImage = null;
+            this.btn_thoat.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_thoat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // Form_ThongTinSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 484);
+            this.BackColor = System.Drawing.Color.White;
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_thoat);
+            this.Controls.Add(this.btn_khongDuyet);
+            this.Controls.Add(this.btn_luu);
+            this.Controls.Add(this.btn_duyet);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbx_gioiTinh);
             this.Controls.Add(this.dtp_ngaySinh);
-            this.Controls.Add(this.btn_khongDuyet);
-            this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.txt_diaChi);
             this.Controls.Add(this.txt_soPhong);
             this.Controls.Add(this.txt_sdt);
             this.Controls.Add(this.txt_hoTen);
             this.Controls.Add(this.txt_maSV);
-            this.Controls.Add(this.btn_duyet);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -268,8 +265,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ThongTinSinhVien";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_ThongTinSinhVien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,14 +277,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbx_gioiTinh;
         private System.Windows.Forms.DateTimePicker dtp_ngaySinh;
-        private System.Windows.Forms.Button btn_khongDuyet;
-        private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.TextBox txt_diaChi;
         private System.Windows.Forms.TextBox txt_soPhong;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_hoTen;
         private System.Windows.Forms.TextBox txt_maSV;
-        private System.Windows.Forms.Button btn_duyet;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -297,5 +291,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private thietKeControls.txtEmail txt_email;
+        private Guna.UI.WinForms.GunaGradientButton btn_duyet;
+        private Guna.UI.WinForms.GunaGradientButton btn_luu;
+        private Guna.UI.WinForms.GunaGradientButton btn_khongDuyet;
+        private Guna.UI.WinForms.GunaGradientButton btn_thoat;
     }
 }

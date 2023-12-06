@@ -36,5 +36,10 @@ namespace thuVienControls
         {
 
         }
+        public event EventHandler thoat_Click;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            thoat_Click?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

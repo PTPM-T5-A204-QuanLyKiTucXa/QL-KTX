@@ -20,11 +20,15 @@ namespace Main
             InitializeComponent();
             loadCBXGioiTinh();
             loadSinhVien();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public Form_ThongTinSinhVien(string masv)
         {
             InitializeComponent();
             this.MaSV = masv;
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             loadCBXGioiTinh();
             loadSinhVien();
 

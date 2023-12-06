@@ -54,7 +54,7 @@ namespace Main
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1301, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1769, 26);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,24 +128,29 @@ namespace Main
             // 
             // panel_trangchu
             // 
-            this.panel_trangchu.Location = new System.Drawing.Point(0, 29);
+            this.panel_trangchu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel_trangchu.Location = new System.Drawing.Point(30, 58);
             this.panel_trangchu.Name = "panel_trangchu";
-            this.panel_trangchu.Size = new System.Drawing.Size(1301, 609);
-            this.panel_trangchu.TabIndex = 6;
+            this.panel_trangchu.Size = new System.Drawing.Size(1715, 766);
+            this.panel_trangchu.TabIndex = 10;
             // 
             // Form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 637);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Main.Properties.Resources._5155dac03c64c13a9875_1;
+            this.ClientSize = new System.Drawing.Size(1769, 876);
             this.Controls.Add(this.panel_trangchu);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_KTX HUIT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

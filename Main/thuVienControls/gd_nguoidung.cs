@@ -135,7 +135,6 @@ namespace thuVienControls
                 e.Handled = true;
             }
         }
-
         private void txt_matkhau_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -143,18 +142,12 @@ namespace thuVienControls
                 e.Handled = true;
             }
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void data_nguoidung_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void data_nguoidung_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                txt_tennguoidung.Enabled=true;
-                txt_matkhau.Enabled=true;
+                txt_tennguoidung.Enabled = true;
+                txt_matkhau.Enabled = true;
                 data_nguoidung.ClearSelection();
                 data_nguoidung.Rows[e.RowIndex].Selected = true;
                 DataGridViewRow selectedRow = data_nguoidung.Rows[e.RowIndex];
@@ -163,6 +156,21 @@ namespace thuVienControls
                 cbm_trangthai.SelectedItem = selectedRow.Cells["trang_thai"].Value.ToString();
                 int mavaitro = int.Parse(selectedRow.Cells["vai_tro_id"].Value.ToString());
                 cbm_vaitro.SelectedItem = nd.laytenvaitro(mavaitro);
+            }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void data_nguoidung_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (data_nguoidung.Columns[e.ColumnIndex].Name == "mat_khau" && e.Value != null)
+            {
+                // Thay thế giá trị bằng '*'
+                e.Value = new string('*', e.Value.ToString().Length);
+                e.FormattingApplied = true;
             }
         }
     }

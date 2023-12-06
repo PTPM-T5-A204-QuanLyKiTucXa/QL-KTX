@@ -21,8 +21,9 @@ namespace thuVienControls
         {
             InitializeComponent();
             Load += Gd_QLPhong_Load;
+           
 
-            
+
         }
 
         private void Gd_QLPhong_Load(object sender, EventArgs e)
@@ -45,7 +46,9 @@ namespace thuVienControls
         public void LoadData()
         {
             LoadPhong();
-
+            cbm_loaiphong.Items.Clear();
+            cbm_tang.Items.Clear();
+            cbm_trangthai.Items.Clear();
             foreach (string s in qL_Phong.laytenloaiPhong_khongtrung())
             {
                 cbm_loaiphong.Items.Add(s.ToString());
@@ -60,6 +63,7 @@ namespace thuVienControls
             txt_sophong.Enabled = true;
             cbm_loaiphong.Enabled= true;
             cbm_tang.Enabled= true;
+            cbm_trangthai.SelectedItem = "Trống";
             them = true;
 
         }
@@ -102,7 +106,7 @@ namespace thuVienControls
 
                 gd.loadThongTinPhong(p.so_phong, p.LoaiPhong.ten_loai_phong, qL_Phong.DemSoSinhVienTrongPhong(p.so_phong));
                 gd.Controlsclick += Gd_Controlsclick;
-                gd.Controlsclick_sua += Gd_Controlsclick_sua;
+               // gd.Controlsclick_sua += Gd_Controlsclick_sua;
                 gd.Controlsclick_xoa += Gd_Controlsclick_xoa;
                 flowLayoutPanel1.Controls.Add(gd);
             }
@@ -126,13 +130,13 @@ namespace thuVienControls
             {
                 gd_Phong gd = new gd_Phong
                 {
-                    BackColor = Color.Aqua,
+               
                     SoPhong = p.so_phong
                 };
 
                 gd.loadThongTinPhong(p.so_phong, p.LoaiPhong.ten_loai_phong, qL_Phong.DemSoSinhVienTrongPhong(p.so_phong));
                 gd.Controlsclick += Gd_Controlsclick;
-                gd.Controlsclick_sua += Gd_Controlsclick_sua;
+               // gd.Controlsclick_sua += Gd_Controlsclick_sua;
                 sua = true;
                 txt_sophong.Enabled = true;
                 cbm_loaiphong.Enabled = true;
@@ -153,20 +157,20 @@ namespace thuVienControls
 
         private void Gd_Controlsclick_sua(object sender, EventArgs e)
         {
-            ResetInputs();
-            gd_Phong gd = sender as gd_Phong;
-            if (gd != null)
-            {
-                sua = true;
-                Phong a = qL_Phong.loadThongTinPhong(gd.SoPhong);
-                txt_sophong.Text +=a.so_phong.ToString();
-                cbm_loaiphong.SelectedItem = qL_Phong.layLoaiPhong(int.Parse(a.loai_phong_id.ToString()));
-                cbm_tang.SelectedItem = a.tang.ToString();
-                cbm_trangthai.SelectedItem =a.trang_thai;
-                txt_sophong.Enabled = true;
-                cbm_loaiphong.Enabled = true;
-                cbm_trangthai.Enabled = true;
-            }
+            //ResetInputs();
+            //gd_Phong gd = sender as gd_Phong;
+            //if (gd != null)
+            //{
+            //    sua = true;
+            //    Phong a = qL_Phong.loadThongTinPhong(gd.SoPhong);
+            //    txt_sophong.Text +=a.so_phong.ToString();
+            //    cbm_loaiphong.SelectedItem = qL_Phong.layLoaiPhong(int.Parse(a.loai_phong_id.ToString()));
+            //    cbm_tang.SelectedItem = a.tang.ToString();
+            //    cbm_trangthai.SelectedItem =a.trang_thai;
+            //    txt_sophong.Enabled = true;
+            //    cbm_loaiphong.Enabled = true;
+            //    cbm_trangthai.Enabled = true;
+            //}
            
         }
         private void OnGdControlsclick()
@@ -183,30 +187,30 @@ namespace thuVienControls
         {
             if (sua)
             {
-                DialogResult r = MessageBox.Show("Bạn có muốn sửa phòng" + txt_sophong.Text + " không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (r == DialogResult.Yes)
-                {
-                    int maloaiphong = qL_Phong.lay_maloaiphong(cbm_loaiphong.SelectedItem.ToString());
-                  bool kq=   qL_Phong.update_Phong(txt_sophong.Text,maloaiphong);
+                //DialogResult r = MessageBox.Show("Bạn có muốn sửa phòng" + txt_sophong.Text + " không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (r == DialogResult.Yes)
+                //{
+                //    int maloaiphong = qL_Phong.lay_maloaiphong(cbm_loaiphong.SelectedItem.ToString());
+                //  bool kq=   qL_Phong.update_Phong(txt_sophong.Text,maloaiphong);
           
-                    if(kq)
-                    {
-                        MessageBox.Show("Đã sửa thành công !", "Thông báo", MessageBoxButtons.OK);
-                    }    
-                    else
-                    {
-                        MessageBox.Show("Cập nhật khong thành công !", "Thông Báo", MessageBoxButtons.OK);
-                    }
-                    ResetInputs();
-                }
-                else
-                {
+                //    if(kq)
+                //    {
+                //        MessageBox.Show("Đã sửa thành công !", "Thông báo", MessageBoxButtons.OK);
+                //    }    
+                //    else
+                //    {
+                //        MessageBox.Show("Cập nhật khong thành công !", "Thông Báo", MessageBoxButtons.OK);
+                //    }
+                //    ResetInputs();
+                //}
+                //else
+                //{
 
-                  MessageBox.Show("Cập nhật khong thành công !", "Thông Báo", MessageBoxButtons.OK);
-                }    
-                LoadData();
-                sua = false;
-                ResetInputs();
+                //  MessageBox.Show("Cập nhật khong thành công !", "Thông Báo", MessageBoxButtons.OK);
+                //}    
+                //LoadData();
+                //sua = false;
+                //ResetInputs();
 
             }
             else if(them)
@@ -267,7 +271,13 @@ namespace thuVienControls
             radio_tang.Checked = false;
             txt_sophong.Text = "";
             txt_tim.Text = "";
-            
+            them = false;
+            txt_sophong.Enabled = false;
+            cbm_loaiphong.Enabled = false;
+            cbm_tang.Enabled = false;
+            cbm_trangthai.Enabled = false;
+            ResetInputs();
+
         }
 
         private void txt_sophong_KeyPress(object sender, KeyPressEventArgs e)

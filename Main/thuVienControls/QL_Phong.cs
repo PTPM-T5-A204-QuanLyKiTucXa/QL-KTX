@@ -221,13 +221,14 @@ namespace thuVienControls
             }
            
         }
-
+        
         public bool  xoa_Phong(string phongCanXoa)
         {
             
             Phong phongToDelete = QL_KTX.Phongs.FirstOrDefault(p => p.so_phong == phongCanXoa);
+            var kq = QL_KTX.HoaDonDienNuocs.Where(p => p.phong_id == phongToDelete.phong_id).Select(p=>p.hoa_don_id).FirstOrDefault();
             int soluong = int.Parse(DemSoSinhVienTrongPhong(phongCanXoa));
-            if(phongToDelete!=null && soluong==0)
+            if(kq==null || soluong==0)
             {
                 QL_KTX.Phongs.DeleteOnSubmit(phongToDelete);
                 QL_KTX.SubmitChanges();

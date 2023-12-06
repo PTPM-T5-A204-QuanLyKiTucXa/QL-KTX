@@ -19,12 +19,16 @@ namespace Main
             InitializeComponent();
             flowLayoutPanel1.Controls.Add(gd); 
             gd.huyBoClick += Gd_huyBoClick;
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         public Form_ThongTinHopDong(int maHD)
         {
             InitializeComponent();
             this.maHD = maHD;
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             flowLayoutPanel1.Controls.Add(gd);
             gd.huyBoClick += Gd_huyBoClick;
             gd.loadThongTinHopDong(maHD);
@@ -35,6 +39,11 @@ namespace Main
         private void Gd_huyBoClick(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

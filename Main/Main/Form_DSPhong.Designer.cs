@@ -28,23 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.gunaAnimateWindow1 = new Guna.UI.WinForms.GunaAnimateWindow(this.components);
+            this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // gunaAnimateWindow1
+            // 
+            this.gunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER;
+            this.gunaAnimateWindow1.Interval = 100;
+            this.gunaAnimateWindow1.TargetControl = this;
             // 
             // panel1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 639);
+            this.panel1.Size = new System.Drawing.Size(1697, 719);
             this.panel1.TabIndex = 0;
             // 
             // Form_DSPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 640);
+            this.ClientSize = new System.Drawing.Size(1697, 719);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_DSPhong";
@@ -56,7 +63,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaAnimateWindow gunaAnimateWindow1;
+        private System.Windows.Forms.FlowLayoutPanel panel1;
     }
 }

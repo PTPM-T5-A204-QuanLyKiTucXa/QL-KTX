@@ -107,7 +107,7 @@ namespace thuVienControls
 
         }
 
-        private void txn_lapHD_Click(object sender, EventArgs e)
+        private void txn_lapHD_Click_1(object sender, EventArgs e)
         {
             DateTime startDate = dtp_ngayBatDau.Value;
             DateTime endDate = dtp_ngayKetThuc.Value;
@@ -124,7 +124,7 @@ namespace thuVienControls
             string trangThai = cbx_trangThai.Text;
             string tienThu = txt_tienThu.Text;
             Ql_SinhVien ql_sv=new Ql_SinhVien();
-            if (ql_sv.IsEmailValid(txt_email.Text))
+            if (!string.IsNullOrEmpty(tienThu))
             {
                 DialogResult r = MessageBox.Show("Bạn muốn lập hợp đồng cho sinh viên " + txt_tenSV.Text + " ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
@@ -150,7 +150,7 @@ namespace thuVienControls
             }
             else
             {
-                MessageBox.Show("Email nhập sai rồi!");
+                MessageBox.Show("Hãy chọn ngày hết hạn trên hợp đồng !");
             }    
         }
 
@@ -172,7 +172,12 @@ namespace thuVienControls
 
         private void txt_CCCD_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || txt_CCCD.Text.Length >= 12)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txt_CCCD.Text.Length >= 12 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
@@ -180,7 +185,12 @@ namespace thuVienControls
 
         private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txt_SDT.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }

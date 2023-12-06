@@ -36,6 +36,7 @@ namespace Main
             gd.themSVClick += Gd_themSVClick;
             gd.DataGridViewCellClick += Gd_DataGridViewCellClick;
             gd.laphopdong_Click += Gd_laphopdong_Click;
+            
 
 
         }

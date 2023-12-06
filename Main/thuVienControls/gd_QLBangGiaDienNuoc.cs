@@ -44,12 +44,19 @@ namespace thuVienControls
 
         private void btn_xacNhan_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (!string.IsNullOrEmpty(txt_DonGia.Text) || !string.IsNullOrEmpty(txt_giaNuoc.Text) || !string.IsNullOrEmpty(txt_SoBatDau.Text))
             {
-                CapNhatThongTinGiaDien();
-                CapNhatThongTinGiaNuoc();
+                DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    CapNhatThongTinGiaDien();
+                    CapNhatThongTinGiaNuoc();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin !");
+            }    
         }
 
         public void CapNhatThongTinGiaDien()
@@ -132,5 +139,7 @@ namespace thuVienControls
                 e.Handled = true;
             }
         }
+
+
     }
 }

@@ -59,6 +59,10 @@ namespace Main
                 btn_duyet.Visible = false;
                 btn_khongDuyet.Visible = false;
             }
+            if(sv.trang_thai=="Chờ duyệt")
+            {
+                btn_luu.Visible=false;
+            }    
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -84,6 +88,7 @@ namespace Main
         private void btn_duyet_Click(object sender, EventArgs e)
         {
             Ql_SinhVien ql=new Ql_SinhVien();
+            
            if(ql.capNhatTrangThai(txt_maSV.Text, "Đã duyệt"))
             {
                 Ql_NguoiDung qlnd = new Ql_NguoiDung();
@@ -134,7 +139,12 @@ namespace Main
 
         private void txt_sdt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) || txt_sdt.Text.Length >= 10)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (txt_sdt.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
@@ -142,7 +152,7 @@ namespace Main
 
         private void txt_soPhong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127 )
             {
                 e.Handled = true;
             }
@@ -150,11 +160,26 @@ namespace Main
 
         private void txt_diaChi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ' )
             {
                 e.Handled = true;
             }
 
+        }
+
+        private void dtp_ngaySinh_CloseUp(object sender, EventArgs e)
+        {
+            DateTime ngaysinh = dtp_ngaySinh.Value;
+            if (ngaysinh>DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ !");
+                dtp_ngaySinh.Value = DateTime.Now;
+            }
+        }
+        public event EventHandler ThoatClick;
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Main
         public Form_ThongTinSuCo()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             flowLayoutPanel1.Controls.Add(gd);
         }
 
@@ -24,6 +26,8 @@ namespace Main
         {
             InitializeComponent();
             gd.loadThongTinSuCo(maSC);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             gd.huyBoClick += Gd_huyBoClick;
             flowLayoutPanel1.Controls.Add(gd);
         }

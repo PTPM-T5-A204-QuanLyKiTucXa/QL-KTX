@@ -18,8 +18,8 @@ namespace Main
         {
             InitializeComponent();
             loadPhong();
-            
-            
+            WindowState = FormWindowState.Maximized;
+
         }
 
         public void loadPhong()

@@ -13,9 +13,15 @@ namespace Main
 {
     public partial class Form_DangNhap : Form
     {
+        private int moveDistance = 5; 
+        private int minX =385; 
+        private int maxX = 640;
+        private Color[] colors = { Color.Black,Color.Indigo}; 
+        private int currentColorIndex = 0;
         public Form_DangNhap()
         {
             InitializeComponent();
+            InitializeTimer();
         }
         public void processLogin()
         {
@@ -84,6 +90,58 @@ namespace Main
         {
             this.Close();
             return;
+        }
+
+
+
+        private void InitializeTimer()
+        {
+            timer1 = new Timer();
+            timer1.Interval = 100; 
+            timer1.Tick += Timer1_Tick;
+            timer1.Start();
+
+
+            //--------------------
+            timer2 = new Timer();
+            timer2.Interval = 8550;
+            timer2.Tick += timer2_Tick;
+            timer2.Start();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+          
+            MoveLabel();
+        }
+
+
+
+        private void ChangeLabelColor()
+        {
+            lbform.ForeColor = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.Length;
+        }
+        private void MoveLabel()
+        {
+            if (lbform.Left >= maxX)
+            {
+                moveDistance = -Math.Abs(moveDistance);
+            }
+            else if (lbform.Left <= minX)
+            {
+                moveDistance = Math.Abs(moveDistance);
+            }
+            lbform.Left += moveDistance;
+        }
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            ChangeLabelColor();
         }
     }
 }

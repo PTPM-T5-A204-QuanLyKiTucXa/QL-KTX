@@ -76,7 +76,8 @@ namespace thuVienControls
 
         public HopDongThuePhong layThongTinHopDong()
         {
-            int maHD = int.Parse(dgv_dsHD.CurrentRow.Cells[0].Value.ToString());
+            
+            int maHD = int.Parse(dgv_dsHD.CurrentRow.Cells["hop_dong_id"].Value.ToString());
             var hdtp = qlhd.loadHopDongThuePhong(maHD);
             return hdtp;
         }
@@ -85,17 +86,32 @@ namespace thuVienControls
 
         private void btn_lapHopDong_Click(object sender, EventArgs e)
         {
-            lapHDClick?.Invoke(this, e);
+       
+            if (!string.IsNullOrEmpty(txt_maSinhVien.Text))
+            {
+                lapHDClick?.Invoke(this, e);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền mã số sinh viên !");
+            }
         }
 
         private void dgv_dsHD_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            clickDataGrid?.Invoke(this, e);
+           clickDataGrid?.Invoke(this, e);
         }
 
         private void btn_xemHopDong_Click(object sender, EventArgs e)
         {
-            dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
+            if (!string.IsNullOrEmpty(txt_maSinhVien.Text))
+            {
+                dgv_dsHD.DataSource = qlhd.loadDSHopDongThuePhongTheoMaSV(txt_maSinhVien.Text.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền mã số sinh viên !");
+            }    
         }
 
         private void txt_maSinhVien_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,6 +133,11 @@ namespace thuVienControls
             cbx_tuThang.SelectedItem = 0;
             cbx_xuatNam.SelectedItem = 0;
             cbx_xuatThang.SelectedItem = 0;
+        }
+
+        private void dgv_dsHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clickDataGrid?.Invoke(this, e);
         }
     }
 }

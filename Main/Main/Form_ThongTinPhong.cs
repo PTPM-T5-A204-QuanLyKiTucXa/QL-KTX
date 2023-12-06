@@ -19,11 +19,16 @@ namespace Main
         {
             InitializeComponent();
             loadThongTin();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public Form_ThongTinPhong(string soPhong)
         {
             InitializeComponent();
             this.SoPhong = soPhong;
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            
             loadThongTin();
         }
 
@@ -36,6 +41,12 @@ namespace Main
             dgv.DataSource = qlp.loadDanhSachSinhVienTheoPhong(this.SoPhong);
             gd.loadGridSinhVien(dgv);
             flowLayoutPanel1.Controls.Add(gd);
+            gd.thoat_Click += Gd_thoat_Click;
+        }
+
+        private void Gd_thoat_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }

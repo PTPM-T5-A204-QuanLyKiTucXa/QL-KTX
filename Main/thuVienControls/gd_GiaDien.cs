@@ -40,26 +40,6 @@ namespace thuVienControls
                 MessageBox.Show("Cập nhật thất bại");
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int soBatDau = int.Parse(txt_SoBatDau.Text);
-            double donGia = double.Parse(txt_DonGia.Text);
-            DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "xóa", MessageBoxButtons.YesNo);
-
-            if (r == DialogResult.Yes)
-            {
-                if (qldn.xoaNacDien(soBatDau, donGia))
-                {
-                    MessageBox.Show("Cập nhật thành công");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại");
-                }
-            }
-        }
-
         private void txt_SoBatDau_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
@@ -83,6 +63,25 @@ namespace thuVienControls
             if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int soBatDau = int.Parse(txt_SoBatDau.Text);
+            double donGia = double.Parse(txt_DonGia.Text);
+            DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "xóa", MessageBoxButtons.YesNo);
+
+            if (r == DialogResult.Yes)
+            {
+                if (qldn.xoaNacDien(soBatDau, donGia))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại");
+                }
             }
         }
     }

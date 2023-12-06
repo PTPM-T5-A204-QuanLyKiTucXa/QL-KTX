@@ -19,11 +19,15 @@ namespace Main
             InitializeComponent();
             gd.load_thongtin(masv);
             flowLayoutPanel1.Controls.Add(gd);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public Form_LapHopDongThuePhong()
         {
             InitializeComponent();
             flowLayoutPanel1.Controls.Add(gd);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public string Massv { get => massv; set => massv = value; }
     }

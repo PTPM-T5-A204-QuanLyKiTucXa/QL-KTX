@@ -105,6 +105,11 @@ namespace thuVienControls
             laphopdong_Click?.Invoke(this, e);
         }
 
+        private void grid_dssv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
 
 

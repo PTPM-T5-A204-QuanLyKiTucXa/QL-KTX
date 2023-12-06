@@ -17,11 +17,15 @@ namespace Main
         public Form_ThongTinHoaDonDienNuoc()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         public Form_ThongTinHoaDonDienNuoc(int maHD)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             gd.loadThongTinHoaDon(maHD);
             gd.clickHuy += Gd_clickHuy;
             flowLayoutPanel1.Controls.Add(gd);
