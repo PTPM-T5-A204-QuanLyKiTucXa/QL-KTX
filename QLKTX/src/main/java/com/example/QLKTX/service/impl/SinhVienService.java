@@ -25,8 +25,7 @@ public class SinhVienService implements ISinhVienService {
     private final ISinhVienRepository repository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+
 
     @Override
     public void save(SinhVien sinhVien) {
@@ -49,20 +48,11 @@ public class SinhVienService implements ISinhVienService {
         sv.setEmail(registerRequest.getEmail());
         sv.setTrangThai(registerRequest.getTrangThai());
         sv.setSoPhong(registerRequest.getSoPhong());
-        sv.setNguoiDung(registerRequest.getNguoiDung());
+        //sv.setNguoiDung(registerRequest.getNguoiDung());
         repository.save(sv);
         return sv;
     }
-    @Override
-    public String login(LoginRequestDto authenticationRequest) {
-        SinhVien sv = repository.findByMaSinhVien(authenticationRequest.getUsername());
 
-        if(!authenticationRequest.getPassword().equals(sv.getSoDienThoai())){
-            throw new AuthenticationServiceException("Wrong password");
-        }
-        return jwtTokenUtil.generateToken(sv);
-
-    }
 
     @Override
     public List<SinhVien> getAll() {

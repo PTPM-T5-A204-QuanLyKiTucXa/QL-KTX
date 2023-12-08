@@ -12,7 +12,6 @@ public interface ISinhVienService {
     SinhVien register(RegisterRequestDto registerRequest);
     SinhVien getSinhVienbyMaSinhVien(String MaSinhVien);
     void edit(SinhVienInforRequestDto sinhVien);
-    String login(LoginRequestDto authenticationRequest);
     List<SinhVien> getAll();
     boolean isSinhVienIsExists (String maSinhVien);
     boolean isCccdIsValid(String Cccd);

@@ -256,7 +256,7 @@
             email:$('#email').val(),
             trangThai: $('#trangThai').val(),
             soPhong:$('#soPhong').val(),
-            nguoiDung:2,
+            nguoiDung:$('#nguoiDung').val(),
         })
         console.log(data);
         $.ajax({
@@ -373,15 +373,6 @@
             '            </div>\n' +
             '            <hr>\n' +
 
-            '            <div class="row">\n' +
-            '              <div class="col-sm-3">\n' +
-            '              <p class="mb-0">Mã Sinh Viên</p>\n' +
-            '              </div>\n' +
-            '              <div class="col-sm-9">\n' +
-            '                  <input type="text" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'" oninput="validateStudentID(this)"/>\n' +
-            '              </div>\n' +
-            '          </div>\n' +
-            '          <hr>\n' +
 
 
             '            <div class="row">\n' +
@@ -452,11 +443,30 @@
             '          </div>\n' +
 
 
+
             '            <div class="row">\n' +
             '              <div class="col-sm-3">\n' +
             '              </div>\n' +
             '              <div class="col-sm-9">\n' +
             '                  <input type="hidden" id="trangThai" name="trangThai" class="form-control" value="'+user.trangThai+'"/>\n' +
+            '              </div>\n' +
+            '          </div>\n' +
+
+            '            <div class="row">\n' +
+            '              <div class="col-sm-3">\n' +
+            '              </div>\n' +
+            '              <div class="col-sm-9">\n' +
+            '                  <input type="hidden" id="nguoiDung" name="nguoiDung" class="form-control" value="'+user.nguoiDung+'"/>\n' +
+            '              </div>\n' +
+            '          </div>\n' +
+
+
+            '            <div class="row">\n' +
+            '              <div class="col-sm-3">\n' +
+            '              <p class="mb-0"></p>\n' +
+            '              </div>\n' +
+            '              <div class="col-sm-9">\n' +
+            '                  <input type="hidden" id="maSinhVien" name="maSinhVien" class="form-control" value="'+user.maSinhVien+'" oninput="validateStudentID(this)"/>\n' +
             '              </div>\n' +
             '          </div>\n' +
 
@@ -466,6 +476,8 @@
             '            </div>\n' +
             '        </form>\n' +
             '    </div>'
+
+
         $("#form").html(temp);
     }
 

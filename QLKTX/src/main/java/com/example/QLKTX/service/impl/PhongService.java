@@ -17,4 +17,5 @@ public class PhongService implements IPhongService {
     public Phong getPhongbySoPhongSinhVien(String soPhong) {
         return PhongRepository.findBySoPhong(soPhong);
     }
+
 }

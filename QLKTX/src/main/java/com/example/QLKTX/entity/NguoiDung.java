@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.BitSet;
 
 @Entity
 @Table(name = "nguoidung")
@@ -33,7 +34,7 @@ public class NguoiDung {
     @Column(name = "mat_khau")
     private String matKhau;
     @Column(name = "trang_thai")
-    private String trangThai;
+    private Integer trangThai;
 
     @Column(name = "vai_tro_id")
     private Integer vaiTroId;

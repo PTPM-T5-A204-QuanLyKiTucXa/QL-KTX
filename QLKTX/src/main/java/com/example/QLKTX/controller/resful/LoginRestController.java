@@ -49,18 +49,22 @@ public class LoginRestController {
 
     @PostMapping(value = "/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginRequestDto authenticationRequest){
-        String token = svService.login(authenticationRequest);
-        String username = jwtTokenUtil.getMaSinhVienFromJWT(token);
-        SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(username);
-        NguoiDung nguoidung = nguoiDungService.getNguoiDungByTenNguoiDung(username);
-        String trangthai =sinhVien.getTrangThai();
+        // login dung tai khoan mat khau nguoi dung se tra ve ma token
+        String token = nguoiDungService.login(authenticationRequest);
+        String masinhvien = jwtTokenUtil.getMaSinhVienFromJWT(token);
+        // ma token chua ma sinh vien de lay thong tin sinh vien
+        SinhVien sinhVien = svService.getSinhVienbyMaSinhVien(masinhvien);
+        // kiem tra thai nguoi dung va trang thai sinh vien truoc khi cho dang nhap
+        String trangthai = sinhVien.getTrangThai();
+        NguoiDung nguoidung= nguoiDungService.getNguoiDungbyNguoiDungID(sinhVien.getNguoiDung());
         Integer vaitro = nguoidung.getVaiTroId();
+        Integer trangthainguoidung = nguoidung.getTrangThai();
         String role="";
         if (trangthai.equals("Chờ duyệt"))
         {
             return  ResponseEntity.ok("Đang chờ duyệt");
         }
-        if (trangthai.equals("Đang ở")||trangthai.equals("Đã duyệt"))
+        if ((trangthai.equals("Đang ở")||trangthai.equals("Đã duyệt")) &&trangthainguoidung==1 )
         {
             if (vaitro ==1)
             {
