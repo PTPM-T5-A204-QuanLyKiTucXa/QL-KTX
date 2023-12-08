@@ -18,7 +18,7 @@ namespace thuVienControls
 
         }
 
-        public int lapHopDongThuePhong(string maSV, string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string loaiPhong, string sdt, string diaChi, string email,DateTime ngayLap, DateTime ngayBD, DateTime ngayKT, string trangThai, double tienThu)
+        public int lapHopDongThuePhong(string maSV, string hoTen, DateTime ngaySinh, string cccd, string gioiTinh, string loaiPhong, string sdt, string diaChi, string email,DateTime ngayLap, DateTime ngayBD, DateTime ngayKT, string trangThai,string xepPhong, double tienThu)
         {
             var sv = qlktx.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
             
@@ -38,7 +38,7 @@ namespace thuVienControls
                         else
                         {
                             HopDongThuePhong hdnew = new HopDongThuePhong();
-                            hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                            hdnew.phong_id = qlp.layIDPhong(xepPhong);
                             hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
                             hdnew.ngay_lap = ngayLap;
                             hdnew.ngay_bat_dau_thue = ngayBD;
@@ -63,7 +63,7 @@ namespace thuVienControls
                     else
                     {
                         HopDongThuePhong hdnew = new HopDongThuePhong();
-                        hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                        hdnew.phong_id = qlp.layIDPhong(xepPhong);
                         hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
                         hdnew.ngay_lap = ngayLap;
                         hdnew.ngay_bat_dau_thue = ngayBD;
@@ -83,7 +83,7 @@ namespace thuVienControls
                 if (kq1 && kq2)
                 {
                     HopDongThuePhong hdnew = new HopDongThuePhong();
-                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                    hdnew.phong_id = qlp.layIDPhong(xepPhong);
                     hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
                     hdnew.ngay_lap = ngayLap;
                     hdnew.ngay_bat_dau_thue = ngayBD;
@@ -98,7 +98,7 @@ namespace thuVienControls
                 else if(kq1 && !kq2)
                 {
                     HopDongThuePhong hdnew = new HopDongThuePhong();
-                    hdnew.phong_id = qlp.layIDPhong(tt.TimPhongPhuHop(gioiTinh, loaiPhong));
+                    hdnew.phong_id = qlp.layIDPhong(xepPhong);
                     hdnew.sinh_vien_id = qlsv.layIDSinhVien(maSV);
                     hdnew.ngay_lap = ngayLap;
                     hdnew.ngay_bat_dau_thue = ngayBD;

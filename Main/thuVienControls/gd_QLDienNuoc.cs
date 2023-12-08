@@ -101,15 +101,7 @@ namespace thuVienControls
 
         private void btn_suaDonGia_Click(object sender, EventArgs e)
         {
-          
-            if (!string.IsNullOrEmpty(txt_soPhong.Text))
-            {
                 btnSuaDonGiaClick?.Invoke(this, e);
-            }
-            else
-            {
-                MessageBox.Show("vui lòng nhập số phòng !");
-            }
         }
 
         public int layMaHoaDon()

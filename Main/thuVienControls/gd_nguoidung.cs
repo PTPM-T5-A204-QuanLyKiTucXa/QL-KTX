@@ -20,6 +20,8 @@ namespace thuVienControls
         {
             InitializeComponent();
             Load += Gd_nguoidung_Load;
+            cbm_trangthai.Items.Add("Đang hoạt động");
+            cbm_trangthai.Items.Add("Ngưng hoạt động");
         }
 
         private void Gd_nguoidung_Load(object sender, EventArgs e)
@@ -31,11 +33,7 @@ namespace thuVienControls
         }
         public void load_data()
         {
-            cbm_trangthai.Items.Add("True");
-            cbm_trangthai.Items.Add("False");
-
-
-
+            
             //------------------------------------------------
 
             List<string> list = nd.layList_tenvaitro();
@@ -43,7 +41,6 @@ namespace thuVienControls
             {
                 cbm_vaitro.Items.Add(item);
             }
-
             data_nguoidung.DataSource = nd.getNguoiDung();
             data_nguoidung.Columns[5].Visible = false;
         }
@@ -98,7 +95,17 @@ namespace thuVienControls
                     if (r == DialogResult.Yes)
                     {
                         int mavaitro = nd.laymavaitro(cbm_vaitro.SelectedItem.ToString());
-                        bool kq = nd.suaTaiKhoanSinhVien(txt_tennguoidung.Text, txt_matkhau.Text, mavaitro);
+                        bool trangThai;
+                        if(cbm_trangthai.Text == "Đang hoạt động")
+                        {
+                            trangThai = true;
+                        }
+                        else
+                        {
+                            trangThai = false;
+                        }
+
+                        bool kq = nd.suaTaiKhoanSinhVien(txt_tennguoidung.Text, txt_matkhau.Text,trangThai, mavaitro);
                         if (kq)
                         {
                             MessageBox.Show("Cập nhật thành công !", "Thông Báo", MessageBoxButtons.OK);
@@ -153,15 +160,18 @@ namespace thuVienControls
                 DataGridViewRow selectedRow = data_nguoidung.Rows[e.RowIndex];
                 txt_tennguoidung.Text = selectedRow.Cells["ten_nguoi_dung"].Value.ToString();
                 txt_matkhau.Text = selectedRow.Cells["mat_khau"].Value.ToString();
-                cbm_trangthai.SelectedItem = selectedRow.Cells["trang_thai"].Value.ToString();
+                string trangThai = selectedRow.Cells["trang_thai"].Value.ToString();
+                if(trangThai=="True")
+                {
+                    cbm_trangthai.Text = "Đang hoạt động";
+                }   
+                else
+                {
+                    cbm_trangthai.Text = "Ngưng hoạt động";
+                }    
                 int mavaitro = int.Parse(selectedRow.Cells["vai_tro_id"].Value.ToString());
                 cbm_vaitro.SelectedItem = nd.laytenvaitro(mavaitro);
             }
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void data_nguoidung_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

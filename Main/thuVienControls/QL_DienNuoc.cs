@@ -152,11 +152,10 @@ namespace thuVienControls
             return gia;
         }
 
-        public bool capNhatHoaDonDienNuoc(int maHD, int soDien, int soNuoc, string trangThai)
+        public bool capNhatHoaDonDienNuoc(int maHD, int soDien, int soNuoc,double tongTien, string trangThai)
         {
             HoaDonDienNuoc hd = qlktx.HoaDonDienNuocs.Where(t => t.hoa_don_id == maHD).FirstOrDefault(); ;
             bool kq = false;
-            double tongTien = TinhTienDien(soDien) + TinhTienNuoc(soNuoc);
             if (hd != null)
             {
                 hd.so_dien = soDien;

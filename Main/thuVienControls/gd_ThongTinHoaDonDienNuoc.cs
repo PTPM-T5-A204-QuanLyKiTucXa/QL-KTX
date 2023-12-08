@@ -53,7 +53,8 @@ namespace thuVienControls
             int soDien = int.Parse(txt_soDienTieuThu.Text.ToString());
             int soNuoc = int.Parse(txt_soNuocTieuThu.Text.ToString());
             string trangThai = cbx_trangThai.Text.ToString();
-            if(qldn.capNhatHoaDonDienNuoc(maHD, soDien, soNuoc, trangThai))
+            double tongTien = double.Parse(txt_tongTien.Text.ToString());
+            if(qldn.capNhatHoaDonDienNuoc(maHD, soDien, soNuoc,tongTien, trangThai))
             {
                 MessageBox.Show("Cập nhật hóa đơn thành công");
             }
@@ -156,6 +157,14 @@ namespace thuVienControls
                 e.Handled = true;
             }
 
+        }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            int soDien = int.Parse(txt_soDienTieuThu.Text);
+            int soNuoc = int.Parse(txt_soNuocTieuThu.Text);
+            double tongTien = qldn.TinhTienDien(soDien) + qldn.TinhTienNuoc(soNuoc);
+            txt_tongTien.Text = tongTien.ToString();
         }
     }
 }

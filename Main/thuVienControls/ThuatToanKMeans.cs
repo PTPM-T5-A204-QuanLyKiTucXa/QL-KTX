@@ -102,8 +102,6 @@ namespace thuVienControls
                     }
                 }
             }
-
-            // Nếu chạy hết vòng lặp mà không tìm thấy phòng phù hợp
             return phongTrong != null ? phongTrong : "Không có phòng phù hợp";
         }
     }

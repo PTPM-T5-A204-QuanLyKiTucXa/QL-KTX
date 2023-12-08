@@ -33,6 +33,8 @@ namespace thuVienControls
             cbx_trangThai.DataSource = trangThai;
             string[] phai = { "Nam", "Nữ" };
             cbx_gioiTinh.DataSource = phai;
+            cbx_phong.DataSource = qlp.LayDanhSachPhongChuaDayTheoLoaiPhong("2 người");
+            cbx_phong.DisplayMember = "so_phong";
         }
 
         public void load_thongtin(string massv)
@@ -63,10 +65,6 @@ namespace thuVienControls
                 MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
                 dtp_ngayKetThuc.Value = DateTime.Now;
             }
-            else
-            {
-                txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, loaiPhong).ToString();
-            }
         }
 
         private void dtp_ngayBatDau_CloseUp(object sender, EventArgs e)
@@ -81,10 +79,6 @@ namespace thuVienControls
             {
                 MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
                 dtp_ngayBatDau.Value = DateTime.Now;
-            }
-            else
-            {
-                txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, loaiPhong).ToString();
             }
 
         }
@@ -101,10 +95,6 @@ namespace thuVienControls
             {
                 MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
                 dtp_ngayLap.Value = DateTime.Now;
-            }
-            else
-            {
-                txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, loaiPhong).ToString();
             }
 
         }
@@ -125,13 +115,21 @@ namespace thuVienControls
             string email = txt_email.Text;
             string trangThai = cbx_trangThai.Text;
             string tienThu = txt_tienThu.Text;
+            string xepPhong  = cbx_phong.Text;
             Ql_SinhVien ql_sv=new Ql_SinhVien();
+
+
+
+            if(string.IsNullOrEmpty(tienThu))
+            {
+                MessageBox.Show("vui lòng xếp phòng cho sinh viên bằng cách nhấn vào xếp phòng hoặc chọn phòng cho sinh viên!");
+            }    
             if (!string.IsNullOrEmpty(tienThu) && IsEmailValid(email))
             {
                 DialogResult r = MessageBox.Show("Bạn muốn lập hợp đồng cho sinh viên " + txt_tenSV.Text + " ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int kq = qlhd.lapHopDongThuePhong(masv, hoTen, ngaySinh, cccd, gioiTinh, loaiPhong, sdt, diaChi, email, ngayLap, startDate, endDate, trangThai, double.Parse(tienThu));
+                    int kq = qlhd.lapHopDongThuePhong(masv, hoTen, ngaySinh, cccd, gioiTinh, loaiPhong, sdt, diaChi, email, ngayLap, startDate, endDate, trangThai, xepPhong, double.Parse(tienThu));
                     if (kq == 0)
                     {
                         MessageBox.Show("Không thể lập hợp đồng do sinh viên đang có hợp đồng còn giá trị!");
@@ -152,7 +150,7 @@ namespace thuVienControls
             }
             else
             {
-                MessageBox.Show("Hãy chọn ngày hết hạn trên hợp đồng !");
+                MessageBox.Show("Hãy điền hay chọn đầy đủ thông tin hợp lệ cho hợp đồng !");
             }    
         }
 
@@ -224,6 +222,56 @@ namespace thuVienControls
             string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
             return Regex.IsMatch(email, pattern);
+        }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dtp_ngayBatDau.Value;
+            DateTime endDate = dtp_ngayKetThuc.Value;
+            DateTime ngayLap = dtp_ngayLap.Value;
+            string loaiPhong = cbx_loaiPhong.Text;
+            txt_tienThu.Text = qlhd.tinhTienThu(startDate, endDate, loaiPhong).ToString();
+        }
+
+        private void dtp_ngaySinh_CloseUp(object sender, EventArgs e)
+        {
+            DateTime ngaySinh = dtp_ngaySinh.Value;
+            if (ngaySinh > DateTime.Now)
+            { 
+                MessageBox.Show("Ngày tháng trong hợp đồng không hợp lệ");
+                dtp_ngaySinh.Value = DateTime.Now;
+            }
+        }
+
+        private void btn_xepPhong_Click(object sender, EventArgs e)
+        {
+            ThuatToanKMeans tt = new ThuatToanKMeans();
+            string gioiTinh = cbx_gioiTinh.Text.ToString() ;
+            string loaiPhong = cbx_loaiPhong.Text.ToString();
+            string kq = tt.TimPhongPhuHop(gioiTinh, loaiPhong);
+            if (kq != "Không có phòng phù hợp")
+            { 
+                cbx_phong.Text =  kq; 
+            }
+            else
+            {
+                MessageBox.Show("không còn phòng nào phù hợp!");
+            }
+        }
+
+        private void txt_xepPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cbx_loaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string loaiPhong = cbx_loaiPhong.Text.ToString();
+            cbx_phong.DataSource = qlp.LayDanhSachPhongChuaDayTheoLoaiPhong(loaiPhong);
+            cbx_phong.DisplayMember = "so_phong";
         }
     }
 }

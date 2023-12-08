@@ -32,18 +32,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accord">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Accord.Statistics.dll</HintPath>
+    </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>D:\file_BT_TH_HQTCSDL\Máy tính\XuatBaoCaoWordBangMailMergeAspose-main\Dll\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\..\..\Máy tính\DLL\DLL\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\thuVienControls\bin\Debug\Guna.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>..\thuVienControls\bin\Debug\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="s, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\thuVienControls\bin\Debug\s.dll</HintPath>
+      <HintPath>..\..\..\..\..\Máy tính\Guna.UI\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,10 +70,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="thietKeControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\thuVienControls\bin\Debug\thietKeControls.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form_NguoiDung.cs">
@@ -249,12 +256,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Template\HoaDonDienNuoc.doc" />
+    <None Include="Template\Hop-dong-thue-cho-noi-tru.doc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Template\" />
+    <ProjectReference Include="..\thuVienControls\thuVienControls.csproj">
+      <Project>{39e46e87-09d0-4af2-8048-c4079f97c740}</Project>
+      <Name>thuVienControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5155dac03c64c13a9875_1.jpg" />

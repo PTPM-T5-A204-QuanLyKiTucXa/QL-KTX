@@ -85,10 +85,11 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cbx_trangThai);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(4, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1328, 147);
+            this.panel2.Size = new System.Drawing.Size(1704, 147);
             this.panel2.TabIndex = 0;
             // 
             // btn_laphopdong
@@ -179,7 +180,7 @@
             this.label2.Location = new System.Drawing.Point(161, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.Size = new System.Drawing.Size(122, 29);
             this.label2.TabIndex = 44;
             this.label2.Text = "Trạng thái";
             // 
@@ -189,7 +190,7 @@
             this.cbx_trangThai.Location = new System.Drawing.Point(253, 56);
             this.cbx_trangThai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_trangThai.Name = "cbx_trangThai";
-            this.cbx_trangThai.Size = new System.Drawing.Size(313, 29);
+            this.cbx_trangThai.Size = new System.Drawing.Size(313, 36);
             this.cbx_trangThai.TabIndex = 43;
             this.cbx_trangThai.SelectedIndexChanged += new System.EventHandler(this.cbx_trangThai_SelectedIndexChanged);
             // 
@@ -200,7 +201,7 @@
             this.label1.Location = new System.Drawing.Point(161, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 21);
+            this.label1.Size = new System.Drawing.Size(77, 29);
             this.label1.TabIndex = 42;
             this.label1.Text = "Bộ lọc";
             // 
@@ -239,12 +240,13 @@
             this.grid_dssv.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_dssv.EnableHeadersVisualStyles = false;
             this.grid_dssv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grid_dssv.Location = new System.Drawing.Point(3, 181);
+            this.grid_dssv.Location = new System.Drawing.Point(3, 180);
             this.grid_dssv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grid_dssv.Name = "grid_dssv";
             this.grid_dssv.RowHeadersVisible = false;
             this.grid_dssv.RowHeadersWidth = 51;
             this.grid_dssv.RowTemplate.Height = 24;
+            this.grid_dssv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.grid_dssv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_dssv.Size = new System.Drawing.Size(1329, 578);
             this.grid_dssv.TabIndex = 2;
@@ -316,7 +318,7 @@
             // 
             // gd_QLSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);

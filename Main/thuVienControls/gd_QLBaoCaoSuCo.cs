@@ -53,5 +53,10 @@ namespace thuVienControls
             loadDanhSachSuCo();
             cbx_trangThai.SelectedItem = 0;
         }
+
+        private void dgv_dsSuCo_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

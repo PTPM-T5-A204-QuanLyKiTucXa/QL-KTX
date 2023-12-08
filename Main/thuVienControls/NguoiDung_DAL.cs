@@ -48,8 +48,11 @@ namespace thuVienControls
         public bool themTaiKhoanSinhVien(string maSV, string sdt)
         {
             var nguoiDung = db.NguoiDungs.Where(t => t.ten_nguoi_dung == maSV).FirstOrDefault();
+            var sinhVien = db.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
             if (nguoiDung != null)
             {
+                sinhVien.nguoi_dung_id = nguoiDung.nguoi_dung_id;
+                db.SubmitChanges();
                 return false;
             }
             else
@@ -61,11 +64,14 @@ namespace thuVienControls
                 nd.vai_tro_id = 2;
                 db.NguoiDungs.InsertOnSubmit(nd);
                 db.SubmitChanges();
+                sinhVien.nguoi_dung_id = nd.nguoi_dung_id;
+                db.SubmitChanges();
+
             }
             return true;
         }
 
-        public bool suaTaiKhoanSinhVien(string maSV, string sdt,int vaitro)
+        public bool suaTaiKhoanSinhVien(string maSV, string sdt,bool trangThai, int vaitro)
         {
             var nguoiDung = db.NguoiDungs.Where(t => t.ten_nguoi_dung == maSV).FirstOrDefault();
             if (nguoiDung == null)
@@ -73,7 +79,7 @@ namespace thuVienControls
                 return false;
             }
             nguoiDung.mat_khau = sdt;
-            nguoiDung.trang_thai = true;
+            nguoiDung.trang_thai = trangThai;
             nguoiDung.vai_tro_id = vaitro;
             db.SubmitChanges();
             return true;
