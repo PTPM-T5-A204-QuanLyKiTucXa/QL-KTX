@@ -79,6 +79,9 @@ namespace thuVienControls
             var nguoiDung = QL_KTX.NguoiDungs.Where(t => t.ten_nguoi_dung == maSV).FirstOrDefault();
             if (nguoiDung != null)
             {
+                var sinhVien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
+                sinhVien.nguoi_dung_id = nguoiDung.nguoi_dung_id;
+                QL_KTX.SubmitChanges();
                 return false;
             }
             else
@@ -89,6 +92,10 @@ namespace thuVienControls
                 nd.trang_thai = true;
                 nd.vai_tro_id = 2;
                 QL_KTX.NguoiDungs.InsertOnSubmit(nd);
+                QL_KTX.SubmitChanges();
+
+                var sinhVien = QL_KTX.SinhViens.Where(t => t.ma_sinh_vien == maSV).FirstOrDefault();
+                sinhVien.nguoi_dung_id = nd.nguoi_dung_id;
                 QL_KTX.SubmitChanges();
             }
             return true;

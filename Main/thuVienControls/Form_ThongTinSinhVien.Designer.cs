@@ -33,7 +33,6 @@
             this.cbx_gioiTinh = new System.Windows.Forms.ComboBox();
             this.dtp_ngaySinh = new System.Windows.Forms.DateTimePicker();
             this.txt_diaChi = new System.Windows.Forms.TextBox();
-            this.txt_soPhong = new System.Windows.Forms.TextBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.txt_hoTen = new System.Windows.Forms.TextBox();
             this.txt_maSV = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.btn_khongDuyet = new Guna.UI.WinForms.GunaGradientButton();
             this.txt_email = new thietKeControls.txtEmail();
             this.btn_thoat = new Guna.UI.WinForms.GunaGradientButton();
+            this.cbx_phong = new Guna.UI.WinForms.GunaComboBox();
             this.SuspendLayout();
             // 
             // label9
@@ -76,12 +76,6 @@
             resources.ApplyResources(this.txt_diaChi, "txt_diaChi");
             this.txt_diaChi.Name = "txt_diaChi";
             this.txt_diaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diaChi_KeyPress);
-            // 
-            // txt_soPhong
-            // 
-            resources.ApplyResources(this.txt_soPhong, "txt_soPhong");
-            this.txt_soPhong.Name = "txt_soPhong";
-            this.txt_soPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soPhong_KeyPress);
             // 
             // txt_sdt
             // 
@@ -238,12 +232,28 @@
             this.btn_thoat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
+            // cbx_phong
+            // 
+            this.cbx_phong.BackColor = System.Drawing.Color.Transparent;
+            this.cbx_phong.BaseColor = System.Drawing.Color.White;
+            this.cbx_phong.BorderColor = System.Drawing.Color.Silver;
+            this.cbx_phong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbx_phong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_phong.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.cbx_phong, "cbx_phong");
+            this.cbx_phong.ForeColor = System.Drawing.Color.Black;
+            this.cbx_phong.FormattingEnabled = true;
+            this.cbx_phong.Name = "cbx_phong";
+            this.cbx_phong.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbx_phong.OnHoverItemForeColor = System.Drawing.Color.White;
+            // 
             // Form_ThongTinSinhVien
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
+            this.Controls.Add(this.cbx_phong);
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.btn_khongDuyet);
             this.Controls.Add(this.btn_luu);
@@ -253,7 +263,6 @@
             this.Controls.Add(this.cbx_gioiTinh);
             this.Controls.Add(this.dtp_ngaySinh);
             this.Controls.Add(this.txt_diaChi);
-            this.Controls.Add(this.txt_soPhong);
             this.Controls.Add(this.txt_sdt);
             this.Controls.Add(this.txt_hoTen);
             this.Controls.Add(this.txt_maSV);
@@ -278,7 +287,6 @@
         private System.Windows.Forms.ComboBox cbx_gioiTinh;
         private System.Windows.Forms.DateTimePicker dtp_ngaySinh;
         private System.Windows.Forms.TextBox txt_diaChi;
-        private System.Windows.Forms.TextBox txt_soPhong;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_hoTen;
         private System.Windows.Forms.TextBox txt_maSV;
@@ -295,5 +303,6 @@
         private Guna.UI.WinForms.GunaGradientButton btn_luu;
         private Guna.UI.WinForms.GunaGradientButton btn_khongDuyet;
         private Guna.UI.WinForms.GunaGradientButton btn_thoat;
+        private Guna.UI.WinForms.GunaComboBox cbx_phong;
     }
 }

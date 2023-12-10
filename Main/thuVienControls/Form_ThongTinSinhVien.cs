@@ -15,6 +15,7 @@ namespace Main
     public partial class Form_ThongTinSinhVien : Form
     {
         Ql_SinhVien qlsv = new Ql_SinhVien();
+        QL_Phong qlp = new QL_Phong();
         private string MaSV;
         public Form_ThongTinSinhVien()
         {
@@ -29,12 +30,30 @@ namespace Main
             InitializeComponent();
             this.MaSV = masv;
             loadCBXGioiTinh();
+            loadCBXPhong();
             loadSinhVien();
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
         }
 
+        public void loadCBXPhong()
+        {
+            SinhVien sv = qlsv.loadThongTinSinhVienTheoMa(this.MaSV);
+            Phong p = qlp.loadThongTinPhong(sv.so_phong);
+            if(p!=null)
+            {
+                List<Phong> dsp = qlp.LayDanhSachPhongChuaDayTheoLoaiPhong(p.LoaiPhong.ten_loai_phong);
+                dsp.Add(p);
+                cbx_phong.DataSource = dsp;
+                cbx_phong.DisplayMember = "so_phong";
+                cbx_phong.Enabled = true;
+            }    
+            else
+            {
+                cbx_phong.Enabled = false;
+            }    
+        }
 
         public void loadCBXGioiTinh()
         {
@@ -49,7 +68,8 @@ namespace Main
             txt_hoTen.Text = sv.ho_ten;
             txt_maSV.Text = sv.ma_sinh_vien;
             txt_sdt.Text = sv.so_dien_thoai;
-            txt_soPhong.Text = sv.so_phong;
+            cbx_phong.Text = sv.so_phong;
+            cbx_phong.Text = sv.so_phong;
             dtp_ngaySinh.Value = sv.ngay_sinh.Value;
             txt_email.Text = sv.email;
             string gioiTinh = sv.gioi_tinh;
@@ -77,9 +97,10 @@ namespace Main
                 string gioiTinh = cbx_gioiTinh.Text.ToString();
                 string sdt = txt_sdt.Text;
                 string diaChi = txt_diaChi.Text;
+            string soPhong = cbx_phong.Text;
                 string email = txt_email.Text;
       
-                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, email))
+                if (qlsv.UpdateSinhVien(maSV, hoTen, ngaysinh, gioiTinh, sdt, diaChi, soPhong, email))
                 {
                     MessageBox.Show("Lưu thành công");
                 }

@@ -118,7 +118,7 @@ namespace thuVienControls
         }
 
 
-        public bool UpdateSinhVien(string ma,string hoten, DateTime ngaysinh, string gioitinh, string sdt, string diachi, string email)
+        public bool UpdateSinhVien(string ma,string hoten, DateTime ngaysinh, string gioitinh, string sdt, string diachi,string soPhong, string email)
         {
             var sinhVien = (from sv in QL_KTX.SinhViens where sv.ma_sinh_vien == ma select sv).FirstOrDefault();
             if (sinhVien != null)
@@ -128,6 +128,7 @@ namespace thuVienControls
                 sinhVien.gioi_tinh = gioitinh;
                 sinhVien.so_dien_thoai = sdt;
                 sinhVien.dia_chi = diachi;
+                sinhVien.so_phong = soPhong;
                 sinhVien.email = email;
                     QL_KTX.SubmitChanges();
                     return true;
